@@ -150,7 +150,7 @@ export default {
 
   // 轮播图
   .banner-trans-enter-active {
-    transition: all .10s ease-in-out;
+    transition: all .5s ease-in-out;
     opacity: 1;
   }
 

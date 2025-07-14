@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="link-contact">
-        <p class="phone">400-100-5678</p>
+        <p class="phone">950816</p>
         <p class="desc">周一至周日 8:00-18:00<br>（仅收市话费）</p>
         <a href="https://support.kefu.mi.com/" target="_blank">
           <i class="iconfont icon-icon-test1"></i>
@@ -52,8 +52,8 @@ export default {
         {value: '预约维修服务', font:'iconfont icon-buoumaotubiao46', url: 'https://www.mi.com/static/fast/'},
         {value: '7天无理由退货', font:'iconfont icon-7tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back'},
         {value: '15天免费换货', font:'iconfont icon-15tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back'},
-        {value: '满150元包邮', font:'iconfont icon-liwu', url: 'https://www.mi.com/service/buy/postage/'},
-        {value: '520余家售后网点', font:'iconfont icon-icon-test', url: 'https://www.mi.com/static/maintainlocation/'}
+        {value: '满69元包邮', font:'iconfont icon-liwu', url: 'https://www.mi.com/service/buy/postage/'},
+        {value: '1100余家售后网点', font:'iconfont icon-icon-test', url: 'https://www.mi.com/static/maintainlocation/'}
       ],
       serviceLink: [
         {value: '帮助中心', subLinks: [

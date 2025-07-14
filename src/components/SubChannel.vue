@@ -109,6 +109,7 @@ export default {
 
     .promo-list-container {
       margin-left: 14px;
+      margin-top: -15px;
       width: calc(100% - 248px);
       .promo-list {
         display: flex;

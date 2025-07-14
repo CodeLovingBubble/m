@@ -295,14 +295,14 @@ export default {
       top: 0;
       width: 235px;
       height: auto;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 10;
+      background: rgb(172, 170, 170);
+      z-index: 1;
     }
   }
 
   .menu-list {
     padding: 20px 0;
-    height: 460px;
+    height: 388px;
     .list-item {
       display: flex;
       padding-left: 30px;

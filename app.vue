@@ -33,3 +33,14 @@ import WeChatWindow from './src/parts/WeChatWindow.vue';
     <!-- <LocationWindow /> -->
     </div>
 </template>
+
+<style>
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>
