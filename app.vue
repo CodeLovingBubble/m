@@ -7,6 +7,7 @@ import SiteInfo from './src/components/SiteInfo.vue';
 import SubChannel from './src/components/SubChannel.vue';
 import ToolBar from './src/components/ToolBar.vue';
 import TopHeader from './src/components/TopHeader.vue';
+import TopTop from './src/components/TopTop.vue';
 import LocationWindow from './src/parts/LocationWindow.vue';
 import VideoWindow from './src/parts/VideoWindow.vue';
 import WeChatWindow from './src/parts/WeChatWindow.vue';
@@ -15,6 +16,7 @@ import WeChatWindow from './src/parts/WeChatWindow.vue';
 
 <template>
     <div class="index-page">
+    <TopTop />
     <TopHeader />
     <MenuBanner />
     <SubChannel />

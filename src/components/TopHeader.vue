@@ -169,6 +169,7 @@ export default {
   .top-header {
     width: 100%;
     height: 100px;
+    justify-content: center;
     .top-container {
       width: 1226px;
       height: 100%;
@@ -300,17 +301,20 @@ export default {
 
     .menus-list {
       position: absolute;
+      display: flex;
+      justify-content: center; /* 水平居中 */
+      align-items: center; 
       left: 0;
       top: 140px;
       width: 100%;
-      // height: 230px;
+      height: 230px;
       background: #fff;
       border-top: 1px solid #e0e0e0;
       box-shadow: 0 3px 4px rgba(0, 0, 0, .18);
       overflow: hidden;
       z-index: 15;
       .menus {
-        padding: 30px 0 30px 110px;
+        padding: 30px 0 30px 200px;
         min-width: 1500px;
         display: flex;
         .menus-item {

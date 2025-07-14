@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script>
+<script>//实现轮播图
 export default {
   data () {
     return {
