@@ -44,9 +44,9 @@
               <h3 class="name ellipsis">{{item.value}}</h3>
               <span class="desc ellipsis">{{item.desc}}</span>
               <div class="price">
-                <span>{{item.newPrice}}元</span>
-                <span v-if="item.sub">起</span>
-                <del v-if="item.oldPrice">{{item.oldPrice}}元</del>
+                <span>{{item.newPrice}}</span>
+                <span v-if="item.sub"></span>
+                <del v-if="item.oldPrice">{{item.oldPrice}}</del>
               </div>
             </a>
           </div>

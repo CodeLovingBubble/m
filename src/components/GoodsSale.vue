@@ -23,7 +23,7 @@ import GoodsBox from '../parts/GoodsBox'
 export default {
   data () {
     return {
-      postItem1: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1a2f39c9fe0804ace1d3707574c7c86f.jpg?w=2452&h=240', url: 'https://www.mi.com/redminote7pro/'},
+      postItem1: {src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9e9c620dbad5c650b6ff0c573df76e14.jpg?thumb=1&w=1533&h=150&f=webp&q=90', url: 'https://www.mi.com/redminote7pro/'},
       postItem2: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e64bcac4e4b7c2ceb94f277bbc57ad45.jpg?w=2452&h=240', url: 'https://www.mi.com/a/h/9819.html'},
       postItem3: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7606bb66991f59e15b5b35e917b1a907.jpg?w=2452&h=240', url: 'https://www.mi.com/a/h/11544.html'},
       postItem4: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e2cf7dd837eb8d4690070d7dfa817d9.jpg?w=2452&h=240', url: 'https://item.mi.com/10476.html'},
@@ -37,16 +37,16 @@ export default {
         vertical: true,
         url: 'https://www.mi.com/a/h/9891.html',
         listData: {
-          promo: [{src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/79ed6663b57e30554a5d1f0653c68b78.jpg?w=468&h=1228', url: 'https://www.mi.com/mix2s/'}],
+          promo: [{src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/55d2e50dd3783b52244ea3938e9dfca7.png?thumb=1&w=293&h=768&f=webp&q=90', url: 'https://www.mi.com/shop/buy?product_id=10050081'}],
           goods: [
-            {value: 'Redmi Note 8 Pro', desc: '6400万全场景四摄', sub: true, newPrice: '1399', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg', url: 'http://www.mi.com/redminote8pro'},
-            {value: 'Redmi Note 8', desc: '千元4800万四摄', sub: true, newPrice: '999', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg', url: 'http://www.mi.com/redminote8'},
-            {value: 'Redmi K20 Pro 6GB+128GB', desc: '骁龙855， 弹出全面屏', sub: false, newPrice: '2299', oldPrice: '2599', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/beee478168e5c4fd0d66369386fddbbe.jpg', url: 'https://www.mi.com/redmik20pro/'},
-            {value: 'Redmi Note 7', desc: '4800万拍照千元机', sub: false, newPrice: '1099', oldPrice: '1399', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg', url: 'https://www.mi.com/redminote7/'},
-            {value: 'Redmi 7', desc: '4000mAh超长续航', sub: true, newPrice: '699', oldPrice: '799', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg', url: 'https://www.mi.com/redmi7/'},
-            {value: '小米MIX 3 8GB+128GB', desc: 'DxO百分拍照手机', sub: false, newPrice: '2599', oldPrice: '3599', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/411d540271f6efbdd882fa33daee0de3.jpg', url: 'https://www.mi.com/mix3/'},
-            {value: '小米CC9', desc: '3200万自拍，4800万三摄', sub: true, newPrice: '1699', oldPrice: '1799', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bd25cc614a670f4d5546fe82e239ef86.jpg', url: 'https://www.mi.com/micc9/'},
-            {value: '小米9 SE', desc: '索尼4800万三摄，骁龙712', sub: true, newPrice: '1599', oldPrice: '1999', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/134efaa5dec3267ce29e36bad3ec26c9.jpg', url: 'https://www.mi.com/mi9se/'}
+            {value: ' Xiaomi MIX Flip 2', desc: '4.01英寸多功能超大外屏', sub: true, newPrice: '5999元起', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202506251658_d1ee9fc2e13ddad3cf6823ce4cbf45b5.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/shop/buy?product_id=21423'},
+            {value: 'REDMI K80 至尊版', desc: '天玑 9400+|7410mAh超长续航|大师级...', sub: true, newPrice: '2599元起', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202506181453_d97271f45499e132cbf0b597d5f7e04d.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/shop/buy?product_id=21432'},
+            {value: ' Xiaomi 15S Pro', desc: '小米 15周年特别设计', sub: false, newPrice: '5499元起', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202505221337_64140259a92b163ab9dc6a7555b31178.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/shop/buy?product_id=21305'},
+            {value: ' Xiaomi Civi 5 Pro', desc: '徕卡光学 Summilux 高速镜头｜6000...', sub: false, newPrice: '2999元起', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202505201429_30b6018560c07bc7670cc3ac79070a0c.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/redminote7/'},
+            {value: 'REDMI Turbo 4 Pro', desc: ' Turbo 4 Pro 好看，更能打！', sub: true, newPrice: '1899元起', oldPrice: '2199元', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202502251811_93715df0882e43e252843e3c7b775570.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/shop/buy?product_id=20982'},
+            {value: 'Xiaomi 15 Ultra', desc: '暗夜之眼 徕卡光学', sub: false, newPrice: '6599元起', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/411d540271f6efbdd882fa33daee0de3.jpg', url: 'https://www.mi.com/mix3/'},
+            {value: ' REDMI Turbo 4', desc: 'REDMI Turbo 4 好看又能打', sub: true, newPrice: '1699元起', oldPrice: '1999元', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/00eb27ead9512a7f12604ad3469460b6.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/shop/buy?product_id=20844'},
+            {value: 'Redmi 14C', desc: '【持久续航】5160mAh 大电池', sub: true, newPrice: '469元起', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202412271148_a4cb76ca76ad26ac81da44ad1a69ebd1.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/shop/buy?product_id=20866'}
           ]
         }
       },
