@@ -35,9 +35,9 @@ export default {
         {value: '话费充值', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48', url: 'https://recharge.10046.mi.com/'}
       ],
       promoList: [
-        {value: 'Redmi 7A', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c745ff5931a1894e51c34b64888c5fca.jpg?w=632&h=340', url: 'https://www.mi.com/redmi7a/'},
-        {value: '小米MIX3', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e7b51b721c3319e9c2916cc41cd9c695.jpg?w=632&h=340', url: 'https://www.mi.com/mix3/'},
-        {value: '小米手环4', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/816a66edef10673b4768128b41804cae.jpg?w=632&h=340', url: 'https://www.mi.com/shouhuan4/'}
+        {value: 'Redmi 7A', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e981f78d2ac17c504975a719cb8b069d.png?w=632&h=340', url: 'https://www.mi.com/redmi7a/'},
+        {value: '小米MIX3', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7404444f0c79b4bbb63e07724f502b86.png?w=632&h=340', url: 'https://www.mi.com/mix3/'},
+        {value: '小米手环4', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6b0c7fadbd84a808287af5faad6e62d7.png?w=632&h=340', url: 'https://www.mi.com/shouhuan4/'}
       ]
     }
   }
@@ -63,7 +63,7 @@ export default {
         font-size: 12px;
         text-align: center;
         .list-item {
-          width: 76px;
+          width: 70px;
           height: 82px;
           padding: 0 3px;
           position: relative;

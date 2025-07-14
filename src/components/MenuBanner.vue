@@ -44,10 +44,10 @@ export default {
       menuTimer: '',
       listInfoData: [],
       menus: [
-        {value: '手机 电话卡', url: 'https://www.mi.com/p/1915.html', type: 'phone'},
-        {value: '电视 盒子', url: 'https://www.mi.com/a/h/9819.html', type: 'tv'},
-        {value: '笔记本 平板', url: 'https://www.mi.com/a/h/7529.html', type: 'laptop'},
-        {value: '家电 插线板', url: 'https://www.mi.com/p/9285.html', type: 'household'},
+        {value: '手机', url: 'https://www.mi.com/p/1915.html', type: 'phone'},
+        {value: '电视', url: 'https://www.mi.com/a/h/9819.html', type: 'tv'},
+        {value: '家电', url: 'https://www.mi.com/a/h/7529.html', type: 'laptop'},
+        {value: '笔记本 平板 显示器', url: 'https://www.mi.com/p/9285.html', type: 'household'},
         {value: '出行 穿戴', url: 'https://www.mi.com/p/9289.html', type: 'wear'},
         {value: '智能 路由器', url: 'https://www.mi.com/a/h/8363.html', type: 'router'},
         {value: '电源 配件', url: 'https://www.mi.com/p/9290.html', type: 'power'},
@@ -56,11 +56,11 @@ export default {
         {value: '生活 箱包', url: 'https://www.mi.com/p/9293.html', type: 'life'}
       ],
       banners: [
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cefed8336bae62768afeeb6a3b8f55c8.jpg?w=2452&h=920', url: 'https://www.mi.com/redminote7/'},
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/743e04f29f920648b9d99b04a85ce343.jpg?w=2452&h=920', url: 'https://www.mi.com/a/h/11251.html'},
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3d7d3f2df881cf62e5fafdada94f5018.jpg?w=2452&h=920', url: 'https://www.mi.com/mitvall-screen/e55c/'},
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6bd4174b8c5aad67a64864a5716ad152.jpg?w=2452&h=920', url: 'https://www.mi.com/washer-dryer-10/'},
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a1f0eb196c6c65a89ffba6efa4b5679c.jpg?w=2452&h=920', url: 'https://www.mi.com/a/h/11117.html'}
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a25b54b7b8072cbb2a058e58c6e1765.jpg?w=2452&h=920', url: 'https://www.mi.com/redminote7/'},
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/59b14ddb52b5745c97467c8229d8b795.jpg?thumb=1&w=1533&h=575&f=webp&q=90', url: 'https://www.mi.com/a/h/11251.html'},
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/da0e79745d648488a84c37772c29c08f.jpg?thumb=1&w=1533&h=575&f=webp&q=90', url: 'https://www.mi.com/mitvall-screen/e55c/'},
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0c9726653e156360c02c9640a20e9c5f.jpg?thumb=1&w=1533&h=575&f=webp&q=90', url: 'https://www.mi.com/washer-dryer-10/'},
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9e3f9630cd04bb2e4d37d1b136b4fae9.jpg?thumb=1&w=1533&h=575&f=webp&q=90', url: 'https://www.mi.com/a/h/11117.html'}
       ],
       phone: [
         {name:'Redmi Note 8 Pro', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e99f7f32923b2ef482338c08544000bb.png', url: 'http://www.mi.com/redminote8pro'},
