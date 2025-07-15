@@ -25,6 +25,9 @@
           value="">
 				<label class="search-btn" :class="{'active': focusFlag}" style="border-left: 0;">
 					<i class="fa fa-search" aria-hidden="true"></i>
+          <div id="kuan">
+            <input type="submit" value="">
+          </div>
 				</label>
         <transition name="list-trans">
           <ul class="search-hots" v-show="hotsListFlag">
@@ -66,7 +69,6 @@ export default {
       menusItemData: this.xiaomi,
       hotsListFlag: true,
       focusFlag: false,
-      hots: ['小米9', '小米9 SE'],
       navs: [
         {value: '小米手机', type: 'xiaomi'},
 				{value: 'Redmi 红米', type: 'redmi'},
@@ -217,7 +219,9 @@ export default {
         height: 50px;
         position: relative;
         display: flex;
+        cursor: pointer;
         .search-input {
+          cursor: pointer;
           width: 240px;
           height: 100%;
           outline: none;
@@ -225,6 +229,28 @@ export default {
           border: 1px solid #e0e0e0;
         }
 
+    #kuan {
+  input[type="submit"] {
+    height: 49px;
+    width: 50px;
+    border: 1px solid #e0e0e0;
+    margin-top: 0px;
+    background-color: #fff;
+    /* 默认状态图片 */
+    background-image: url('https://i.postimg.cc/G3FQtqGh/image.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:55px;
+    color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-image: url('https://i.postimg.cc/Y0dLgGt8/image.png');
+      border: 1px solid #ff6700;
+    }
+  }
+}
         .search-btn {
           border: 1px solid #e0e0e0;
           cursor: pointer;
@@ -245,6 +271,13 @@ export default {
           &:hover {
             border: 1px solid #ff6700;
             transition: all .20s ease;
+          }
+          &:focus-within {
+          .search-input,
+          .search-btn,
+            #kuan input[type="submit"] {
+              border-color: #ff6700; // 统一变为橙色
+            }
           }
         }
 
@@ -298,6 +331,7 @@ export default {
         }
       }
     }
+
 
     .menus-list {
       position: absolute;
