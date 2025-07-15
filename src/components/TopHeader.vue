@@ -312,7 +312,7 @@ export default {
         .search-list {
           position: absolute;
           width: 240px;
-          top: 50px;
+          top: 35px;
           height: auto;
           border: 1px solid #ff6700;
           border-top: 0;

@@ -65,7 +65,6 @@ const showCart = ref(false);
 
 <style>
 .back{
-    /* position: relative; */
     z-index: 30;
     height: 40px;
     width: auto;
@@ -91,6 +90,7 @@ const showCart = ref(false);
     margin-left: 3px;
     display: inline-block;
     position: relative; /* 确保二维码定位基准 */
+    white-space: nowrap /* 防止文字在网页缩小换行 */
 }
 .sep{
     margin: 0 .3em;
@@ -123,6 +123,7 @@ const showCart = ref(false);
     display: flex;
     justify-content: center; /* 水平居中 */
     align-items: center; 
+    white-space: nowrap
 }
 .right a{
     color: #b0b0b0;
@@ -130,6 +131,7 @@ const showCart = ref(false);
     margin-right: 3px;
     margin-left: 3px;
     display: inline-block;
+    white-space: nowrap
 }
 .cart {
     margin-left: 20px;
@@ -137,7 +139,6 @@ const showCart = ref(false);
     display: inline-block;
 }
 .cart-container{
-    /* background: #424242; */
     width: 120px;
     height: 40px;
     line-height: 40px;
