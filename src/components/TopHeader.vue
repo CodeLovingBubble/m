@@ -22,7 +22,7 @@
 					class="search-input"
           :class="{'active': focusFlag}"
           type="search"
-          value="">
+          :placeholder="placeholderWords[currentWordIndex]">
 				<label class="search-btn" :class="{'active': focusFlag}" style="border-left: 0;">
 					<i class="fa fa-search" aria-hidden="true"></i>
           <div id="kuan">
@@ -70,31 +70,31 @@ export default {
       hotsListFlag: true,
       focusFlag: false,
       navs: [
-        {value: '小米手机', type: 'xiaomi'},
-				{value: 'Redmi 红米', type: 'redmi'},
+        {value: 'Xiaomi手机', type: 'xiaomi'},
+				{value: 'REDMI手机', type: 'redmi'},
 				{value: '电视', type: 'tv'},
 				{value: '笔记本', type: 'laptop'},
-				{value: '家电', type: 'household'},
-				{value: '路由器', type: 'router'},
-				{value: '智能硬件', type: 'hardware'},
-				{value: '服务', url: '//www.mi.com/service/'},
+				{value: '平板', type: 'household'},
+				{value: '家电', type: 'router'},
+				{value: '路由器', type: 'hardware'},
+				{value: '服务中心', url: '//www.mi.com/service/'},
 				{value: '社区', url: 'http://www.xiaomi.cn'}
       ],
       xiaomi: [
-        {value: '小米CC9', price: '1799', sub: true, src: 'https://www.mi.com/micc9/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png'},
-        {value: '小米CC9e', price: '1299', sub: true, src: 'https://www.mi.com/micc9e/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/df9b3e7a562e02a33eb069b3f0119815.png'},
-        {value: '小米CC9 美图定制版', price: '2599', sub: false, src: 'https://www.mi.com/xiaomicc9mt/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b02f50c9dd2e01c139a06a12502755ef.png'},
-        {value: '小米9', price: '2599', sub: true, src: 'https://www.mi.com/mi9/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2c9307e9690dfbca39d8de770a7a8664.png'},
-        {value: '小米MIX 3', price: '2599', sub: false, src: 'https://item.mi.com/10000123.html', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3b5e5829fdf92d54c167f4681531b535.png'},
-        {value: '小米MIX 2s', price: '1799', sub: true, src: 'https://www.mi.com/mix2s/', url: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ae81fdc9f2ed286d135e16c2a5f6db33.png'}
+        {value: ' Xiaomi MIX Flip 2', price: '5999', sub: true, src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/8059e5c1decb3331d95c65b28e016ef5.png?thumb=1&w=200&h=138&f=webp&q=90', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png'},
+        {value: 'REDMI Turbo 4 Pro', price: '1899', sub: true, src: 'https://www.mi.com/micc9e/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/df9b3e7a562e02a33eb069b3f0119815.png'},
+        {value: 'Xiaomi Civi 5 Pro', price: '2999', sub: false, src: 'https://www.mi.com/xiaomicc9mt/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b02f50c9dd2e01c139a06a12502755ef.png'},
+        {value: 'Xiaomi 15 Ultra', price: '6499', sub: true, src: 'https://www.mi.com/mi9/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2c9307e9690dfbca39d8de770a7a8664.png'},
+        {value: 'Xiaomi 15', price: '3999', sub: false, src: 'https://item.mi.com/10000123.html', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3b5e5829fdf92d54c167f4681531b535.png'},
+        {value: 'Xiaomi 15 Pro', price: '4999', sub: true, src: 'https://www.mi.com/mix2s/', url: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ae81fdc9f2ed286d135e16c2a5f6db33.png'}
       ],
       redmi: [
-        {value: 'Redmi K20 Pro', price: '2299', sub: true, src: 'https://www.mi.com/redmik20pro/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f69828396fcd1e05b932778f4fca4409.jpg'},
-        {value: 'Redmi K20', price: '1999', sub: true, src: 'https://www.mi.com/redmik20/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d4fbf37c6b51e510a3bac5e738f2f681.jpg'},
-        {value: 'Redmi Note7 Pro', price: '1399', sub: false, src: 'https://www.mi.com/redminote7pro/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b0e0c0fda4adf267012815127302f6de.jpg'},
-        {value: 'Redmi 7A', price: '579', sub: true, src: 'https://www.mi.com/redmi7a/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/031af981e77b41770cade39353021e33.jpg'},
-        {value: 'Redmi Note 7', price: '999', sub: true, src: 'https://www.mi.com/redminote7/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5352bd79f5304484f529da8a53145a20.png'},
-        {value: 'Redmi 7', price: '699', sub: true, src: 'https://www.mi.com/redmi7/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/536b98c95ecd4375bae21599e53aae53.png'}
+        {value: 'REDMI K80 至尊版', price: '2599', sub: true, src: 'https://www.mi.com/redmik20pro/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f69828396fcd1e05b932778f4fca4409.jpg'},
+        {value: 'REDMI Turbo 4 Pro', price: '1899', sub: true, src: 'https://www.mi.com/redmik20/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d4fbf37c6b51e510a3bac5e738f2f681.jpg'},
+        {value: 'RREDMI Turbo 4', price: '1699', sub: false, src: 'https://www.mi.com/redminote7pro/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b0e0c0fda4adf267012815127302f6de.jpg'},
+        {value: 'Redmi 14C', price: '469', sub: true, src: 'https://www.mi.com/redmi7a/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/031af981e77b41770cade39353021e33.jpg'},
+        {value: 'REDMI K80 Pro', price: '2999', sub: true, src: 'https://www.mi.com/redminote7/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5352bd79f5304484f529da8a53145a20.png'},
+        {value: 'REDMI K80', price: '2099', sub: true, src: 'https://www.mi.com/redmi7/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/536b98c95ecd4375bae21599e53aae53.png'}
       ],
       tv: [
         {value: '小米壁画电视 65英寸', price: '6999', sub: false, src: 'https://www.mi.com/arttv/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/00f597a8725eee9245e383c35cd4f7b6.jpg'},
@@ -136,8 +136,30 @@ export default {
         {value: '小爱万能遥控版', price: '179', sub: false, src: 'https://www.mi.com/aispeaker-control/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/df136199221a23299bc5348f37230a86.jpg'},
         {value: '查看全部', type: '智能硬件', sub: false, src: 'https://www.mi.com/p/3469.html?client_id=180100041086&masid=17409.0245', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c1016ddffd2ac5808c4bebcdbefd413a.jpg'}
       ],
-      searchHot: ['手机换新','空调', '充电宝', '风扇', 'Redmi K80', '显示器', '路由器', '空气进化器']
+      searchHot: ['手机换新','空调', '充电宝', '风扇', 'Redmi K80', '显示器', '路由器', '空气进化器'],
+      placeholderWords: [
+        '电视',
+        '电饭煲',
+        '空调',
+        '充电宝',
+        '风扇',
+        'Redmi K80',
+        '显示器',
+        '路由器',
+        '空气净化器',
+        '小米手环9pro'
+      ],
+      currentWordIndex: 0,
+      rotateInterval: null
     }
+  },
+  mounted() {
+    // 启动轮换定时器
+    this.startRotation();
+  },
+  beforeDestroy() {
+    // 组件销毁前清除定时器
+    clearInterval(this.rotateInterval);
   },
   methods: {
     // 菜单显示区域
@@ -154,14 +176,31 @@ export default {
 				this.menusListFlag = false;
 			}, 300);
     },
-    // 搜索框下拉列表
-    searchListShow () {
+    // 启动轮换
+    startRotation() {
+      clearInterval(this.rotateInterval);
+      this.rotateInterval = setInterval(() => {
+        this.currentWordIndex = (this.currentWordIndex + 1) % this.placeholderWords.length;
+      }, 5000);
+    },
+    
+    // 停止轮换
+    stopRotation() {
+      clearInterval(this.rotateInterval);
+    },
+    
+    // 搜索框获取焦点
+    searchListShow() {
       this.hotsListFlag = false;
       this.focusFlag = true;
+      this.stopRotation(); // 停止轮换
     },
-    searchListHide () {
+    
+    // 搜索框失去焦点
+    searchListHide() {
       this.hotsListFlag = true;
       this.focusFlag = false;
+      this.startRotation(); // 重新开始轮换
     }
   }
 }
@@ -187,11 +226,12 @@ export default {
         background: #ff6700 url('../assets/image/home-logo.png') no-repeat;
         background-position: -55px 0;
         transition: all .20s ease;
+        border-radius: 20px;
       }
 
-      .mi-icon:hover {
-          background-position: 0 0;
-        }
+      // .mi-icon:hover {
+      //     background-position: 0 0;
+      //   }
 
       .header-navs-container {
         width: 820px;
@@ -222,6 +262,7 @@ export default {
         cursor: pointer;
         .search-input {
           cursor: pointer;
+          padding-left: 10px; 
           width: 240px;
           height: 100%;
           outline: none;
