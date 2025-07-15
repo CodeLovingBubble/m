@@ -134,7 +134,7 @@ export default {
         {value: '小爱万能遥控版', price: '179', sub: false, src: 'https://www.mi.com/aispeaker-control/', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/df136199221a23299bc5348f37230a86.jpg'},
         {value: '查看全部', type: '智能硬件', sub: false, src: 'https://www.mi.com/p/3469.html?client_id=180100041086&masid=17409.0245', url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c1016ddffd2ac5808c4bebcdbefd413a.jpg'}
       ],
-      searchHot: ['小米 9','Redmi K20 pro', 'Redmi K20', 'Redmi Note 7 Pro', 'Redmi note 7', '小米电视4c', '电视32英寸', '笔记本pro', '小爱音箱', '净水器']
+      searchHot: ['手机换新','空调', '充电宝', '风扇', 'Redmi K80', '显示器', '路由器', '空气进化器']
     }
   },
   methods: {
