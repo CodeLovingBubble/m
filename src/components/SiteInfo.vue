@@ -6,15 +6,26 @@
       </div>
       <div class="info-footer">
         <ul class="info-link">
-          <li class="info-item" v-for="(item, index) in footerNavs" :key="index">
-            <template v-if="item.value === 'Select Location'">
-              <a :href="item.url" @click="showLocationWindow">{{item.value}}</a>
-            </template>
-            <template v-else>
-              <a :href="item.url" target="_blank">{{item.value}}</a>
-              <span class="nav-span">|</span>
-            </template>
-          </li>
+          <!-- 第一行导航 -->
+          <template v-for="(item, index) in footerNavs">
+            <li class="info-item" :key="index" v-if="!item.isSecondLine">
+              <template v-if="item.value === 'Select Location'">
+                <a :href="item.url" @click="showLocationWindow">{{ item.value }}</a>
+              </template>
+              <template v-else>
+                <a :href="item.url" target="_blank">{{ item.value }}</a>
+                <span class="nav-span">|</span>
+              </template>
+            </li>
+          </template>
+
+          <!-- 第二行导航 -->
+          <template v-for="(item, index) in footerNavs">
+            <li class="info-item second-line" :key="'second-' + index" v-if="item.isSecondLine">
+              <a :href="item.url" target="_blank">{{ item.value }}</a>
+              <span class="nav-span" v-if="index < footerNavs.filter(i => i.isSecondLine).length - 1">|</span>
+            </li>
+          </template>
         </ul>
         <div class="info-license">
           <template v-for="(item, index) in licenseInfo">
@@ -49,22 +60,23 @@ export default {
     return {
       footerNavs: [
         {value: '小米商城', url: 'https://www.mi.com/index.html'},
-        {value: 'MIUI', url: 'https://www.miui.com/'},
+        {value: '小米澎拜OS', url: 'https://www.miui.com/'},
         {value: '米家', url: 'https://home.mi.com/index.html'},
-        {value: '米聊', url: 'http://www.miliao.com/'},
         {value: '多看', url: 'https://www.duokan.com/'},
         {value: '游戏', url: 'http://game.xiaomi.com/'},
-        {value: '路由器', url: 'http://www.miwifi.com/'},
-        {value: '米粉卡', url: 'https://www.mi.com/micard/'},
+        {value: '音乐', url: 'http://game.xiaomi.com/'},
         {value: '政企服务', url: 'https://b.mi.com/?client_id=180100031058&masid=17409.0358'},
         {value: '小米天猫店', url: 'https://xiaomi.tmall.com/'},
         {value: '小米集团隐私政策', url: 'https://privacy.mi.com/all/zh_CN/'},
         {value: '小米商城隐私政策', url: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ded8d0e4a77d.html'},
+        {value: '小米公司儿童信息保护规则', url: 'http://game.xiaomi.com/'},
+        {value: '小米商城隐式政策', url: 'http://game.xiaomi.com/'},
         {value: '小米商城用户协议', url: 'https://www.mi.com/about/user-agreement/'},
         {value: '问题反馈', url: 'https://static.mi.com/feedback/'},
-        {value: '廉正举报', url: 'https://www.mi.com/jiancha/'},
-        {value: '诚信合规', url: 'https://integrity.mi.com/'},
         {value: 'Select Location', url: 'javascript:void(0);'},
+        {value: '北京互联网法院法律服务工作站 |', url: 'https://www.mi.com/jiancha/', isSecondLine: true},
+        {value: '中国消费者协会 |', url: 'https://integrity.mi.com/', isSecondLine: true},
+        {value: '北京市消费者协会', url: 'http://game.xiaomi.com/', isSecondLine: true}
       ],
       licenseInfo: [
         {id: 'rwvge', value: '©', url: '', br: false},
@@ -85,11 +97,10 @@ export default {
         {id: 'ijdqo', value: ' 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试', url: '', br: false}
       ],
       logoInfo: [
-        {value: 'TRUSTe Privacy Certification', src: 'https://i1.mifile.cn/f/i/17/site/truste.png', url: 'https://privacy.truste.com/privacy-seal/validation?rid=4fc28a8c-6822-4980-9c4b-9fdc69b94eb8&lang=zh-cn'},
         {value: '诚信网站', src: 'https://s01.mifile.cn/i/v-logo-2.png', url: 'https://search.szfw.org/cert/l/CX20120926001783002010'},
         {value: '可信网站', src: 'https://s01.mifile.cn/i/v-logo-1.png', url: 'https://ss.knet.cn/verifyseal.dll?sn=e12033011010015771301369&ct=df&pa=461082'},
-        {value: '网上交易保障中心', src: 'https://s01.mifile.cn/i/v-logo-3.png', url: 'http://www.315online.com.cn/member/315140007.html'},
         {value: '诚信经营 放心消费', src: 'https://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png', url: 'https://www.mi.com/service/buy/commitment/'},
+        {value: '网上交易保障中心', src: 'https://s01.mifile.cn/i/v-logo-3.png', url: 'http://www.315online.com.cn/member/315140007.html'}
       ]
     }
   },
@@ -127,28 +138,38 @@ export default {
       width: 57px;
       height: 57px;
       margin-right: 10px;
+      border-radius: 20px;
     }
   }
 
-  .info-footer .info-link {
-    display: flex;
-    .info-item {
-      height: 18px;
-      line-height: 18px;
+.info-footer .info-link {
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+  
+  .info-item {
+    height: 18px;
+    line-height: 18px;
+    display: inline-block;
+    
+    &.second-line {
+      margin-top: 10px; /* 第二行与第一行的间距 */
+    }
+    
+    a {
       display: inline-block;
-      a {
-        display: inline-block;
-        color: #757575;
-        &:hover {
-          color: #ff6709;
-        }
-      }
-
-      .nav-span {
-        line-height: 18px;
+      color: #757575;
+      &:hover {
+        color: #ff6709;
       }
     }
+
+    .nav-span {
+      line-height: 18px;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
   }
+}
 
   .info-footer .info-license {
     text-align: left;
