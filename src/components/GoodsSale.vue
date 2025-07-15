@@ -2,15 +2,10 @@
   <div class="goods-sale">
     <poster :postItem="postItem1"></poster>
     <goods-box :goodsItem="goodsItem1"></goods-box>
-    <poster :postItem="postItem2"></poster>
-    <goods-box :goodsItem="goodsItem2"></goods-box>
-    <poster :postItem="postItem3"></poster>
     <goods-box :goodsItem="goodsItem3"></goods-box>
-    <poster :postItem="postItem4"></poster>
+    <goods-box :goodsItem="goodsItem2"></goods-box>
     <goods-box :goodsItem="goodsItem4"></goods-box>
-    <poster :postItem="postItem5"></poster>
     <goods-box :goodsItem="goodsItem5"></goods-box>
-    <poster :postItem="postItem6"></poster>
     <goods-box :goodsItem="goodsItem6"></goods-box>
     <poster :postItem="postItem7"></poster>
   </div>
@@ -24,13 +19,7 @@ export default {
   data () {
     return {
       postItem1: {src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9e9c620dbad5c650b6ff0c573df76e14.jpg?thumb=1&w=1533&h=150&f=webp&q=90', url: 'https://www.mi.com/redminote7pro/'},
-      postItem2: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e64bcac4e4b7c2ceb94f277bbc57ad45.jpg?w=2452&h=240', url: 'https://www.mi.com/a/h/9819.html'},
-      postItem3: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7606bb66991f59e15b5b35e917b1a907.jpg?w=2452&h=240', url: 'https://www.mi.com/a/h/11544.html'},
-      postItem4: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e2cf7dd837eb8d4690070d7dfa817d9.jpg?w=2452&h=240', url: 'https://item.mi.com/10476.html'},
-      postItem5: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/89c2a209b742fce9b10d9d196149d634.jpg?w=2452&h=240', url: 'https://www.mi.com/airenergy/'},
-      postItem6: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/10fb0086cb21120c53248a3d8cc56dc5.jpg?w=2452&h=240', url: 'https://item.mi.com/10327.html'},
       postItem7: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/88e35cffc82cd98cd53172460067af17.jpg?w=2452&h=240', url: 'https://item.mi.com/9836.html'},
-
       goodsItem1: {
         boxTitle: '手机',
         isHot: false,
@@ -86,12 +75,12 @@ export default {
         }
       },
       goodsItem3: {
-        boxTitle: '智能',
+        boxTitle: '智能穿戴',
         isHot: true,
         vertical: false,
         tabList: [
-          {value: '热门', type: 'hots', url: 'https://www.mi.com/p/3469.html'},
-          {value: '出行', type: 'trip', url: 'https://www.mi.com/p/3469.html'}
+          {value: '耳机', type: 'hots', url: 'https://www.mi.com/p/3469.html'},
+          {value: '穿戴', type: 'trip', url: ''},
         ],
         listData: {
           promo: [
@@ -121,12 +110,13 @@ export default {
         }
       },
       goodsItem4: {
-        boxTitle: '搭配',
+        boxTitle: '生活电器',
         isHot: true,
         vertical: false,
         tabList: [
           {value: '热门', type: 'hots', url: 'https://www.mi.com/p/3469.html'},
-          {value: '耳机音箱', type: 'earphone', url: 'https://www.mi.com/p/3469.html'}
+          {value: '电视影音', type: 'earphone', url: 'https://www.mi.com/p/3469.html'},
+          {value: '空调', type: 'television', url: 'https://www.mi.com/a/h/9819.html'}
         ],
         listData: {
           promo: [
@@ -155,27 +145,29 @@ export default {
         }
       },
       goodsItem5: {
-        boxTitle: '配件',
+        boxTitle: '厨房电器',
         isHot: true,
         vertical: false,
         tabList: [
-          {value: '热门', type: 'hots', url: 'https://search.mi.com/search_%E4%BF%9D%E6%8A%A4%E5%A3%B3'},
-          {value: '保护套', type: 'protective', url: 'https://search.mi.com/search_%E4%BF%9D%E6%8A%A4%E5%A3%B3'}
+          {value: '净水器', type: 'hots', url: 'https://search.mi.com/search_%E4%BF%9D%E6%8A%A4%E5%A3%B3'},
+          {value: '烟灶', type: 'protective', url: 'https://search.mi.com/search_%E4%BF%9D%E6%8A%A4%E5%A3%B3'},
+          {value: '电饭煲', type: 'b', url: ''},
+          {value: '微蒸烤', type: 'c', url: ''}
         ],
         listData: {
           promo: [
-            {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/739ebd8abfc2b1be8866a2c1ad87e709.jpg?w=468&h=600', url: 'https://item.mi.com/9016.html'},
-            {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ffe4182f1d9a5befdf2380ec90ae1620.jpg?w=468&h=600', url: 'https://www.mi.com/dispenser/'}
+            {src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/499abd2f37095463c677a09f55cb2074.jpg?thumb=1&w=293&h=375&f=webp&q=90', url: 'https://item.mi.com/9016.html'},
+            {src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e7310eb9e74b138865f32bf8a35c98e.jpg?thumb=1&w=293&h=375&f=webp&q=90', url: 'https://www.mi.com/dispenser/'}
           ],
           hots: [
-            {value: '小米9 SE 街头风保护壳', desc: '简约时尚，多彩三色', sub: false, newPrice: '49', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6c19fad90ad73f91e13c97cce2b15d82.jpg', url: 'https://item.mi.com/9355.html'},
-            {value: '小米CC9e 高透果冻保护壳', desc: '更薄更清透', sub: false, newPrice: '49', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9dd5ef3ab726a9b9b9cd39587a1d0e86.jpg', url: 'https://item.mi.com/10173.html'},
-            {value: 'Redmi K20 / K20 Pro 怪力魔王保护壳', desc: '怪力魔王专属定制', sub: false, newPrice: '39', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8fb7f3be403cfcbe98576bee28c7cc25.jpg', url: 'https://item.mi.com/9889.html'},
-            {value: '小米MIX 3 獬豸神兽保护壳', desc: '因为独特而备受瞩目', sub: false, newPrice: '32.9', oldPrice: '69', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/20bb12392d70e3b7158c252e9c34d0b0.jpg', url: 'https://item.mi.com/9133.html'},
-            {value: '小米 USB充电器（4口）', desc: '化繁为简，以一敌四', sub: false, newPrice: '59', oldPrice: '69', src: 'https://i8.mifile.cn/v1/a1/T1C__gBmYv1RXrhCrK.jpg', url: 'https://www.mi.com/chongdianqi4kou'},
-            {value: '米家LED随身灯', desc: '小巧轻便 5级亮度调节', sub: false, newPrice: '16.9', oldPrice: '19.9', src: 'https://i8.mifile.cn/v1/a1/b0ded71f-b235-8f99-ba1c-20f80c3a4231.jpg', url: 'https://item.mi.com/4053.html'},
-            {value: '小米USB-C数据线 编织线版', desc: '高强度纤维编制线体', sub: true, newPrice: '18.9', oldPrice: '', src: 'https://i8.mifile.cn/b2c-mimall-media/4132366589e457f407b918fe48c89cb1.jpg', url: 'https://item.mi.com/10000124.html'},
-            {value: 'USB Type-C 转接头', desc: '', sub: false, newPrice: '5', oldPrice: '', src: 'https://i8.mifile.cn/v1/a1/T1hvC_BQdT1RXrhCrK.jpg', url: 'https://item.mi.com/3751.html'}
+            {value: '米家前置过滤器', desc: '简约时尚，多彩三色', sub: false, newPrice: '349', oldPrice: '499', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202305191436_605f85cd7d3ffc75af9df18ed0f4780a.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/9355.html'},
+            {value: '米家即热管线机', desc: '净水好搭档，100度真沸腾', sub: false, newPrice: '49', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202309141639_92f3a75834776ec9cbb8877a843d2510.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/10173.html'},
+            {value: '米家即热净水器Q1000', desc: '专利即热技术，一分钟1升开水', sub: false, newPrice: '349', oldPrice: '499', src:  '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202309041738_36e653df314c55ac3cc74930bfc87767.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/9889.html'},
+            {value: '米家净水器1000G', desc: '澎湃大水量，5年免换RO滤芯', sub: false, newPrice: '32.9', oldPrice: '69', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/dc7c9f2277e5181fc3d3ee2320246f26.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/9133.html'},
+            {value: '米家净水器1000G Pro', desc: '米家净水器1000G Pro', sub: false, newPrice: '59', oldPrice: '69', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202305231418_5d6ddd0efe84fa2915540de66848f377.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/chongdianqi4kou'},
+            {value: '米家净水器 1200G Pro', desc: '全新零陈水3.0，畅饮母婴级健康水', sub: false, newPrice: '16.9', oldPrice: '19.9', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202312211522_7eb6e935ebc0c053d48fbf71fd795303.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/4053.html'},
+            {value: '米家双核净水器 1200G Pro', desc: '主RO使用寿命8年', sub: true, newPrice: '18.9', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202312211522_7eb6e935ebc0c053d48fbf71fd795303.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/10000124.html'},
+            {value: '米家净水器', desc: '1600G', sub: false, newPrice: '5', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202312211522_7eb6e935ebc0c053d48fbf71fd795303.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/3751.html'}
           ],
           protective: [
             {value: '小米CC9&小米CC9美图定制版 标准高透贴膜', desc: '高清透亮，耐磨性强', sub: false, newPrice: '19', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5c200476bc9336d171931cb7ee2e4549.jpg', url: 'https://item.mi.com/10171.html'},
@@ -190,12 +182,14 @@ export default {
         }
       },
       goodsItem6: {
-        boxTitle: '周边',
+        boxTitle: '智能家居',
         isHot: true,
         vertical: false,
         tabList: [
-          {value: '热门', type: 'hots', url: 'https://www.mi.com/p/3484.html'},
-          {value: '出行', type: 'trip', url: ''}
+          {value: '小爱音箱', type: 'hots', url: 'https://www.mi.com/p/3484.html'},
+          {value: '门锁门铃', type: 'trip', url: ''},
+          {value: '路由器', type: 'e', url: ''},
+          {value: '智能设备', type: 'f', url: ''}
         ],
         listData: {
           promo: [

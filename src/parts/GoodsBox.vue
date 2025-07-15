@@ -13,7 +13,7 @@
       </div>
       <div class="type-more" v-else>
         <a :href="goodsItem.url" target="_blank">
-          <span>查看全部</span>
+          <span>查看更多</span>
           <i class="fa fa-angle-right"></i>
         </a>
       </div>
@@ -148,71 +148,78 @@ export default {
     margin: 0 auto;
   }
 
-  .box-header {
-    .type-select {
-      display: inline-block;
-      .tab-list {
-        display: flex;
-        .tab-item {
-          display: inline-block;
-          margin-left: 30px;
-          color: #424242;
-          border-bottom: 2px solid transparent;
-          transition: all .3s;
-          cursor: pointer;
+.box-header {
+  display: flex; // 添加这行使父容器成为flex容器
+  justify-content: space-between; // 让子元素两端对齐
+  align-items: center; // 垂直居中
+  
+  .type-select {
+    display: inline-block;
+    .tab-list {
+      display: flex;
+      .tab-item {
+        display: inline-block;
+        margin-left: 30px;
+        color: #424242;
+        border-bottom: 2px solid transparent;
+        transition: all .3s;
+        cursor: pointer;
+        
+        &:first-child {
+          margin-left: 0; // 第一个元素不需要左边距
         }
 
-        .active {
+        &.active {
           border-bottom: 2px solid #ff6709;
           color: #ff6709;
         }
       }
     }
+  }
 
-    .type-more {
-      display: inline-block;
-      a {
-        font-size: 16px;
-        display: flex;
-        align-items: center;
+  .type-more {
+    // 移除 margin-left: auto，因为父容器已经使用 space-between
+    a {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      span {
+        color: #424242;
+        transition: all .4s;
+      }
+
+      i {
+        width: 20px;
+        height: 20px;
+        margin-left: 8px;
+        border-radius: 16px;
+        font-size: 15px;
+        line-height: 20px;
+        background: #b0b0b0;
+        color: #fff;
+        text-align: center;
+        vertical-align: 2px;
+        transition: all .4s;
+      }
+
+      &:hover {
         span {
-          color: #424242;
-          transition: all .4s;
+          color: #ff6709;
         }
-
         i {
-          width: 20px;
-          height: 20px;
-          margin-left: 8px;
-          border-radius: 16px;
-          font-size: 15px;
-          line-height: 20px;
-          background: #b0b0b0;
-          color: #fff;
-          text-align: center;
-          vertical-align: 2px;
-          transition: all .4s;
-        }
-
-        &:hover {
-          span {
-            color: #ff6709;
-          }
-
-          i {
-            background: #ff6709;
-          }
+          background: #ff6709;
         }
       }
     }
   }
+}
 
   .box-content {
     display: flex;
     .promo-content .promo-one {
       a {
         display: block;
-        height: 614px;
+        height: 695px;
         img {
           height: 100%;
           width: 234px;
@@ -223,7 +230,7 @@ export default {
     .promo-two {
       a {
         display: block;
-        height: 300px;
+        height: 340px;
         img {
           width: 234px;
           height: 100%;
@@ -257,7 +264,7 @@ export default {
       a {
         display: flex;
         justify-content: space-between;
-        height: 143px;
+        height: 103px;
         background: #fff;
         padding: 30px 20px 30px 30px;
         margin-bottom: 14px;
@@ -371,5 +378,9 @@ export default {
         margin: 0;
       }
     }
+  }
+  .box-title{
+    font-size: 22px;
+    font-weight: normal;
   }
 </style>
