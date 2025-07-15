@@ -141,12 +141,14 @@ export default {
 </script>
 
 <style lang="less">
-  .good-box {
-    position: relative;
-    width: 1226px;
-    height: auto;
-    margin: 0 auto;
-  }
+.good-box {
+  background: #f5f5f5;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
 .box-header {
   display: flex; // 添加这行使父容器成为flex容器
