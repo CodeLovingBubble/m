@@ -176,7 +176,7 @@ export default {
     transition: all 0.3s;
     white-space: nowrap;
 
-    @media (max-width: 1225px) {
+    @media (max-width: 1425px) {
       display: none;
     }
   }
@@ -264,7 +264,7 @@ export default {
     }
   }
 
-  @media (max-width: 1225px) {
+  @media (max-width: 1425px) {
     .tool-item {
       width: 20px; // 改为更小的宽度
       padding: 6px 3px; // 减少内边距
