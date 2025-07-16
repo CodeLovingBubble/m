@@ -1,54 +1,56 @@
 <template>
-  <div class="site-info">
-    <div class="info-container">
-      <div class="logo-footer">
-        <img src="../assets/image/logo-footer.png">
-      </div>
-      <div class="info-footer">
-        <ul class="info-link">
-          <!-- 第一行导航 -->
-          <template v-for="(item, index) in footerNavs">
-            <li class="info-item" :key="index" v-if="!item.isSecondLine">
-              <template v-if="item.value === 'Select Location'">
-                <a :href="item.url" @click="showLocationWindow">{{ item.value }}</a>
+  <div class="footer-wrapper">
+    <div class="site-info">
+      <div class="info-container">
+        <div class="logo-footer">
+          <img src="../assets/image/logo-footer.png">
+        </div>
+        <div class="info-footer">
+          <ul class="info-link">
+            <!-- 第一行导航 -->
+            <template v-for="(item, index) in footerNavs">
+              <li class="info-item" :key="index" v-if="!item.isSecondLine">
+                <template v-if="item.value === 'Select Location'">
+                  <a :href="item.url" @click="showLocationWindow">{{ item.value }}</a>
+                </template>
+                <template v-else>
+                  <a :href="item.url" target="_blank">{{ item.value }}</a>
+                  <span class="nav-span">|</span>
+                </template>
+              </li>
+            </template>
+
+            <!-- 第二行导航 -->
+            <template v-for="(item, index) in footerNavs">
+              <li class="info-item second-line" :key="'second-' + index" v-if="item.isSecondLine">
+                <a :href="item.url" target="_blank">{{ item.value }}</a>
+                <span class="nav-span" v-if="index < footerNavs.filter(i => i.isSecondLine).length - 1">|</span>
+              </li>
+            </template>
+          </ul>
+          <div class="info-license">
+            <template v-for="(item, index) in licenseInfo">
+              <template v-if="item.url">
+                <a :key="index" :href="item.url">{{item.value}}</a>
               </template>
               <template v-else>
-                <a :href="item.url" target="_blank">{{ item.value }}</a>
-                <span class="nav-span">|</span>
+                <span :key="index">{{item.value}}</span>
               </template>
-            </li>
-          </template>
-
-          <!-- 第二行导航 -->
-          <template v-for="(item, index) in footerNavs">
-            <li class="info-item second-line" :key="'second-' + index" v-if="item.isSecondLine">
-              <a :href="item.url" target="_blank">{{ item.value }}</a>
-              <span class="nav-span" v-if="index < footerNavs.filter(i => i.isSecondLine).length - 1">|</span>
-            </li>
-          </template>
-        </ul>
-        <div class="info-license">
-          <template v-for="(item, index) in licenseInfo">
-            <template v-if="item.url">
-              <a :key="index" :href="item.url">{{item.value}}</a>
+              <br :key="item.id" v-if="item.br">
             </template>
-            <template v-else>
-              <span :key="index">{{item.value}}</span>
-            </template>
-            <br :key="item.id" v-if="item.br">
-          </template>
-        </div>
-        <div class="info-logo">
-          <a target="_blank"
-          v-for="(item, index) in logoInfo"
-          :key="index"
-          :href="item.url">
-            <img :src="item.src" :alt="item.value">
-          </a>
+          </div>
+          <div class="info-logo">
+            <a target="_blank"
+            v-for="(item, index) in logoInfo"
+            :key="index"
+            :href="item.url">
+              <img :src="item.src" :alt="item.value">
+            </a>
+          </div>
         </div>
       </div>
+      <div class="slogan-container"></div>
     </div>
-    <div class="slogan-container"></div>
   </div>
 </template>
 
@@ -113,6 +115,12 @@ export default {
 </script>
 
 <style lang="less">
+  .footer-wrapper {
+    background: #f5f5f5;
+    /* 让内部内容居中显示 */
+    display: flex;
+    justify-content: center;
+  }
   .site-info {
     position: relative;
     width: 1226px;
