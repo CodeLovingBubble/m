@@ -25,6 +25,11 @@ import TopTop from '~/src/components/TopTop.vue';
             </div>
         </template>
 
+        <template v-if="$route.path === '/more'">
+            <TopTop />
+            <TopHeader />
+        </template>
+
         <!-- 动态内容区域 -->
         <slot />
         <template v-if="$route.path === '/cart'">

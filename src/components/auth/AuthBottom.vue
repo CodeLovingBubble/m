@@ -12,7 +12,7 @@
     right: 0;
     text-align: center;
     padding: 10px 0;
-    background: white; /* 可选：添加背景色防止文字与内容重叠 */
+    background: white; 
     z-index: 100; /* 确保在最上层 */
 }
 
@@ -24,6 +24,6 @@
     text-overflow: ellipsis; /* 超出显示省略号 */
     margin: 0 auto;
     max-width: 90%; /* 控制最大宽度，防止在小屏幕上溢出 */
-    font-size: 12px; /* 可选：调整字体大小 */
+    font-size: 12px; 
 }
 </style>
