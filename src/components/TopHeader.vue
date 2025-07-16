@@ -229,10 +229,6 @@ export default {
         border-radius: 20px;
       }
 
-      // .mi-icon:hover {
-      //     background-position: 0 0;
-      //   }
-
       .header-navs-container {
         width: 820px;
         display: flex;
