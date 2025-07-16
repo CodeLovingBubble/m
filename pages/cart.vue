@@ -1,62 +1,72 @@
 <template>
+    <div class="ff"></div>
     <div class="top-box">
-        <div class="top-box-left">
-            <img src="/_nuxt/src/assets/image/logo-footer.png" alt="小米Logo">
-            <p>我的购物车</p>
-        </div>
-        <div class="top-box-right">
-            <p>登录</p>
-            <p>注册</p>
+        <div class="top-container">
+            <div class="top-box-left">
+                <img src="/_nuxt/src/assets/image/logo-footer.png" alt="小米Logo">
+                <p>我的购物车</p>
+            </div>
+            <div class="top-box-right">
+                <NuxtLink to="/login" class="tab-link">登录</NuxtLink>
+                <span class="sep">|</span>
+                <NuxtLink to="/register" class="tab-link">注册</NuxtLink>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped>
+
+/* 唯一改动：移除 position: fixed 和相关定位属性 */
 .top-box {
     border-bottom: 2px solid #ff6709;
     height: 100px;
+    z-index: 1000;
+}
+
+/* 其他所有样式保持不变 */
+.top-container {
+    max-width: 1226px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
 }
 
 .top-box-left {
     display: flex;
     align-items: center;
-    height: 57px;
+    gap: 15px;
 }
 
 .top-box-left img {
     width: 57px;
     height: 57px;
-    margin-right: 15px;
     border-radius: 20px;
 }
 
 .top-box-left p {
-    font-size: 18px;
+    margin-left: 20px;
+    font-size: 26px;
     font-weight: 500;
     color: #333;
 }
 
 .top-box-right {
     display: flex;
-    gap: 30px;
+    gap: 0px;
 }
 
-.top-box-right p {
+.tab-link {
     font-size: 16px;
     color: #666;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.top-box-right p:hover {
+.tab-link:hover {
     color: #ff6709;
 }
 </style>

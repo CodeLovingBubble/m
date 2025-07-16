@@ -42,7 +42,9 @@
             </div>
             <div class="cart" @mouseenter="showCart = true" @mouseleave="showCart = false">
                 <div class="cart-container" @click.stop="goToCart">
-                    <img src="https://i.postimg.cc/kGbZk9zN/image.png" alt="">
+                    <NuxtLink to="/cart" class="tab-link">
+                        <img src="https://i.postimg.cc/kGbZk9zN/image.png" alt="">
+                    </NuxtLink>
                 </div>
                 <transition name="fade">
                     <div class="cart-list" v-show="showCart">
@@ -95,9 +97,6 @@ const handleAgree = async () => {
     } else {
         return navigateTo('/register');
     }
-};
-const goToCart = () => {
-  window.location.href = '/cart'; // 强制刷新，确保加载新页面
 };
 </script>
 
