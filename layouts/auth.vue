@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AuthBottom from '~/src/components/auth/AuthBottom.vue';
 import AuthTop from '~/src/components/auth/AuthTop.vue';
 
 </script>
@@ -7,7 +8,7 @@ import AuthTop from '~/src/components/auth/AuthTop.vue';
     <div class="auth-layout">
         <AuthTop />
         <slot />
-        
+        <AuthBottom />
     </div>
 </template>
 

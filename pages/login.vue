@@ -51,6 +51,15 @@ definePageMeta({
 </script>
 
 <style scoped>
+.auth-page {
+    width: 300px; /* 添加固定宽度 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+}
 
 .auth-tabs {
     display: flex;
@@ -96,16 +105,18 @@ definePageMeta({
 }
 
 .input-group input {
-    width: 100%;
+    width: 90%;
     padding: 12px 15px;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     font-size: 14px;
+    background-color: #f7f7f7;
 }
 
 .input-group input:focus {
     border-color: #ff6700;
     outline: none;
+    background-color: #f7f7f7;
 }
 
 .agreement {
@@ -127,7 +138,7 @@ definePageMeta({
 .submit-btn {
     width: 100%;
     padding: 12px;
-    background: #ff6700;
+    background: #ff6900;
     color: white;
     border: none;
     border-radius: 4px;

@@ -53,17 +53,29 @@ definePageMeta({
 </script>
 
 <style scoped>
-/* 共用样式与login.vue相同 */
-/* 修改这部分样式 */
+.auth-page {
+    width: 300px; /* 添加固定宽度 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+}
+
+.select-box {
+    background-color: #f7f7f7;
+}
+
 .phone-input-row {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
-    align-items: flex-end; /* 添加这个使底部对齐 */
+    align-items: flex-end;
 }
 
 .country-code-group {
-    flex: 0 0 120px; /* 增加一些宽度 */
+    flex: 0 0 120px;
 }
 
 .country-code-group label {
@@ -79,22 +91,21 @@ definePageMeta({
 
 .phone-number-group input,
 .verification-row input,
-.select-box { /* 统一所有输入框和选择框样式 */
+.select-box {
     width: 100%;
     height: 42px;
     padding: 0 15px;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
-    box-sizing: border-box; /* 添加这个防止溢出 */
+    box-sizing: border-box;
     font-size: 14px;
 }
 
-/* 移除手机号输入框的 margin-top */
 .phone-number-group input {
     margin-top: 0;
+    background-color: #f7f7f7;
 }
 
-/* 调整验证码部分 */
 .verification-row {
     position: relative;
     margin-bottom: 20px;
@@ -102,6 +113,7 @@ definePageMeta({
 
 .verification-row input {
     padding-right: 110px;
+    background-color: #f7f7f7;
 }
 
 .code-btn {
@@ -119,7 +131,6 @@ definePageMeta({
 
 .auth-page {
     max-width: 400px;
-    margin: 0 auto;
     padding: 20px;
     font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
 }
@@ -207,7 +218,7 @@ definePageMeta({
     background: none;
     border: none;
     color: #ff6700;
-    cursor: pointer;
+    cursor: button;
 }
 
 .agreement {

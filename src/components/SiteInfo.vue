@@ -126,9 +126,9 @@ export default {
 
     .slogan-container {
       margin: 30px auto 0;
-      width: 267px;
+      width: 400px;
       height: 19px;
-      background: url('../assets/image/slogan2016.png') no-repeat center 0;
+      background: url('https://cdn.cnbj1.fds.api.mi-img.com/staticsfile/global/slogan2020.png') no-repeat center 0;
     }
   }
 
