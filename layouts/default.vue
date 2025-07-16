@@ -2,6 +2,8 @@
 import CartGoods from '~/src/components/CartGoods.vue';
 import GoodsSale from '~/src/components/GoodsSale.vue';
 import MenuBanner from '~/src/components/MenuBanner.vue';
+import MoreList from '~/src/components/more/MoreList.vue';
+import MoreLun from '~/src/components/more/MoreLun.vue';
 import SiteFooter from '~/src/components/SiteFooter.vue';
 import SiteInfo from '~/src/components/SiteInfo.vue';
 import SubChannel from '~/src/components/SubChannel.vue';
@@ -28,9 +30,9 @@ import TopTop from '~/src/components/TopTop.vue';
         <template v-if="$route.path === '/more'">
             <TopTop />
             <TopHeader />
+            <MoreList />
+            <MoreLun />
         </template>
-
-        <!-- 动态内容区域 -->
         <slot />
         <template v-if="$route.path === '/cart'">
             <TopCom />
