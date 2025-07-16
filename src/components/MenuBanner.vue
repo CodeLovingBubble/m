@@ -3,6 +3,7 @@
     <div class="menu-container" @mouseleave="bannerMenuHide()">
       <ul class="menu-list">
         <li class="list-item"
+        style="white-space: pre"
         v-for="(item, index) in menus"
         :key="index"
         @mouseenter="bannerMenuShow(item.type)">
@@ -44,16 +45,16 @@ export default {
       menuTimer: '',
       listInfoData: [],
       menus: [
-        {value: '手机', url: 'https://www.mi.com/p/1915.html', type: 'phone'},
-        {value: '电视', url: 'https://www.mi.com/a/h/9819.html', type: 'tv'},
-        {value: '家电', url: 'https://www.mi.com/a/h/7529.html', type: 'laptop'},
-        {value: '笔记本 平板 显示器', url: 'https://www.mi.com/p/9285.html', type: 'household'},
-        {value: '出行 穿戴', url: 'https://www.mi.com/p/9289.html', type: 'wear'},
-        {value: '智能 路由器', url: 'https://www.mi.com/a/h/8363.html', type: 'router'},
-        {value: '电源 配件', url: 'https://www.mi.com/p/9290.html', type: 'power'},
-        {value: '健康 儿童', url: 'https://www.mi.com/p/9291.html', type: 'health'},
-        {value: '耳机 音箱', url: 'https://www.mi.com/p/9292.html', type: 'pods'},
-        {value: '生活 箱包', url: 'https://www.mi.com/p/9293.html', type: 'life'}
+        {value: '手机                                         >', url: 'https://www.mi.com/p/1915.html', type: 'phone'},
+        {value: '电视                                         >', url: 'https://www.mi.com/a/h/9819.html', type: 'tv'},
+        {value: '家电                                         >', url: 'https://www.mi.com/a/h/7529.html', type: 'laptop'},
+        {value: '笔记本 平板 显示器         >', url: 'https://www.mi.com/p/9285.html', type: 'household'},
+        {value: '出行 穿戴                              >', url: 'https://www.mi.com/p/9289.html', type: 'wear'},
+        {value: '智能 路由器                         >', url: 'https://www.mi.com/a/h/8363.html', type: 'router'},
+        {value: '电源 配件                              >', url: 'https://www.mi.com/p/9290.html', type: 'power'},
+        {value: '健康 儿童                              >', url: 'https://www.mi.com/p/9291.html', type: 'health'},
+        {value: '耳机 音箱                              >', url: 'https://www.mi.com/p/9292.html', type: 'pods'},
+        {value: '生活 箱包                              >', url: 'https://www.mi.com/p/9293.html', type: 'life'}
       ],
       banners: [
         {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a25b54b7b8072cbb2a058e58c6e1765.jpg?w=2452&h=920', url: 'https://www.mi.com/redminote7/'},

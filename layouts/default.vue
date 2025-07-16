@@ -12,14 +12,21 @@ import TopTop from '~/src/components/TopTop.vue';
 
 <template>
     <div class="index-page">
-        <TopTop />
-        <TopHeader />
-        <MenuBanner />
-        <SubChannel />
-        <div class="gray-page">
-            <GoodsSale />
-        </div>
-        <slot /> <!-- 这是页面内容插入点 -->
+        <!-- 只在首页显示这些组件 -->
+        <template v-if="$route.path === '/'">
+            <TopTop />
+            <TopHeader />
+            <MenuBanner />
+            <SubChannel />
+            <div class="gray-page">
+                <GoodsSale />
+            </div>
+        </template>
+
+        <!-- 动态内容区域 -->
+        <slot />
+
+        <!-- 全局页脚 -->
         <SiteFooter />
         <div class="gray-page">
             <SiteInfo />

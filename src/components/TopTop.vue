@@ -5,23 +5,24 @@
             <span class="sep">|</span>
             <a href="//www.mi.com/shop">小米商城</a>
             <span class="sep">|</span>
-            <a href="//hyperos.mi.com/"target="_blank">小米澎湃OS</a>
+            <a href="//hyperos.mi.com/" target="_blank">小米澎湃OS</a>
             <span class="sep">|</span>
-            <a href="//www.xiaomiev.com/"target="_blank">小米汽车</a>
+            <a href="//www.xiaomiev.com/" target="_blank">小米汽车</a>
             <span class="sep">|</span>
-            <a href="//i.mi.com/"target="_blank">云服务</a>
+            <a href="//i.mi.com/" target="_blank">云服务</a>
             <span class="sep">|</span>
-            <a href="//iot.mi.com"target="_blank">IoT</a>
+            <a href="//iot.mi.com" target="_blank">IoT</a>
             <span class="sep">|</span>
-            <a href="//youpin.mi.com/"target="_blank">有品</a>
+            <a href="//youpin.mi.com/" target="_blank">有品</a>
             <span class="sep">|</span>
-            <a href="//xiaoai.mi.com/"target="_blank">小爱开放平台</a>
+            <a href="//xiaoai.mi.com/" target="_blank">小爱开放平台</a>
             <span class="sep">|</span>
-            <a href="//www.mi.com/aptitude/list/?id=88"target="_blank">资质证照</a>
+            <a href="//www.mi.com/aptitude/list/?id=88" target="_blank">资质证照</a>
             <span class="sep">|</span>
-            <a href="//www.mi.com/aptitude/list/"target="_blank">协议规则</a>
+            <a href="//www.mi.com/aptitude/list/" target="_blank">协议规则</a>
             <span class="sep">|</span>
-            <a href="//www.mi.com/appdownload/" target="_blank"@mouseenter="showAppCode = true" @mouseleave="showAppCode = false">
+            <a href="//www.mi.com/appdownload/" target="_blank" @mouseenter="showAppCode = true"
+                @mouseleave="showAppCode = false">
                 下载app
                 <span class="appcode" :style="{ height: showAppCode ? '148px' : '0' }">
                     <img src="//i1.mifile.cn/f/i/17/appdownload/download.png?1" alt="小米商城" width="90" height="90">
@@ -40,7 +41,7 @@
                 <a href="">消息通知</a>
             </div>
             <div class="cart" @mouseenter="showCart = true" @mouseleave="showCart = false">
-                <div class="cart-container">
+                <div class="cart-container" @click.stop="goToCart">
                     <img src="https://i.postimg.cc/kGbZk9zN/image.png" alt="">
                 </div>
                 <transition name="fade">
@@ -50,7 +51,7 @@
                 </transition>
             </div>
         </div>
-        
+
         <!-- 协议声明弹窗 -->
         <transition name="modal-fade">
             <div class="protocol-modal" v-show="showProtocol">
@@ -65,7 +66,9 @@
                         <h4>小米商城用户协议</h4>
                         <p>版本公示日期：2022年9月27日</p>
                         <p>版本生效日期：2022年10月4日</p>
-                        <p>《小米商城用户协议》（以下简称 "本协议"）是您（或称 "用户"，指注册、登录、使用、浏览小米商城的个人或组织）与小米科技有限责任公司（平台运营主体）及其关联公司（包括但不限于小米通讯技术有限公司，以下简称 "小米"）及其合作单位（包括但不限于第三方商家）之间关于小米商城网站（域名为www.mi.com，简称本网站）与小米产品、程序及服务所订立的协议。</p>
+                        <p>《小米商城用户协议》（以下简称 "本协议"）是您（或称
+                            "用户"，指注册、登录、使用、浏览小米商城的个人或组织）与小米科技有限责任公司（平台运营主体）及其关联公司（包括但不限于小米通讯技术有限公司，以下简称
+                            "小米"）及其合作单位（包括但不限于第三方商家）之间关于小米商城网站（域名为www.mi.com，简称本网站）与小米产品、程序及服务所订立的协议。</p>
                         <p>小米和合作单位分别就您在本网站接受服务的过程中享受的权利和承担的义务，与您签订本协议，并独立向您承担责任，互不承担保证、连带或共同责任等。</p>
                     </div>
                     <div class="modal-footer">
@@ -83,25 +86,24 @@ const showAppCode = ref(false);
 const showCart = ref(false);
 const showProtocol = ref(false);
 const protocolType = ref('');
-// const handleAgree = () => {
-//   // 在 Nuxt 3 中跳转路由
-//     navigateTo('/login');
-// };
 const handleAgree = async () => {
     showProtocol.value = false;
     await nextTick(); // 确保弹窗完全关闭
 
     if (protocolType.value === 'login') {
-    return navigateTo('/login'); // 使用 Nuxt 的 navigateTo
+        return navigateTo('/login'); // 使用 Nuxt 的 navigateTo
     } else {
-    return navigateTo('/register');
+        return navigateTo('/register');
     }
+};
+const goToCart = () => {
+  window.location.href = '/cart'; // 强制刷新，确保加载新页面
 };
 </script>
 
 <style>
 /* 原有样式保持不变 */
-.back{
+.back {
     z-index: 30;
     height: 40px;
     width: auto;
@@ -111,34 +113,39 @@ const handleAgree = async () => {
     display: flex;
     justify-content: space-evenly;
 }
-.back a:hover{
+
+.back a:hover {
     color: #fff;
 }
-.left{
+
+.left {
     line-height: 40px;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
+
 .left a {
     color: #b0b0b0;
     line-height: 40px;
     margin-right: 3px;
     margin-left: 3px;
     display: inline-block;
-    position: relative; 
+    position: relative;
     white-space: nowrap
 }
-.sep{
+
+.sep {
     margin: 0 .3em;
     color: #424242;
 }
+
 .appcode {
     position: absolute;
     top: 40px;
     left: 50%;
     width: 124px;
-    height: 0; 
+    height: 0;
     background: #fff;
     margin-left: -55px;
     box-shadow: 0 1px 5px #aaa;
@@ -147,22 +154,24 @@ const handleAgree = async () => {
     color: #333;
     line-height: 1;
     overflow: hidden;
-    transition: height 0.3s; 
+    transition: height 0.3s;
     z-index: 20;
 }
-.appcode img{
+
+.appcode img {
     display: block;
     margin: 18px auto 12px;
 }
 
-.right{
+.right {
     line-height: 40px;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     white-space: nowrap
 }
-.right a{
+
+.right a {
     color: #b0b0b0;
     line-height: 40px;
     margin-right: 3px;
@@ -170,18 +179,21 @@ const handleAgree = async () => {
     display: inline-block;
     white-space: nowrap
 }
+
 .cart {
     margin-left: 20px;
     position: relative;
     display: inline-block;
 }
-.cart-container{
+
+.cart-container {
     width: 120px;
     height: 40px;
     line-height: 40px;
     text-align: center;
 }
-.cart-container img{
+
+.cart-container img {
     width: 100%;
     height: 40px;
     background-image: url("https://i.postimg.cc/kGbZk9zN/image.png");
@@ -189,9 +201,11 @@ const handleAgree = async () => {
     background-position: center;
     background-repeat: no-repeat;
 }
-.cart-container img:hover{
+
+.cart-container img:hover {
     content: url("https://i.postimg.cc/fWt63jy3/image.png");
 }
+
 .cart-list {
     position: absolute;
     top: 100%;
@@ -200,10 +214,11 @@ const handleAgree = async () => {
     padding: 15px;
     background: #fff;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
     text-align: center;
 }
+
 .cart-list-word {
     color: #424242;
     font-size: 12px;
@@ -291,15 +306,18 @@ const handleAgree = async () => {
     font-size: 16px;
     color: #333;
 }
-.colo{
+
+.colo {
     color: #ff6700;
 }
+
 /* 协议弹窗底部按钮 */
 .modal-footer {
     padding: 15px 30px;
     border-top: 1px solid #e0e0e0;
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+    ;
     gap: 10px;
 }
 
