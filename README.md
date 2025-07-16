@@ -1,3 +1,13 @@
+# vue3+nuxt3仿小米商城
+
+### 涉及轮播图，下拉搜索词条，商品选项卡，鼠标悬停二级商品展示面板，协议弹窗声明等功能
+
+### 对于不同的设备屏宽有不同的布局样式
+
+### 配置有登录，注册，购物车，更多路由页面
+
+### 配置有SEO优化
+
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
