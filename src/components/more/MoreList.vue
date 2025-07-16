@@ -5,6 +5,7 @@
             <p>></p>
             <p @click="$router.go(0)" style="cursor:pointer">全部结果</p>
         </div>
+
         <!-- 筛选标签栏 -->
         <div class="filter-tags">
             <div class="container">
@@ -15,20 +16,48 @@
             </div>
         </div>
 
-        <!-- 排序栏 -->
+        <!-- 排序栏（包含收货地址和筛选选项） -->
         <div class="sort-bar">
             <div class="container">
-                <div class="sort-item" :class="{ active: sortType === 'default' }" @click="changeSort('default')">
-                    默认
-                    <i :class="sortType === 'default' ? (sortAsc ? 'asc' : 'desc') : ''"></i>
+                <div class="sort-options">
+                    <div class="sort-item" :class="{ active: sortType === 'default' }" @click="changeSort('default')">
+                        综合
+                        <i :class="sortType === 'default' ? (sortAsc ? 'asc' : 'desc') : ''"></i>
+                    </div>
+                    <div class="sort-item" :class="{ active: sortType === 'sales' }" @click="changeSort('sales')">
+                        销量
+                        <i :class="sortType === 'sales' ? (sortAsc ? 'asc' : 'desc') : ''"></i>
+                    </div>
+                    <div class="sort-item" :class="{ active: sortType === 'price' }" @click="changeSort('price')">
+                        价格
+                        <i :class="sortType === 'price' ? (sortAsc ? 'asc' : 'desc') : ''"></i>
+                    </div>
                 </div>
-                <div class="sort-item" :class="{ active: sortType === 'price' }" @click="changeSort('price')">
-                    价格
-                    <i :class="sortType === 'price' ? (sortAsc ? 'asc' : 'desc') : ''"></i>
-                </div>
-                <div class="sort-item" :class="{ active: sortType === 'sales' }" @click="changeSort('sales')">
-                    销量
-                    <i :class="sortType === 'sales' ? (sortAsc ? 'asc' : 'desc') : ''"></i>
+                
+                <!-- 右侧筛选控件（收货地址和复选框） -->
+                <div class="filter-controls">
+                    <div class="location">
+                        <label class="location-label">收货地</label>
+                        <select class="location-select">
+                            <option value="beijing">北京 北京市</option>
+                            <option value="shanghai">上海 上海市</option>
+                            <!-- 可继续扩展其他地址 -->
+                        </select>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" />
+                            促销
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" />
+                            分期
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" />
+                            仅看有货
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,8 +105,8 @@ import { ref, computed } from 'vue'
 
 // 筛选标签
 const tags = [
-    { name: '小米手机', value: 'xiaomi' },
-    { name: '红米手机', value: 'redmi' }
+    { name: '红米手机', value: 'redmi' },
+    { name: '小米手机', value: 'xiaomi' }
 ]
 const activeTag = ref('all')
 
@@ -599,9 +628,7 @@ const filteredGoods = computed(() => {
 
 .shou p {
     margin: 0 8px 0 0;
-    /* 调整间距 */
     cursor: pointer;
-    /* 首页和全部结果添加点击光标 */
     color: #757575;
     font-size: 12px;
     line-height: 40px;
@@ -609,7 +636,6 @@ const filteredGoods = computed(() => {
 
 .shou p:nth-child(2) {
     cursor: default;
-    /* ">"符号不需要点击效果 */
 }
 
 /* 筛选标签 */
@@ -631,10 +657,20 @@ const filteredGoods = computed(() => {
     color: #fff;
 }
 
-/* 排序栏 */
+/* 排序栏（包含收货地址和筛选选项） */
 .sort-bar {
     padding: 10px 0;
     background: #f5f5f5;
+}
+
+.sort-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sort-options {
+    display: flex;
 }
 
 .sort-item {
@@ -666,6 +702,54 @@ const filteredGoods = computed(() => {
 .sort-item i.desc {
     border-top-color: #ff6700;
     margin-top: -2px;
+}
+
+/* 右侧筛选控件样式 */
+.filter-controls {
+    display: flex;
+    align-items: center;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.location-label {
+    color: #333;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.location-select {
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 }
 
 /* 商品列表 */
@@ -779,22 +863,20 @@ const filteredGoods = computed(() => {
 
 /* 上一页/下一页按钮（符号版） */
 .prev-next-btn {
-    font-size: 30px !important; /* 放大箭头符号 */
-    font-weight: bold !important; /* 加粗箭头符号 */
+    font-size: 30px !important;
+    font-weight: bold !important;
     width: 44px !important;
-    background: none !important; /* 移除背景色 */
-    border: none !important; /* 移除边框 */
-    color: #757575; /* 设置文字颜色 */
+    background: none !important;
+    border: none !important;
+    color: #757575;
 }
 
-/* 激活状态 */
 .prev-next-btn:not(:disabled):hover {
-    color: #ff6700 !important; /* 鼠标悬停时的颜色 */
+    color: #ff6700 !important;
 }
 
-/* 禁用状态 */
 .prev-next-btn:disabled {
-    color: #e0e0e0 !important; /* 禁用时的颜色 */
+    color: #e0e0e0 !important;
 }
 
 .pagination button.active {
@@ -808,7 +890,6 @@ const filteredGoods = computed(() => {
     color: #ff6700;
 }
 
-/* 禁用状态（当在第一页/最后一页时） */
 .pagination button:disabled {
     color: #b0b0b0;
     border-color: #e0e0e0;

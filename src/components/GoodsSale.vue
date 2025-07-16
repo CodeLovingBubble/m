@@ -118,7 +118,7 @@ export default {
         tabList: [
           {value: '热门', type: 'hots', url: 'https://www.mi.com/p/3469.html'},
           {value: '电视影音', type: 'earphone', url: 'https://www.mi.com/p/3469.html'},
-          {value: '空调', type: 'television', url: 'https://www.mi.com/a/h/9819.html'}
+          {value: '空调', type: 'aaa', url: 'https://www.mi.com/a/h/9819.html'}
         ],
         listData: {
           promo: [
@@ -143,7 +143,17 @@ export default {
             {value: '小米蓝牙耳机青春版', desc: '6.5 克轻巧，高清通话音质', sub: false, newPrice: '59', oldPrice: '', src: 'https://i8.mifile.cn/v1/a1/e4c0f21c-3bd4-323e-673b-a9c1c1c6e294.jpg', url: 'https://www.mi.com/bluetooth-earphone/'},
             {value: '小米运动蓝牙耳机mini', desc: '迷你机身, 小如蚕豆', sub: false, newPrice: '169', oldPrice: '', src: 'https://i8.mifile.cn/v1/a1/852c3872-7aca-e565-b8fb-37aa3ce88979.jpg', url: 'https://www.mi.com/sportearphone-mini/'},
             {value: '小米蓝牙耳机AirDots青春版', desc: '雅致简约，收纳充电盒', sub: false, newPrice: '199', oldPrice: '', src: 'https://i8.mifile.cn/b2c-mimall-media/92af1f21293fabfbf2a112892b864925.jpg', url: 'https://item.mi.com/9016.html'}
-          ]
+          ],
+          aaa: [
+            {value: '米家互联网空调C1（一级能效）', desc: '变频节能省电，自清洁', sub: false, newPrice: '2599', oldPrice: '2799', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8ce424d6fe93dfb74733b5838140b7ee.jpg', url: 'https://www.mi.com/airconditionc1/v1c1/'},
+            {value: '米家空调', desc: '出众静音，快速制冷热', sub: false, newPrice: '1699', oldPrice: '1799', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2b911be4c2f156bb6e4cf367c6080045.jpg', url: 'https://www.mi.com/aircondition/f3w1/'},
+            {value: '米家互联网洗烘一体机 Pro 10kg', desc: '智能洗烘，省心省力', sub: false, newPrice: '2999', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ec20453216dcd42f982cffe5fdbc3115.jpg', url: 'https://item.mi.com/9963.html'},
+            {value: '小米电视4A 32英寸', desc: '人工智能系统，高清液晶屏', sub: false, newPrice: '699', oldPrice: '799', src: 'https://i8.mifile.cn/v1/a1/ef617fac-7489-436d-b74e-c43582f09633.jpg', url: 'https://www.mi.com/mitv4A/32/'},
+            {value: 'Redmi全自动波轮洗衣机1A 8kg', desc: '一键操作，父母都爱用', sub: false, newPrice: '799', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8c63a2024528fe5410ebe669b7d2407.jpg', url: 'https://item.mi.com/9509.html'},
+            {value: '小米全面屏电视E55A', desc: '全面屏设计，人工智能语音', sub: false, newPrice: '1999', oldPrice: '2099', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ef6b4e9b9151849b3b1fb1dbf069c6ed.jpg', url: 'https://www.mi.com/mitvall-screen/e55a/'},
+            {value: '15.6" 四核i7 16G 独显 512G', desc: '全面均衡的国民轻薄本', sub: false, newPrice: '4899', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd2aa2dcad6440b469c22e27db9b6236.jpg', url: 'https://item.mi.com/10253.html'},
+            {value: 'Air 13.3" 2019款 ', desc: '', sub: true, newPrice: '4699', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74e573c4c0d89048392d14831cc507d5.jpg', url: 'https://item.mi.com/10000142.html'}
+          ],
         }
       },
       goodsItem5: {
@@ -180,6 +190,26 @@ export default {
             {value: 'Redmi K20 / K20 Pro 怪力魔王保护壳', desc: '怪力魔王专属定制', sub: false, newPrice: '39', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8fb7f3be403cfcbe98576bee28c7cc25.jpg', url: 'https://item.mi.com/9889.html'},
             {value: '小米9 ARE U OK保护壳', desc: '一个与众不同的保护壳', sub: false, newPrice: '39', oldPrice: '49', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/39a5445afe8c48d9b92b2bf9d6d88a26.jpg', url: 'https://item.mi.com/9720.html'},
             {value: '小米9 RUOK保护壳', desc: '', sub: false, newPrice: '39', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/913e51883bf91da95c2f84b0776b95cf.jpg', url: 'https://item.mi.com/9721.html'}
+          ],
+          b: [
+            {value: '米家互联网空调C1（一级能效）', desc: '变频节能省电，自清洁', sub: false, newPrice: '2599', oldPrice: '2799', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8ce424d6fe93dfb74733b5838140b7ee.jpg', url: 'https://www.mi.com/airconditionc1/v1c1/'},
+            {value: '米家空调', desc: '出众静音，快速制冷热', sub: false, newPrice: '1699', oldPrice: '1799', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2b911be4c2f156bb6e4cf367c6080045.jpg', url: 'https://www.mi.com/aircondition/f3w1/'},
+            {value: '米家互联网洗烘一体机 Pro 10kg', desc: '智能洗烘，省心省力', sub: false, newPrice: '2999', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ec20453216dcd42f982cffe5fdbc3115.jpg', url: 'https://item.mi.com/9963.html'},
+            {value: '小米电视4A 32英寸', desc: '人工智能系统，高清液晶屏', sub: false, newPrice: '699', oldPrice: '799', src: 'https://i8.mifile.cn/v1/a1/ef617fac-7489-436d-b74e-c43582f09633.jpg', url: 'https://www.mi.com/mitv4A/32/'},
+            {value: 'Redmi全自动波轮洗衣机1A 8kg', desc: '一键操作，父母都爱用', sub: false, newPrice: '799', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8c63a2024528fe5410ebe669b7d2407.jpg', url: 'https://item.mi.com/9509.html'},
+            {value: '小米全面屏电视E55A', desc: '全面屏设计，人工智能语音', sub: false, newPrice: '1999', oldPrice: '2099', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ef6b4e9b9151849b3b1fb1dbf069c6ed.jpg', url: 'https://www.mi.com/mitvall-screen/e55a/'},
+            {value: '15.6" 四核i7 16G 独显 512G', desc: '全面均衡的国民轻薄本', sub: false, newPrice: '4899', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd2aa2dcad6440b469c22e27db9b6236.jpg', url: 'https://item.mi.com/10253.html'},
+            {value: 'Air 13.3" 2019款 ', desc: '', sub: true, newPrice: '4699', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74e573c4c0d89048392d14831cc507d5.jpg', url: 'https://item.mi.com/10000142.html'}
+          ],
+          c: [
+            {value: 'Redmi充电宝 10000mAh 标准版 白色', desc: '10000mAh大电量', sub: false, newPrice: '59', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea8e42faebf7d76a4cb42b8930cf9e46.jpg', url: 'https://item.mi.com/10317.html'},
+            {value: 'Redmi充电宝 20000mAh 快充版', desc: '大容量，	可上飞机 ', sub: false, newPrice: '99', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eaf70e0e9905de6452f07b1f48fcc386.jpg', url: 'https://item.mi.com/10318.html'},
+            {value: '小米二合一数据线', desc: '两种接口，支持多种设备', sub: false, newPrice: '19.9', oldPrice: '', src: 'https://i8.mifile.cn/v1/a1/287594eb-b765-8db1-3255-0a05c4c07440.jpg', url: 'https://item.mi.com/4833.html'},
+            {value: '小米插线板 5孔位', desc: '多重安全保护', sub: false, newPrice: '39', oldPrice: '', src: 'https://i8.mifile.cn/v1/a1/5dd69c0a-8f4a-b42f-d840-6c5a47f2cd03.jpg', url: 'https://item.mi.com/5857.html'},
+            {value: '小米无线充电器', desc: '快速充电，轻巧便携', sub: false, newPrice: '99', oldPrice: '', src: 'https://i8.mifile.cn/b2c-mimall-media/d7fd9ecdca3959beae3fb5db59aa9aff.jpg', url: 'https://item.mi.com/9009.html'},
+            {value: '小米蓝牙耳机AirDots青春版', desc: '雅致简约，收纳充电盒', sub: false, newPrice: '199', oldPrice: '', src: 'https://i8.mifile.cn/b2c-mimall-media/92af1f21293fabfbf2a112892b864925.jpg', url: 'https://item.mi.com/9016.html'},
+            {value: '小米小爱蓝牙音箱 随身版', desc: '小巧便携，一键唤醒小爱', sub: false, newPrice: '49', oldPrice: '', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/321610e787393c42e5cb2e5730a7681d.jpg', url: 'https://www.mi.com/sound-carry/'},
+            {value: '小米小爱触屏音箱', desc: '', sub: false, newPrice: '249', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9946e252a7c49662376c056ced004a20.jpg', url: 'https://www.mi.com/aispeaker-touch/'}
           ]
         }
       },
@@ -216,6 +246,26 @@ export default {
             {value: 'Free Tie 真皮板鞋 米家定制', desc: '做一双简单的板鞋', sub: false, newPrice: '129', oldPrice: '199', src: 'https://i8.mifile.cn/v1/a1/e2775107-da04-6611-3580-82227ffec369.png', url: 'https://www.mi.com/plateshoes/'},
             {value: '自动折叠伞', desc: '防泼水伞布，轻盈拒水', sub: false, newPrice: '94', oldPrice: '99', src: 'https://i8.mifile.cn/v1/a1/43549b8e-c8cd-0464-17ba-6be26f395ef0.jpg', url: 'https://www.mi.com/umbrella/'},
             {value: '最生活毛巾•青春系列', desc: '3秒吸水，杀菌无刺激', sub: false, newPrice: '19.9', oldPrice: '', src: 'https://i8.mifile.cn/b2c-mimall-media/1f4c867b5ccb878b43054f640636c872.jpg', url: 'https://item.mi.com/4917.html'},
+          ],
+          e: [
+            {value: 'Redmi充电宝 10000mAh 标准版 白色', desc: '10000mAh大电量', sub: false, newPrice: '59', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea8e42faebf7d76a4cb42b8930cf9e46.jpg', url: 'https://item.mi.com/10317.html'},
+            {value: 'Redmi充电宝 20000mAh 快充版', desc: '大容量，	可上飞机 ', sub: false, newPrice: '99', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eaf70e0e9905de6452f07b1f48fcc386.jpg', url: 'https://item.mi.com/10318.html'},
+            {value: '小米二合一数据线', desc: '两种接口，支持多种设备', sub: false, newPrice: '19.9', oldPrice: '', src: 'https://i8.mifile.cn/v1/a1/287594eb-b765-8db1-3255-0a05c4c07440.jpg', url: 'https://item.mi.com/4833.html'},
+            {value: '小米插线板 5孔位', desc: '多重安全保护', sub: false, newPrice: '39', oldPrice: '', src: 'https://i8.mifile.cn/v1/a1/5dd69c0a-8f4a-b42f-d840-6c5a47f2cd03.jpg', url: 'https://item.mi.com/5857.html'},
+            {value: '小米无线充电器', desc: '快速充电，轻巧便携', sub: false, newPrice: '99', oldPrice: '', src: 'https://i8.mifile.cn/b2c-mimall-media/d7fd9ecdca3959beae3fb5db59aa9aff.jpg', url: 'https://item.mi.com/9009.html'},
+            {value: '小米蓝牙耳机AirDots青春版', desc: '雅致简约，收纳充电盒', sub: false, newPrice: '199', oldPrice: '', src: 'https://i8.mifile.cn/b2c-mimall-media/92af1f21293fabfbf2a112892b864925.jpg', url: 'https://item.mi.com/9016.html'},
+            {value: '小米小爱蓝牙音箱 随身版', desc: '小巧便携，一键唤醒小爱', sub: false, newPrice: '49', oldPrice: '', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/321610e787393c42e5cb2e5730a7681d.jpg', url: 'https://www.mi.com/sound-carry/'},
+            {value: '小米小爱触屏音箱', desc: '', sub: false, newPrice: '249', oldPrice: '', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9946e252a7c49662376c056ced004a20.jpg', url: 'https://www.mi.com/aispeaker-touch/'}
+          ],
+          f: [
+            {value: '米家前置过滤器', desc: '简约时尚，多彩三色', sub: false, newPrice: '349', oldPrice: '499', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202305191436_605f85cd7d3ffc75af9df18ed0f4780a.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/9355.html'},
+            {value: '米家即热管线机', desc: '净水好搭档，100度真沸腾', sub: false, newPrice: '49', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202309141639_92f3a75834776ec9cbb8877a843d2510.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/10173.html'},
+            {value: '米家即热净水器Q1000', desc: '专利即热技术，一分钟1升开水', sub: false, newPrice: '349', oldPrice: '499', src:  '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202309041738_36e653df314c55ac3cc74930bfc87767.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/9889.html'},
+            {value: '米家净水器1000G', desc: '澎湃大水量，5年免换RO滤芯', sub: false, newPrice: '32.9', oldPrice: '69', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/dc7c9f2277e5181fc3d3ee2320246f26.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/9133.html'},
+            {value: '米家净水器1000G Pro', desc: '米家净水器1000G Pro', sub: false, newPrice: '59', oldPrice: '69', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202305231418_5d6ddd0efe84fa2915540de66848f377.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://www.mi.com/chongdianqi4kou'},
+            {value: '米家净水器 1200G Pro', desc: '全新零陈水3.0，畅饮母婴级健康水', sub: false, newPrice: '16.9', oldPrice: '19.9', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202312211522_7eb6e935ebc0c053d48fbf71fd795303.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/4053.html'},
+            {value: '米家双核净水器 1200G Pro', desc: '主RO使用寿命8年', sub: true, newPrice: '18.9', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202312211522_7eb6e935ebc0c053d48fbf71fd795303.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/10000124.html'},
+            {value: '米家净水器', desc: '1600G', sub: false, newPrice: '5', oldPrice: '', src: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202312211522_7eb6e935ebc0c053d48fbf71fd795303.png?thumb=1&w=250&h=250&f=webp&q=90', url: 'https://item.mi.com/3751.html'}
           ]
         }
       }
