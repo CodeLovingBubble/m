@@ -1,13 +1,15 @@
 <template>
   <div class="goods-sale">
-    <poster :postItem="postItem1"></poster>
-    <goods-box :goodsItem="goodsItem1"></goods-box>
-    <goods-box :goodsItem="goodsItem3"></goods-box>
-    <goods-box :goodsItem="goodsItem2"></goods-box>
-    <goods-box :goodsItem="goodsItem4"></goods-box>
-    <goods-box :goodsItem="goodsItem5"></goods-box>
-    <goods-box :goodsItem="goodsItem6"></goods-box>
-    <poster :postItem="postItem7"></poster>
+    <div class="goods-sale-container">
+      <poster :postItem="postItem1"></poster>
+      <goods-box :goodsItem="goodsItem1"></goods-box>
+      <goods-box :goodsItem="goodsItem3"></goods-box>
+      <goods-box :goodsItem="goodsItem2"></goods-box>
+      <goods-box :goodsItem="goodsItem4"></goods-box>
+      <goods-box :goodsItem="goodsItem5"></goods-box>
+      <goods-box :goodsItem="goodsItem6"></goods-box>
+      <poster :postItem="postItem7"></poster>  
+    </div>
   </div>
 </template>
 
@@ -229,10 +231,15 @@ export default {
 <style lang="less">
   .goods-sale {
       position: relative;
-      width: 1226px;
-      height: auto;
-      margin: 0 auto;
+      width: 100%;          /* 宽度占满全屏 */
+      background: #f5f5f5;
       display: flex;
       flex-direction: column;
+      align-items: center; 
+  }
+
+  .goods-sale-container {
+      width: 1226px; 
+      margin: 0 auto;
   }
 </style>
