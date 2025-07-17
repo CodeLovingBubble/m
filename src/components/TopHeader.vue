@@ -17,25 +17,29 @@
       </div>
       <div class="header-search-container">
         <input
+          v-model="searchValue"
           @focus="searchListShow"
-					@blur="searchListHide"
-					class="search-input"
+          @blur="searchListHide"
+          @keyup.enter="handleSearch"
+          class="search-input"
           :class="{'active': focusFlag}"
           type="search"
           :placeholder="placeholderWords[currentWordIndex]">
-				<label class="search-btn" :class="{'active': focusFlag}" style="border-left: 0;">
-					<i class="fa fa-search" aria-hidden="true"></i>
+        <label class="search-btn" :class="{'active': focusFlag}" style="border-left: 0;">
+          <i class="fa fa-search" aria-hidden="true"></i>
           <div id="kuan">
-            <input type="submit" value="">
+            <input type="submit" value="" @click="handleSearch">
           </div>
-				</label>
+        </label>
         <transition name="list-trans">
-          <ul class="search-hots" v-show="hotsListFlag">
-            <li class="hots-item" v-for="(item, index) in hots" :key="index">{{item}}</li>
+          <ul class="search-hots" v-show="hotsListFlag && !focusFlag">
+            <li class="hots-item" v-for="(item, index) in hots" :key="index" @click="handleHotItemClick(item)">{{item}}</li>
           </ul>
         </transition>
-        <ul class="search-list" v-show="!hotsListFlag">
-          <li class="list-item" v-for="(item, index) in searchHot" :key="index">{{item}}</li>
+        <ul class="search-list" v-show="!hotsListFlag && focusFlag">
+          <li class="list-item" v-for="(item, index) in searchHistory.concat(searchHot)" :key="index" @click="handleListItemClick(item)">
+            {{item}}
+          </li>
         </ul>
       </div>
     </div>
@@ -71,14 +75,14 @@ export default {
       focusFlag: false,
       navs: [
         {value: 'Xiaomi手机', type: 'xiaomi'},
-				{value: 'REDMI手机', type: 'redmi'},
-				{value: '电视', type: 'tv'},
-				{value: '笔记本', type: 'laptop'},
-				{value: '平板', type: 'household'},
-				{value: '家电', type: 'router'},
-				{value: '路由器', type: 'hardware'},
-				{value: '服务中心', url: '//www.mi.com/service/'},
-				{value: '社区', url: 'http://www.xiaomi.cn'}
+        {value: 'REDMI手机', type: 'redmi'},
+        {value: '电视', type: 'tv'},
+        {value: '笔记本', type: 'laptop'},
+        {value: '平板', type: 'household'},
+        {value: '家电', type: 'router'},
+        {value: '路由器', type: 'hardware'},
+        {value: '服务中心', url: '//www.mi.com/service/'},
+        {value: '社区', url: 'http://www.xiaomi.cn'}
       ],
       xiaomi: [
         {value: ' Xiaomi MIX Flip 2', price: '5999', sub: true, src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/8059e5c1decb3331d95c65b28e016ef5.png?thumb=1&w=200&h=138&f=webp&q=90', url: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/8059e5c1decb3331d95c65b28e016ef5.png?thumb=1&w=200&h=138&f=webp&q=90'},
@@ -150,7 +154,9 @@ export default {
         '小米手环9pro'
       ],
       currentWordIndex: 0,
-      rotateInterval: null
+      rotateInterval: null,
+      searchValue: '',
+      searchHistory: []
     }
   },
   mounted() {
@@ -173,8 +179,8 @@ export default {
     },
     menusListHide () {
       this.timer = setTimeout(() => {
-				this.menusListFlag = false;
-			}, 300);
+        this.menusListFlag = false;
+      }, 300);
     },
     // 启动轮换
     startRotation() {
@@ -201,6 +207,53 @@ export default {
       this.hotsListFlag = true;
       this.focusFlag = false;
       this.startRotation(); // 重新开始轮换
+    },
+    
+    // 处理下拉词条点击
+    handleListItemClick(item) {
+      // 先回填搜索框
+      this.searchValue = item;
+      
+      // 延迟执行其他操作，确保回填先完成
+      setTimeout(() => {
+        this.addToSearchHistory(item);
+        this.hotsListFlag = true;
+        this.focusFlag = false;
+        this.handleSearch();
+      }, 100);
+    },
+    
+    // 处理热门词条点击
+    handleHotItemClick(item) {
+      this.searchValue = item;
+      this.addToSearchHistory(item);
+      this.hotsListFlag = true;
+      this.focusFlag = false;
+      this.handleSearch();
+    },
+    
+    // 添加到搜索历史
+    addToSearchHistory(item) {
+      // 移除已存在的相同词条
+      const index = this.searchHistory.indexOf(item);
+      if (index !== -1) {
+        this.searchHistory.splice(index, 1);
+      }
+      // 添加到搜索历史的顶部
+      this.searchHistory.unshift(item);
+      // 限制历史记录数量
+      if (this.searchHistory.length > 5) {
+        this.searchHistory.pop();
+      }
+    },
+    
+    // 处理搜索提交
+    handleSearch() {
+      if (this.searchValue.trim()) {
+        this.addToSearchHistory(this.searchValue);
+        // 这里可以添加实际的搜索逻辑
+        console.log('搜索:', this.searchValue);
+      }
     }
   }
 }
@@ -349,7 +402,7 @@ export default {
         .search-list {
           position: absolute;
           width: 240px;
-          top: 35px;
+          top: 50px;
           height: auto;
           border: 1px solid #ff6700;
           border-top: 0;
@@ -464,4 +517,4 @@ export default {
   .list-trans-enter-to, .list-trans-leave {
     opacity: 1;
   }
-</style>
+</style>    
