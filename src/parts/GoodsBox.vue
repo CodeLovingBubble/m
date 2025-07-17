@@ -306,7 +306,7 @@ export default {
     }
 
     .goods-two .goods-item-bg {
-      height: 300px;
+      height: 320px;
       width: 496px;
       display: flex;
 
@@ -320,9 +320,10 @@ export default {
 
       .brick-more {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        align-items: center;
         height: 143px;
-        padding: 30px 20px 30px 30px;
+        padding: 5px 0px 5px 0px;
 
         img {
           width: 80px;
@@ -372,7 +373,7 @@ export default {
   }
 
   .brick-item {
-    transition: all .2s linear;
+    // transition: all .2s linear;
 
     &:hover {
       transform: translate3d(0, -2px, 0);
