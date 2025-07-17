@@ -76,72 +76,96 @@ export default {
 }
 </script>
 
-<style lang="less">
-  .sale-slide {
-    width: 978px;
-    height: 340px;
-    margin-left: 14px;
-    overflow: hidden;
-    position: relative;
+<style lang="less" scoped>
+.sale-slide {
+  width: 978px;
+  height: 340px;
+  margin-left: 14px;
+  position: relative;
+  overflow: hidden;
+  
+  &-container {
+    height: 100%;
     display: flex;
-    .slide-container {
-      height: 340px;
-      display: flex;
-      transition: all 1s ease-in-out;
-      .slide-item {
-        display: block;
-        width: 234px;
-        margin-right: 14px;
-        border-top-width: 1px;
-        border-top-style: solid;
-        text-align: center;
-        background: #fff;
-        a {
-          display: block;
-          height: 300px;
-          padding-top: 39px;
-        }
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
 
-        img {
-          display: block;
-          width: 160px;
-          height: 160px;
-          margin: 0 37px 22px;
-        }
+  &-item {
+    flex: 0 0 234px;
+    margin-right: 14px;
+    background: #fff;
+    border-top: 1px solid #f5f5f5;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    &:last-child {
+      margin-right: 0;
+    }
 
-        .name {
-          display: block;
-          margin: 0 20px 3px;
-          font-size: 14px;
-          font-weight: 400;
-          color: #212121;
-        }
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    }
 
-        .desc {
-          display: block;
-          height: 18px;
-          margin: 0 20px 12px;
-          font-size: 12px;
-          color: #b0b0b0;
-        }
+    &-link {
+      display: block;
+      height: 300px;
+      padding-top: 39px;
+    }
 
-        .price {
-          margin: 0 10px 14px;
-          font-size: 14px;
-          color: #ff6709;
-          del {
-            color: #b0b0b0;
-            margin-left: 4px;
-          }
-        }
+    &-image {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 22px;
+      object-fit: contain;
+    }
+
+    &-name {
+      .ellipsis();
+      margin: 0 20px 3px;
+      font-size: 14px;
+      color: #212121;
+      font-weight: 400;
+    }
+
+    &-desc {
+      .ellipsis();
+      height: 18px;
+      margin: 0 20px 12px;
+      font-size: 12px;
+      color: #b0b0b0;
+    }
+
+    &-price {
+      margin: 0 10px 14px;
+      font-size: 14px;
+      color: #ff6709;
+      
+      del {
+        color: #b0b0b0;
+        margin-left: 4px;
       }
     }
   }
+}
 
-  .ellipsis {
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+// 文字截断混入
+.ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .sale-slide {
+    width: 100%;
+    margin-left: 0;
+    
+    &-item {
+      flex: 0 0 calc(25% - 11px);
+      margin-right: 14px;
+    }
   }
+}
 </style>

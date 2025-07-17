@@ -60,109 +60,116 @@ export default {
 }
 </script>
 
-<style lang="less">
-  .banner {
-    position: relative;
-    .banner-prev {
-      position: absolute;
-      top: 50%;
-      width: 41px;
-      height: 69px;
-      margin-top: -35px;
-      z-index: 5;
-      cursor: pointer;
-      outline: none;
-      background: url(../assets/image/icon-slides.png) no-repeat -84px 50%;
-      left: 234px;
-      right: auto;
-      &:hover {
-        background: url(../assets/image/icon-slides.png) no-repeat 0px 50%;
-      }
+<style lang="less" scoped>
+.banner {
+  position: relative;
+  
+  &-prev,
+  &-next {
+    position: absolute;
+    top: 50%;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    z-index: 5;
+    cursor: pointer;
+    outline: none;
+    background: url(../assets/image/icon-slides.png) no-repeat;
+    transition: opacity 0.3s;
+    
+    &:hover {
+      opacity: 0.8;
     }
+  }
 
-    .banner-next {
-      position: absolute;
-      top: 50%;
-      width: 41px;
-      height: 69px;
-      margin-top: -35px;
-      z-index: 5;
-      cursor: pointer;
-      outline: none;
-      background: url(../assets/image/icon-slides.png) no-repeat -125px 50%;
-      right: 0;
-      left: auto;
-      &:hover {
-        background: url(../assets/image/icon-slides.png) no-repeat -43px 50%;
-      }
+  &-prev {
+    left: 234px;
+    background-position: -84px 50%;
+    
+    &:hover {
+      background-position: 0 50%;
     }
+  }
 
-    .banner-points {
-      position: absolute;
+  &-next {
+    right: 0;
+    background-position: -125px 50%;
+    
+    &:hover {
+      background-position: -43px 50%;
+    }
+  }
+
+  &-points {
+    position: absolute;
+    display: inline-block;
+    width: 400px;
+    right: 30px;
+    bottom: 20px;
+    text-align: right;
+    z-index: 10;
+    
+    &-point {
       display: inline-block;
-      width: 400px;
-      left: auto;
-      right: 30px;
-      bottom: 20px;
-      text-align: right;
-      transform: translateZ(0);
-      z-index: 10;
-      .banner-point {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border: 2px solid #fff;
-        border-color: hsla(0, 0%, 100%, .3);
-        border-radius: 10px;
-        overflow: hidden;
-        background: rgba(0, 0, 0, .4);
-        opacity: 1;
-        margin: 0 4px;
-        cursor: pointer;
-        &:hover {
-          background: hsla(0,0%,100%,.4);
-          border-color: rgba(0,0,0,.4);
-        }
-      }
-
-      .active {
-        background: hsla(0,0%,100%,.4);
-        border-color: rgba(0,0,0,.4);
+      width: 10px;
+      height: 10px;
+      border: 2px solid hsla(0, 0%, 100%, 0.3);
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.4);
+      margin: 0 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+      
+      &:hover,
+      &.active {
+        background: hsla(0, 0%, 100%, 0.4);
+        border-color: rgba(0, 0, 0, 0.4);
       }
     }
+  }
 
-    .banner-container {
+  &-container {
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    
+    .image-container {
       width: 100%;
-      height: 460px;
-      overflow: hidden;
-      .image-container {
-        width: 100%;
-        height: auto;
-        a {
-          display: block;
-          img {
-            width: 100%;
-          }
+      height: 100%;
+      
+      a {
+        display: block;
+        height: 100%;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
     }
   }
+}
 
-  // 轮播图
-  .banner-trans-enter-active {
-    transition: all .5s ease-in-out;
-    opacity: 1;
+/* 轮播图过渡动画 */
+.banner-trans {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
-
-  .banner-trans-leave-active {
+  
+  &-enter-from,
+  &-leave-to {
     opacity: 0;
   }
-
-  .banner-trans-enter, .banner-trans-leave-to {
-      opacity: 0;
-    }
-
-  .banner-trans-enter-to, .banner-trans-leave {
+  
+  &-enter-to,
+  &-leave-from {
     opacity: 1;
   }
+}
 </style>

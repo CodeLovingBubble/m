@@ -73,166 +73,153 @@ export default {
         {name: 'Redmi 数字系列', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/c15a3d1b4e8bf2af17e6b5ad5559cfcb.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://www.mi.com/mi9se/'}
       ],
       tv: [
-        {name: '米家激光投影电视', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d78230a2f48ecb44a30db910476acf7b.jpg', url: 'https://search.mi.com/search_%E6%BF%80%E5%85%89%E6%8A%95%E5%BD%B1%E7%94%B5%E8%A7%86'},
-        {name: '小米壁画电视 65英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5732e8f317eb86bfcb174fbb49d00c4a.jpg', url: 'https://www.mi.com/arttv/'},
-        {name: '小米全面屏电视', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8aeae36f5d088f22c84b8953bd0d08b4.jpg', url: 'https://search.mi.com/search_%E5%85%A8%E9%9D%A2%E5%B1%8F%E7%94%B5%E8%A7%86'},
-        {name: '小米电视4A 32英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/820cba6c44f7263c5fe773a7ffaf85b9.png', url: 'https://www.mi.com/mitv4A/32/'},
-        {name: '小米电视4A 43英寸青春版', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/ea8be80c82c273e167d5b282b17e9b2b.png', url: 'https://www.mi.com/mitv4A/43y'},
-        {name: '小米电视4A 49英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a9710af2fff5548ea05950473898ef0e.jpg', url: 'https://www.mi.com/mitv4A/49/'},
-        {name: '小米电视4A 50英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2f15dd9779865b48bfa8c8e915ac75ac.png', url: 'https://www.mi.com/mitv4A/50'},
-        {name: '小米电视4A 55英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/37ce1615e1e8fcbbda2b3f37c09ec676.png', url: 'https://www.mi.com/mitv4A/55/'},
-        {name: '小米电视4A 58英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/11e4d06f29877044ddce0f9fdd2e26d5.png', url: 'https://www.mi.com/mitv4A/58/'},
-        {name: '小米电视4A 65英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/ca8058c9c776447265b99420ff04e544.png', url: 'https://www.mi.com/mitv4A/65/'},
-        {name: '小米电视4C 32英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/cb83515483547404cd26a962bada5d5b.png', url: 'https://www.mi.com/mitv4c/32/'},
-        {name: '小米电视4C 40英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/af572c503ed2a81ab71e2810617860c5.jpg', url: 'https://www.mi.com/mitv4c/40/'},
-        {name: '小米电视4C 43英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/7bef124bc015669bdacf76d5d4b02a7e.png', url: 'https://www.mi.com/mitv4c/43/'},
-        {name: '小米电视4C 50英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/24ee18218b3b98161e17abe23c6fd539.png', url: 'https://www.mi.com/mitv4c/50/'},
-        {name: '小米电视4C 55英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/fe603cc3b9c19903be14aac4e9b571d6.jpg', url: 'https://www.mi.com/mitv4c/55/'},
-        {name: '小米电视4X 43英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/53f3593ab87d90c4cc5201e10a5c42f7.png', url: 'https://www.mi.com/mitv4x/43/'},
-        {name: '小米电视4X 55英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/247f20519504afe5222b5a810e30fd14.png', url: 'https://www.mi.com/mitv4x/55/'},
-        {name: '小米电视4X 65英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/0df6f56ead57cb5a90f6b81a21fb5261.jpg', url: 'https://item.mi.com/9666.html'},
-        {name: '小米电视4 55英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f89f8c92035e635b64a2f4a0c3ca8a9b.png', url: 'https://www.mi.com/mitv4/55/'},
-        {name: '小米电视4 65英寸旗舰版', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/823ff82753067c5651cc70c8daf3021d.jpg', url: 'https://www.mi.com/mitv4/65aio/'},
-        {name: '小米电视4 75英寸', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/45d9675f31b2c22e286284e62de35f7d.jpg', url: 'https://www.mi.com/mitv4/75/'},
-        {name: '小米电视4S', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/46be9462fab23618500fda14e7e07e0f.png', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%94%B5%E8%A7%864s'},
-        {name: '小米电视 体育版', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/16278c189bb0ba0d12aae41c278fa5a1.png', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%94%B5%E8%A7%86%20%E4%BD%93%E8%82%B2%E7%89%88'},
-        {name: '小米盒子', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/554a4f8ea0c2c3ed19d843bea7321203.jpg', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%9B%92%E5%AD%90'}
+        {name: '旗舰系列-S Mini LED 2025', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/e831b62c0f720a7b038bff519ab29676.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E6%BF%80%E5%85%89%E6%8A%95%E5%BD%B1%E7%94%B5%E8%A7%86'},
+        {name: '旗舰系列-S Pro Mini LED', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/026fb3c3542d5ea80824efb94e52f895.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://www.mi.com/arttv/'},
+        {name: '旗舰系列-S Mini LED', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/fb29bd1fdc24747f29a1391842e7249b.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E5%85%A8%E9%9D%A2%E5%B1%8F%E7%94%B5%E8%A7%86'},
+        {name: '巨幕影院-Redmi MAX', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/30508961963af8937ead2013b77b97fe.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://www.mi.com/mitv4A/32/'},
+        {name: '游戏高刷-REDMI X 2025', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3d02613c3057fa79fd3aa46624eaa362.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://www.mi.com/mitv4A/43y'},
+        {name: '性价比爆款-Redmi A Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/7255d4c770a75efc5d96dd92dfc6ec49.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://www.mi.com/mitv4A/49/'},
+        {name: '性价比爆款-Redmi A 2025', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/1d5d10c3aa7cd62086fc39716f687449.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://www.mi.com/mitv4A/50'},
       ],
       laptop: [
-        {name: '小米笔记本 15.6"', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d28f298362ba20046db1dbb0c8eb5e70.jpg', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%2015.6'},
-        {name: '小米笔记本 13.3"', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/1f95bb7c9206951e3d870cb5581b8329.png', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%2013.3'},
-        {name: '小米笔记本 12.5"', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/eaab0db21859e0e58cae1fb807907905.jpg', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%2012.5'},
-        {name: 'RedmiBook 14', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a3c149225946312f2b4bbe1263f65450.png', url: 'https://www.mi.com/redmibook14/'},
-        {name: '小米游戏本', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a66c24ee8ae2efea3ae92ec455a27352.jpg', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%B8%B8%E6%88%8F%E6%9C%AC'},
-        {name: '小米平板4', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/131e5d409e62eedb94577cae11c530f1.jpg', url: 'https://www.mi.com/mipad4/'},
-        {name: '键盘', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/03c3afaa26624708921a2875b293e866.jpg', url: 'https://search.mi.com/search_%E9%94%AE%E7%9B%98'},
-        {name: '鼠标／鼠标垫', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c61933e7ac89c61bc727c275391e82e0.png', url: 'https://search.mi.com/search_%E9%BC%A0%E6%A0%87'},
-        {name: '转接器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/62f36168a0fb318102ff74ab65e6a8fc.jpg', url: 'https://search.mi.com/search_%E8%BD%AC%E6%8E%A5%E5%99%A8'},
-        {name: '平板配件', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/32bfcdebff3058de7bc0b2855d05c240.jpg', url: 'https://search.mi.com/search_%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B9%B3%E6%9D%BF%E9%85%8D%E4%BB%B6'},
-        {name: '笔记本双肩包', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a23f28ad195aa93679012c785db11fc2.jpg', url: 'https://search.mi.com/search_%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%8F%8C%E8%82%A9%E5%8C%85'},
-        {name: '小米笔记本内胆包', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/48ec2200729879ed3e3bc01b61146d79.jpg', url: 'https://list.mi.com/accessories/tag?id=neidanbao'}
+        {name: '壁挂空调', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/630b9e523bb2e1387ce6c7be1edaca18.png?thumb=1&w=50&h=50', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%2013.3'},
+        {name: '立式空调', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/20e478a62b19d36ff05e92763fe7396f.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%2013.3'},
+        {name: '中央空调Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/afcf69ccc6c889edb4ceeca205799d23.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%2012.5'},
+        {name: '冰箱', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/e6fe32cdaf14e104013384d89100f9c6.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://www.mi.com/redmibook14/'},
+        {name: '滚筒洗衣机', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/f23bac0cfa0082b79230350b87d27eea.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%B8%B8%E6%88%8F%E6%9C%AC'},
+        {name: '波轮洗衣机', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/fd480335781b6c6d6c0ba586c5bb209c.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://www.mi.com/mipad4/'},
+        {name: '电暖器', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/6aa1871d84aaae98cd676f5e2cf5c2f2.jpg?thumb=1&w=50&h=50', url: 'https://search.mi.com/search_%E9%94%AE%E7%9B%98'},
+        {name: '除湿机', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce2cb16bdc44b5336c90e2d788d6c8e2.png?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E9%BC%A0%E6%A0%87'},
+        {name: '洗地机', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/00d73a63bf8fb50cb0cf071d903333b2.jpg?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E8%BD%AC%E6%8E%A5%E5%99%A8'},
+        {name: '净水器', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/12f4b26ced3716d07bfcc6beba751188.jpg?thumb=1&w=50&h=50'},
+        {name: '微蒸烤', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/f7dcbb8c268574041ce0b4b98e591cf1.jpg?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B9%B3%E6%9D%BF%E9%85%8D%E4%BB%B6'},
+        {name: '烟灶', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/bf07e32a082098cc81a433fe360811c8.gif?thumb=1&w=50&h=50&f=webp&q=90', url: 'https://search.mi.com/search_%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%8F%8C%E8%82%A9%E5%8C%85'},
+        {name: '洗碗机', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/91ccbb3270bcfd72a3c3ae98f15aed9d.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '扫地机器人', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d068f740ef433d49ba1304b0c70e39e3.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '吸尘器', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/26deda5474eb7eb7e5b34547c58b9893.jpg?thumb=1&w=50&h=50'},
+        {name: '加湿器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3630f1d92e44f1518b982020986ee953.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '空气净化器', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e997ed31cd5199ec0a24eeb48a37b1e7.jpg?thumb=1&w=50&h=50'},
+        {name: '电饭煲', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/390e15818dd103b2f96f4ac742d47379.jpg?thumb=1&w=50&h=50'},
+        {name: '电磁炉', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d93e6a98403262a506c9e9b22293cdae.jpg?thumb=1&w=50&h=50'},
+        {name: '水壶', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/39c8ccbebd08687bc6780373b7ef2a95.jpg?thumb=1&w=50&h=50'},
+        {name: '落地风扇', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3a3e4238b70ef8db89ae77f8a3762fc8.png?thumb=1&w=50&h=50'},
+        {name: '投影仪', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c12fd1da9fed662842d6f5c57d7737c9.png?thumb=1&w=50&h=50'},
+        {name: '灯具', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c0a6b523433a492dbf32035b2983d98e.jpg?thumb=1&w=50&h=50'},
+        {name: '除螨仪', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/4b611c8e68c0b9424e66857646c4b264.png?thumb=1&w=50&h=50&f=webp&q=90'}
       ],
       household: [
-        {name: '米家立式空调', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/96de94415b860f3de95b2d6294f0d0fd.png', url: 'https://www.mi.com/aircondition-f/f3c1/'},
-        {name: '米家空调', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/630b9e523bb2e1387ce6c7be1edaca18.png', url: 'https://search.mi.com/search_%E4%BA%92%E8%81%94%E7%BD%91%E7%A9%BA%E8%B0%83'},
-        {name: '滚筒洗衣机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/18723c3561252ce76c9a1b1eebc4c01c.png', url: 'https://search.mi.com/search_%E6%BB%9A%E7%AD%92%E6%B4%97%E8%A1%A3%E6%9C%BA'},
-        {name: 'Redmi全自动波轮洗衣机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d3bace6e62cecb7901e306b05502535f.jpg', url: 'https://search.mi.com/search_%E6%B3%A2%E8%BD%AE%E6%B4%97%E8%A1%A3%E6%9C%BA'},
-        {name: '净水器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/12f4b26ced3716d07bfcc6beba751188.jpg', url: 'https://search.mi.com/search_%E5%87%80%E6%B0%B4%E5%99%A8'},
-        {name: '净水器滤芯', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d38c628865341057d6e19a3a6a4ab88e.png', url: 'https://search.mi.com/search_%E5%87%80%E6%B0%B4%E5%99%A8%E6%BB%A4%E8%8A%AF'},
-        {name: '扫地机器人', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/603beb09930e32addd1b362bf43c7ac2.jpg', url: 'https://www.mi.com/roomrobot/?cfrom=search'},
-        {name: '吸尘器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/26deda5474eb7eb7e5b34547c58b9893.jpg', url: 'https://www.mi.com/vacuum-cleaner/'},
-        {name: '空气净化器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e997ed31cd5199ec0a24eeb48a37b1e7.jpg', url: 'https://search.mi.com/search_%E7%A9%BA%E6%B0%94%E5%87%80%E5%8C%96%E5%99%A8'},
-        {name: '电饭煲', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/390e15818dd103b2f96f4ac742d47379.jpg', url: 'https://search.mi.com/search_%E7%94%B5%E9%A5%AD%E7%85%B2'},
-        {name: '电磁炉', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d93e6a98403262a506c9e9b22293cdae.jpg', url: 'https://search.mi.com/search_%E7%94%B5%E7%A3%81%E7%82%89'},
-        {name: '厨房用具', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b945d8524ca8497b899f04ef957b71ec.jpg', url: 'https://search.mi.com/search_%E7%9F%A5%E5%90%BE%E7%85%AE'},
-        {name: '电水壶', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/39c8ccbebd08687bc6780373b7ef2a95.jpg', url: 'https://search.mi.com/search_%E7%94%B5%E6%B0%B4%E5%A3%B6'},
-        {name: '滤水壶', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9ffcebcacca008ed2d92a692f7312ef6.jpg', url: 'https://search.mi.com/search_%E6%BB%A4%E6%B0%B4%E5%A3%B6'},
-        {name: '落地风扇', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3a3e4238b70ef8db89ae77f8a3762fc8.png', url: 'https://search.mi.com/search_%E8%90%BD%E5%9C%B0%E9%A3%8E%E6%89%87'},
-        {name: '投影仪', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c12fd1da9fed662842d6f5c57d7737c9.png', url: 'https://www.mi.com/projection-youth/'},
-        {name: '灯具', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c0a6b523433a492dbf32035b2983d98e.jpg', url: 'https://search.mi.com/search_%E7%81%AF%E5%85%B7'},
-        {name: '插线板', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d1c8cfb055709db380c6de981a4c894b.jpg', url: 'https://search.mi.com/search_%E6%8F%92%E6%8E%92'},
-        {name: '新风机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/1cc417a7cae8c4ff8b0041fa29003717.jpg', url: 'https://search.mi.com/search_%E6%96%B0%E9%A3%8E%E6%9C%BA'},
-        {name: '电暖器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/6aa1871d84aaae98cd676f5e2cf5c2f2.jpg', url: 'https://item.mi.com/product/9145.html'},
-        {name: '电压力锅', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/ba8d2a2d383f612575d323ce159bdce3.jpg', url: 'https://item.mi.com/1190200053.html'},
-        {name: '料理机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/0bf0ba35dc3ad57115c59f0ebde0fd1d.jpg', url: 'https://search.mi.com/search_%E6%96%99%E7%90%86%E6%9C%BA'},
-        {name: '电煮壶', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b7de8a5bc64975df73f5fde5507fc8d1.jpg', url: 'https://item.mi.com/product/9529.html'}
+        {name: 'REDMI K Pad', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/56f19f81d311fe83e8b5aba1074bde66.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Pad 7S Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d0419051658e56e3983e52d4e88160d8.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Pad 7 Ultra', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d9c24da8091a1a930cfaf9fafce4658f.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Pad 7 Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/63710378af101deacce8b4986fdef250.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Pad 7', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/194b27f9a5698e7f2d651f0c0635453a.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'REDMI Book 14 锐龙版', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/c78e72d1a4280bb907f22e60bed5f62a.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'REDMI Book Pro 14', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5cb4d9647492cf51a86df9c73e8a87ba.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'REDMI Book Pro 16', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/455295a749de8a10288257f43cdb98ce.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Redmi 平板', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/627ca9afd92d4efa4e29dce497c7bf8b.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi 平板', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/01093ece938a05e0e6e6b64299eb89ae.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'REDMI Book 14 2025', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/c78e72d1a4280bb907f22e60bed5f62a.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'REDMI Book 16 2025', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/f63964384cfe7c6e041b5f9961522920.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '办公娱乐显示器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/721960abfd3ba99426d74595124c0820.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '游戏电竞显示器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/722dcf898f2db1e5689a6df08e87b525.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Redmi 显示器 G34WQ', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/2ac4fd34e03041586d6507444d0a24ca.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Redmi G Pro27', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/722dcf898f2db1e5689a6df08e87b525.png?thumb=1&w=50&h=50&f=webp&q=90'},
       ],
       wear: [
-        {name: '手环手表', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4dd7eeff34b478acd2cf3eec99b78c96.png', url: 'https://search.mi.com/search_%E6%89%8B%E7%8E%AF%E6%89%8B%E8%A1%A8'},
-        {name: 'VR', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/fece041c17bdebaab5f3a9313c7c0f8c.jpg', url: 'https://search.mi.com/search_vr'},
-        {name: '平衡车', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/50180b158690a40f9cbc684c7646d297.jpg', url: 'https://search.mi.com/search_%E5%B9%B3%E8%A1%A1%E8%BD%A6'},
-        {name: '滑板车', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4e9da27ebbeeb38078910c97173c4671.jpg', url: 'https://search.mi.com/search_%E6%BB%91%E6%9D%BF%E8%BD%A6'},
-        {name: '车载逆变器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/601f0b54e805d769ab6dc1bdea93706d.jpg', url: 'https://search.mi.com/search_%E8%BD%A6%E8%BD%BD%E9%80%86%E5%8F%98%E5%99%A8'},
-        {name: '平衡车配件', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8ac5b263aac2ffa1894fb7b215c3ce87.jpg', url: 'https://search.mi.com/search_%E5%B9%B3%E8%A1%A1%E8%BD%A6%E9%85%8D%E4%BB%B6'},
-        {name: '智能后视镜', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/971c8c01a246c7ac69a4c9be9e77e832.jpg', url: 'https://search.mi.com/search_%E5%90%8E%E8%A7%86%E9%95%9C'},
-        {name: '智能记录仪', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e2748064a9ac9969e53851479d55f1a9.jpg', url: 'https://search.mi.com/search_%E8%AE%B0%E5%BD%95%E4%BB%AA'},
-        {name: '车载空气净化器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e73568f1bfc9b92fb0302c0a1538f181.jpg', url: 'https://search.mi.com/search_%E8%BD%A6%E8%BD%BD%E7%A9%BA%E6%B0%94%E5%87%80%E5%8C%96%E5%99%A8'},
-        {name: '无线车充', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/efd04d4a90822e7e2f04a365083f2607.jpg', url: 'https://item.mi.com/product/9357.html'},
-        {name: '充气宝', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8b398bad185dddb5397f2c0d9a3f6271.jpg', url: 'https://item.mi.com/product/9613.html'},
-        {name: '平衡轮', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/6d92b9db10f261f56b2f2dfb93ca132e.jpg', url: 'https://item.mi.com/product/10003.html'}
+        {name: '小米AI眼镜', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/e1c48ffa70da75f0404743772fae89c3.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '小米手环10', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/cdd27b674f412cbe75fffa9e5ff72727.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '小米手环10 NFC版', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/14caaa0bde26184e29c9f8c988dafc32.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Watch S4 41mm', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/8166a5f1edff6019eb16bddc0d08846a.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Watch S4', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5f1a142b30ae28479510eab9b048580b.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'REDMI Watch 5', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f3f4fad1bc8ef497b9023dffedbe338.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '小米手环9 Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/20f93242663fc6d005deabc1252aca67.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Watch S4Sport', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/879fbf4ec88f1c27835f7f895546fd27.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Redmi 手环 3', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3f017abd91eaeb1df17d9e2efec5cc5c.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '小米车载充电器快充版1A1C 100W', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/46bbc5d5750f6af3f505c029ee6f1ba4.png?thumb=1&w=50&h=50&f=webp&q=90'},
       ],
       router: [
-        {name: '打印机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5ef6c2d63df78e140afab6ac3c088fac.jpg', url: 'https://search.mi.com/search_%E6%89%93%E5%8D%B0%E6%9C%BA'},
-        {name: '路由器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/50b4287ee78e7f190c5603ad7ce7e5d6.jpg', url: 'https://www.mi.com/a/h/8363.html'},
-        {name: '智能家庭', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/14107363b5dc77b18e9983bda999931d.jpg', url: 'https://search.mi.com/search_%E6%99%BA%E8%83%BD%E5%AE%B6%E5%BA%AD'},
-        {name: '对讲机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/21fedf7ba9019bce59cbc4856f907076.jpg', url: 'https://search.mi.com/search_%E5%AF%B9%E8%AE%B2%E6%9C%BA'},
-        {name: '无人机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9f50ae9f7f38378e057462483c8cf65f.jpg', url: 'https://search.mi.com/search_%E6%97%A0%E4%BA%BA%E6%9C%BA'},
-        {name: '摄像机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/067f4a6f0ffb264ed40734a97deae52d.jpg', url: 'https://search.mi.com/search_%E6%91%84%E5%83%8F%E6%9C%BA'},
-        {name: '照相机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/81d89cfdb72d0445ed4ef19942d9dedb.jpg', url: 'https://search.mi.com/search_%E7%85%A7%E7%9B%B8%E6%9C%BA'},
-        {name: '智能门锁', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4fb7885d49255b93f7245aa53501294c.jpg', url: 'https://search.mi.com/search_%E9%97%A8%E9%94%81'},
-        {name: '视频门铃', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/feaab5bd13257dbe8f30b80b6a4472be.jpg', url: 'https://search.mi.com/search_%E9%97%A8%E9%93%83'},
-        {name: '小爱老师', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/90b75c1046e486c19f14effd9b45f488.png', url: 'https://search.mi.com/search_%E5%B0%8F%E7%88%B1%E8%80%81%E5%B8%88'},
-        {name: '小爱音箱', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3d5963e212402fa5ebd2e71dd10c426c.jpg', url: 'https://search.mi.com/search_%E5%B0%8F%E7%88%B1%E9%9F%B3%E7%AE%B1'}
+        {name: 'Xiaomi Buds 5 Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/f39eb03f586be89abccfc715f4133db1.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi 开放式耳机 Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/8e7b34cc5c43c0ba3137b6bde7d8276c.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Buds 5', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/c70bc9b94595d8a434a75e138fce7bca.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'REDMI Buds 6 Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/4fa45caa44d39037cd57c189e6bb69f8.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Redmi Buds 6', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/f56084f0a9adc67bd4866876b29a38c3.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'REDMI Buds 7S', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/b430c0701ca1832b8b6a962fd1adf25e.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Redmi Buds 6	青春版', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/dfd8124c484dc3fcc1186d39e27c7827.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Redmi Buds 6 活力版', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/b2acd6de4ca7d7997a62eb1f9fb91a23.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi 智能音箱 Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/def6f846649f6bd1f4182973370d253e.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '小爱音箱Play 增强版', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/df7c5b83fa173824052ca7929dbb0c37.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi 智能家庭屏 Mini', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/ffd02ff2d1572fd545d5bf9c8e73cdb1.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi Sound Pro', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/daeb40550103b72449ee783eabb45b0d.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '小米小爱音箱 Play', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3d5963e212402fa5ebd2e71dd10c426c.jpg?thumb=1&w=50&h=50'},
+        {name: '小米小爱触屏音箱Pro 8', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9177af7098efadcaac278e2f9c6f113a.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi 蓝牙音箱 Mini', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/aa861ad93e69c69c7b2d1d21fd6946cd.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi智能音箱', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3374a34421fad5466b98ea715f7d072c.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: ' Xiaomi智能家庭屏Pro 8', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/007308d07c93d959c1ca8c8d62853914.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi智能家庭屏 6', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/15d918d05a777f119f4b794503ce5c98.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Xiaomi智能家庭屏 10', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3080f7634a71b9863966ff0b10ad1a53.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '小米AI音箱', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/db89d422ef877cf7290616fef515e413.jpg?thumb=1&w=50&h=50'},
+        {name: 'Xiaomi 胶囊耳机', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5232ef2eeeef67dee0fc7687b667b631.png?thumb=1&w=50&h=50&f=webp&q=90'},
       ],
       power: [
-        {name: '移动电源', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/91e56808d5c6f4fb7e9d41590f8b889c.jpg', url: 'https://search.mi.com/search_%E5%85%85%E7%94%B5%E5%AE%9D'},
-        {name: '数据线', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/45dd7a2c4fc3d17d5d261ed3eed7cd15.jpg', url: 'https://search.mi.com/search_usb%E6%95%B0%E6%8D%AE%E7%BA%BF'},
-        {name: '车充', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/397d8119508e8e3c895fc30ece88e799.jpg', url: 'https://search.mi.com/search_%E8%BD%A6%E8%BD%BD%E5%85%85%E7%94%B5%E5%99%A8'},
-        {name: '无线充', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/18d288107e1a72ad3c7b3aa66a1dc780.jpg', url: 'https://search.mi.com/search_%E6%97%A0%E7%BA%BF%E5%85%85%E7%94%B5%E5%99%A8'},
-        {name: '电池', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/10ec831749f1c657fc0a494feab15ed4.jpg', url: 'https://search.mi.com/search_%E5%BD%A9%E8%99%B9%E7%94%B5%E6%B1%A0'},
-        {name: '自拍杆', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2725e04c955dc060ac142fabbf809c1e.jpg', url: 'https://search.mi.com/search_%E8%87%AA%E6%8B%8D%E6%9D%86'},
-        {name: '手机壳', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5c6e60e48edf17219724faad95963b93.jpg', url: 'https://list.mi.com/8-0-0-0-0-0-0-0-1'},
-        {name: '手机贴膜', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e9e248c899fd895c9267f494ea1aaebf.jpg', url: 'https://list.mi.com/9'},
-        {name: '手机支架', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/826264a4845f45a0a503600f9331ab06.jpg', url: 'https://item.mi.com/1162000043.html?cfrom=search'},
-        {name: '平板配件', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/6ce8ff4bc1e6ded2d40c53b2aa83b98c.jpg', url: 'https://search.mi.com/search_%E5%B9%B3%E6%9D%BF%E9%85%8D%E4%BB%B6'},
-        {name: '黑鲨配件', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9c3ead590f49767a4f562b7285215f5e.jpg', url: 'https://search.mi.com/search_%E9%BB%91%E9%B2%A8%E9%85%8D%E4%BB%B6'},
-        {name: '其他配件', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/57d9989807dbc15c1a82bc49acc1f06f.jpg', url: 'https://search.mi.com/search_%E5%85%B6%E4%BB%96%E7%94%B5%E6%BA%90%E9%85%8D%E4%BB%B6'}
+        {name: '洗手机', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/da43c3dd6b171ee267f1fd1ec01b9208.jpg?thumb=1&w=50&h=50'},
+        {name: '剃须刀', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/60d7bdf307ceaba08b3275246ad3ab53.jpg?thumb=1&w=50&h=50'},
+        {name: '修剪器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/96b5d738ce5926e3a6969ad68fa1521d.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '牙刷', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/15447769c461fdc71e84a7badb83f09b.jpg?thumb=1&w=50&h=50'},
+        {name: '吹风机', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/bba7ce79f4d61939c69b7a26bf507bae.jpg?thumb=1&w=50&h=50'},
+        {name: '体重秤', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/459afd0eb2a3bc6313e7ac62bd3a52df.png?thumb=1&w=50&h=50'},
+        {name: '体脂秤', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/fe6166ca2026008abb86bc67dfd8211d.jpg?thumb=1&w=50&h=50'},
+        {name: '米家跑步机', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9e04107f99edded4a64b7e92ae25641d.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '米家动感单车', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/84ca0dbb3d7b8debc2e531109d7c2b58.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '走步机', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/fb1fee7e2f2963baae34d3611a2b7e9f.jpg?thumb=1&w=50&h=50'},
+        {name: '益智积木', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d9d211ae20e700690ce9eec644ac3f31.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '儿童手表', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a0b3a592784632760a7ef25de50147a7.jpg?thumb=1&w=50&h=50'},
+        {name: '儿童滑板车', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9f6a34ed8071b821ee5aa8d32a7be95d.jpg?thumb=1&w=50&h=50'},
+        {name: '婴儿推车', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/12235daeb49fd45e709e68c7dacd3336.jpg?thumb=1&w=50&h=50'},
+        {name: '理发器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/c4568ec9535a8707cea88dcd0148dda8.jpeg?thumb=1&w=50&h=50&f=webp&q=90'},
       ],
       health: [
-        {name: '洗手机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/da43c3dd6b171ee267f1fd1ec01b9208.jpg', url: 'https://www.mi.com/dispenser/'},
-        {name: '剃须刀', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/60d7bdf307ceaba08b3275246ad3ab53.jpg', url: 'https://search.mi.com/search_%E5%89%83%E9%A1%BB%E5%88%80'},
-        {name: '日光镜', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/320c12a501b40fa1d69d0ca3a4303129.jpg', url: 'https://item.mi.com/product/9235.html'},
-        {name: '牙刷', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/15447769c461fdc71e84a7badb83f09b.jpg', url: 'https://search.mi.com/search_%E7%89%99%E5%88%B7'},
-        {name: '吹风机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/bba7ce79f4d61939c69b7a26bf507bae.jpg', url: 'https://item.mi.com/1184700005.html'},
-        {name: '体重秤', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/459afd0eb2a3bc6313e7ac62bd3a52df.png', url: 'https://search.mi.com/search_%E4%BD%93%E9%87%8D%E7%A7%A4'},
-        {name: '体脂秤', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/fe6166ca2026008abb86bc67dfd8211d.jpg', url: 'https://search.mi.com/search_%E4%BD%93%E8%84%82%E7%A7%A4'},
-        {name: '早教启智', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2cb10391d6527bf64126a63446a38e2e.jpg', url: 'https://search.mi.com/search_%E6%97%A9%E6%95%99%E5%90%AF%E6%99%BA'},
-        {name: '遥控电动', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/ab36232a1004421e1a5b3efd0b9226c0.jpg', url: 'https://search.mi.com/search_%E5%84%BF%E7%AB%A5%E9%81%A5%E6%8E%A7'},
-        {name: '益智积木', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c9a5feb1f6c9b9aa0dc998c17e5eb3e9.jpg', url: 'https://search.mi.com/search_%E7%9B%8A%E6%99%BA%E7%A7%AF%E6%9C%A8'},
-        {name: '儿童手表', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a0b3a592784632760a7ef25de50147a7.jpg', url: 'https://search.mi.com/search_%E5%84%BF%E7%AB%A5%E6%89%8B%E8%A1%A8'},
-        {name: '儿童滑板车', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9f6a34ed8071b821ee5aa8d32a7be95d.jpg', url: 'https://search.mi.com/search_%E5%84%BF%E7%AB%A5%E6%BB%91%E6%9D%BF%E8%BD%A6'},
-        {name: '米兔拉杆箱', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a2c84adc7a3620d222346068528da1b5.jpg', url: 'https://item.mi.com/product/8878.html'},
-        {name: '自行车', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8f200595fe0a6b4b67291970f25e4f02.jpg', url: 'https://item.mi.com/10491.html'},
-        {name: '婴儿推车', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/12235daeb49fd45e709e68c7dacd3336.jpg', url: 'https://item.mi.com/product/9029.html'},
-        {name: '儿童书包', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d55c8943ceac7cd5ac7d8aa052f69b93.jpg', url: 'https://item.mi.com/product/10000130.html'},
-        {name: '婴儿理发器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/17d625c8b5466b9527e9c06c71601939.jpg', url: 'https://item.mi.com/product/9315.html'},
-        {name: '儿童保温杯', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/81737be7672dfa85cbb3abc65669f091.jpg', url: 'https://item.mi.com/product/9317.html'},
-        {name: '走步机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/fb1fee7e2f2963baae34d3611a2b7e9f.jpg', url: 'https://www.mi.com/treadmill/?cfrom=search'},
-        {name: '点读笔', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/ccdce424f41806f775693748058fa2ca.jpg', url: 'https://item.mi.com/product/9834.html'}
+        {name: '小背包', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9f26030d7d914b86daca51233a3ac5f9.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '双肩包', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f628feba0f2f8253f9cc41f9984194a7.jpg?thumb=1&w=50&h=50'},
+        {name: '胸包', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/2846c64ffd97969c639979da9bb97974.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '旅行箱', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/6c5138635ef1396e35856ec942e3b6c0.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '收纳袋', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/77aa97808ebf4965cf823fd2199433ec.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '运动鞋', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e899d08e36c306570d4fe3c75df90a42.jpg?thumb=1&w=50&h=50'},
+        {name: '服饰', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/6c6b6895044b55858102f72d87a6c39f.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '眼镜', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d521bd58668f66c50562b8fa8949f67c.jpg?thumb=1&w=50&h=50'},
+        {name: '床垫', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/aba45662667dceaf4ba0e5b08f44d3a7.jpg?thumb=1&w=50&h=50'},
+        {name: '枕头', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/744306b95df4d130bdfc346ff2b3c871.png?thumb=1&w=50&h=50'},
+        {name: '螺丝刀', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/458169c8138413666feb860068ce1a56.jpg?thumb=1&w=50&h=50'},
+        {name: '水杯', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/813d173eff50a83abb8abd5abde5f5a6.jpg?thumb=1&w=50&h=50'},
+        {name: '驱蚊器', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/59d3a701ac0bbb78f1b1d0ea7ebc7505.jpg?thumb=1&w=50&h=50'},
+        {name: '毛巾/浴巾', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/21c3ec8638dd75f5c54f1a69864a1cc9.jpg?thumb=1&w=50&h=50'},
+        {name: '笔', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c9279a17e9399958420af64e449e3214.jpg?thumb=1&w=50&h=50'},
       ],
       pods: [
-        {name: '小米小爱音箱 Play版', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3d5963e212402fa5ebd2e71dd10c426c.jpg', url: 'https://www.mi.com/aispeaker-play'},
-        {name: '线控耳机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8b3d235f4a5a5bf5c9d8d066d2166e6c.jpg', url: 'https://search.mi.com/search_%E7%BA%BF%E6%8E%A7%E8%80%B3%E6%9C%BA'},
-        {name: '蓝牙耳机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/649f781dd8595272ac3885f064205114.jpg', url: 'https://search.mi.com/search_%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA'},
-        {name: '头戴耳机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/28a77451da1dbd0d3e42d529777997c3.jpg', url: 'https://search.mi.com/search_%E5%A4%B4%E6%88%B4%E8%80%B3%E6%9C%BA'},
-        {name: '品牌耳机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4885bda69e45b870a5bcf5bbaea1548b.jpg', url: 'https://search.mi.com/search_%E5%93%81%E7%89%8C%E8%80%B3%E6%9C%BA'},
-        {name: '蓝牙音箱', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f7c7a9d73fb7b3cf93d3ae0dc2849f5e.jpg', url: 'https://search.mi.com/search_%E8%93%9D%E7%89%99%E9%9F%B3%E7%AE%B1'},
-        {name: '小米AI音箱', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/db89d422ef877cf7290616fef515e413.jpg', url: 'https://www.mi.com/aispeaker/'},
-        {name: '小米小爱音箱HD', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4df2fa022495e79f890a943a9d7e70a5.jpg', url: 'https://item.mi.com/product/9151.html'},
-        {name: 'k歌耳机', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a290d924c1bbd1e3ce64e96f497d4059.jpg', url: 'https://search.mi.com/search_k%E6%AD%8C%E8%80%B3%E6%9C%BA'},
-        {name: '小爱音箱 万能遥控版', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/cebeb2536e051c4792b57c07bf404c21.jpg', url: 'https://www.mi.com/aispeaker-control/?cfrom=search'},
-        {name: '小爱触屏音箱', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/abe665fafbef94eb3626ae8baf1de97e.jpg', url: 'https://www.mi.com/aispeaker-touch/?cfrom=search'}
+        {name: 'MIJIA K歌麦克风', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/435f8b56d41de210d1c4598f4f00fa50.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '打印机', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5ef6c2d63df78e140afab6ac3c088fac.jpg?thumb=1&w=50&h=50'},
+        {name: '小米路由器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/4670a965ac5f0dd32689e06c27cea78f.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: 'Redmi路由器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/399b717a9d27252f21e32a981403c1c0.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '智能家庭', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/aa7c5302bf6c8e040b084dee50fa699f.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '对讲机', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/21fedf7ba9019bce59cbc4856f907076.jpg?thumb=1&w=50&h=50'},
+        {name: '摄像机', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/067f4a6f0ffb264ed40734a97deae52d.jpg?thumb=1&w=50&h=50'},
+        {name: '智能门锁', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4fb7885d49255b93f7245aa53501294c.jpg?thumb=1&w=50&h=50'},
+        {name: '门铃/猫眼', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/b2f1afe3f26a673a736c0927fefe238a.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '小爱音箱', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3374a34421fad5466b98ea715f7d072c.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '家庭屏', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/7242436b36197a81d73b67ce6a5f26f5.png?thumb=1&w=50&h=50&f=webp&q=90'},
       ],
       life: [
-        {name: '双肩包', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f628feba0f2f8253f9cc41f9984194a7.jpg', url: 'https://search.mi.com/search_%E5%8F%8C%E8%82%A9%E5%8C%85'},
-        {name: '钱包', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5763f4e2fd983cd30d4976cc438f9d1e.jpg', url: 'https://search.mi.com/search_%E9%92%B1%E5%8C%85'},
-        {name: '旅行箱', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/ae3df443bfe6b9e634e8957264f6060c.jpg', url: 'https://search.mi.com/search_%E6%97%85%E8%A1%8C%E7%AE%B1'},
-        {name: '运动鞋', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e899d08e36c306570d4fe3c75df90a42.jpg', url: 'https://search.mi.com/search_%E8%BF%90%E5%8A%A8%E9%9E%8B'},
-        {name: '服饰', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/57d894d9d776e1bcb81681720e4294a9.jpg', url: 'https://search.mi.com/search_%E8%A1%A3%E7%89%A9'},
-        {name: '眼镜', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d521bd58668f66c50562b8fa8949f67c.jpg', url: 'https://search.mi.com/search_%E7%9C%BC%E9%95%9C'},
-        {name: '床垫', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/aba45662667dceaf4ba0e5b08f44d3a7.jpg', url: 'https://search.mi.com/search_%E5%BA%8A%E5%9E%AB'},
-        {name: '枕头', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/744306b95df4d130bdfc346ff2b3c871.png', url: 'https://search.mi.com/search_%E6%9E%95%E5%A4%B4'},
-        {name: '沙发', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a991c859604a4960744643eccde76c56.png', url: 'https://search.mi.com/search_%E6%B2%99%E5%8F%91'},
-        {name: '饰品', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d24d3886ab3d6b6187cb8a15db3308f4.jpg', url: 'https://search.mi.com/search_%E9%A5%B0%E5%93%81'},
-        {name: '螺丝刀', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/458169c8138413666feb860068ce1a56.jpg', url: 'https://search.mi.com/search_%E8%9E%BA%E4%B8%9D%E5%88%80'},
-        {name: '保温杯', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/813d173eff50a83abb8abd5abde5f5a6.jpg', url: 'https://item.mi.com/1174800007.html?cfrom=search'},
-        {name: '伞', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/395ffd04841f70b8bdf67339ba1dfc98.jpg', url: 'https://item.mi.com/product/6124.html'},
-        {name: '驱蚊器', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/59d3a701ac0bbb78f1b1d0ea7ebc7505.jpg', url: 'https://search.mi.com/search_%E9%A9%B1%E8%9A%8A%E5%99%A8'},
-        {name: '尤克里里', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2cb85b96b12395fdaa7bccaf8f94e758.jpg', url: 'https://item.mi.com/product/7716.html'},
-        {name: '毛巾/浴巾', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/21c3ec8638dd75f5c54f1a69864a1cc9.jpg', url: 'https://search.mi.com/search_%E6%AF%9B%E5%B7%BE'},
-        {name: '米兔', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/972026cd032be6da4093358f70c3f6ba.jpg', url: 'https://search.mi.com/search_%E7%B1%B3%E5%85%94'},
-        {name: '笔', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c9279a17e9399958420af64e449e3214.jpg', url: 'https://search.mi.com/search_%E7%AC%94'},
-        {name: '床', src: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e73794f2d870970b6d4acd9ce39c0f2b.jpg', url: 'https://item.mi.com/product/10000160.html'}
+        {name: '插座插排', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/458adc268050c17312da7c12328395e8.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '移动电源', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/8c55361386a46857f962e5142baeefcf.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '数据线', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/45dd7a2c4fc3d17d5d261ed3eed7cd15.jpg?thumb=1&w=50&h=50'},
+        {name: '穿戴配件', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9027b032a6afc6ba9d4d2acb962cb220.jpg?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '平板配件', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/49f1917ed50c197e7b27407a10256fa3.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '充电器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/864bcd18999a7b0fe22365f7ea7909e0.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '电池', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/10ec831749f1c657fc0a494feab15ed4.jpg?thumb=1&w=50&h=50'},
+        {name: '自拍杆', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2725e04c955dc060ac142fabbf809c1e.jpg?thumb=1&w=50&h=50'},
+        {name: '手机壳', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5c6e60e48edf17219724faad95963b93.jpg?thumb=1&w=50&h=50'},
+        {name: '手机贴膜', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e9e248c899fd895c9267f494ea1aaebf.jpg?thumb=1&w=50&h=50'},
+        {name: '无线充电器', src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/27074367aa02371a3c3c417c41195346.png?thumb=1&w=50&h=50&f=webp&q=90'},
+        {name: '其他配件', src: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/57d9989807dbc15c1a82bc49acc1f06f.jpg?thumb=1&w=50&h=50'},
       ]
     }
   },
@@ -268,29 +255,31 @@ export default {
 }
 </script>
 
-<style lang="less">
-  .menu-banner {
-    position: relative;
-    width: 1226px;
+<style scoped lang="less">
+.menu-banner {
+  position: relative;
+  width: 1226px;
+  height: auto;
+  margin: 0 auto;
+  
+  .menu-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 235px;
     height: auto;
-    margin: 0 auto;
-    .menu-container {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 235px;
-      height: auto;
-      background: rgb(172, 170, 170);
-      z-index: 1;
-    }
+    background: rgb(172, 170, 170);
+    z-index: 1;
   }
 
   .menu-list {
     padding: 20px 0;
     height: 388px;
+    
     .list-item {
       display: flex;
       padding-left: 30px;
+      
       &:hover {
         background-color: #ff6700;
       }
@@ -323,19 +312,22 @@ export default {
     top: 0;
     z-index: 11;
     border: 1px solid #e0e0e0;
-    box-shadow: 3px 8px 16px rgba( 0, 0, 0, 0.18);
+    box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.18);
+    
     .menu-info-list {
-      width: 248px;
+      width: 260px;
       height: 458px;
       margin: 0;
       padding: 0;
       list-style: none;
       background: #fff;
+      
       a {
         display: flex;
         padding: 18px 20px;
         line-height: 40px;
         color: #333;
+        
         img {
           width: 40px;
           height: 40px;
@@ -361,4 +353,5 @@ export default {
       }
     }
   }
+}
 </style>

@@ -114,13 +114,13 @@ export default {
 }
 </script>
 
-<style lang="less">
-  .footer-wrapper {
-    background: #f5f5f5;
-    /* 让内部内容居中显示 */
-    display: flex;
-    justify-content: center;
-  }
+<style scoped lang="less">
+.footer-wrapper {
+  background: #f5f5f5;
+  /* 让内部内容居中显示 */
+  display: flex;
+  justify-content: center;
+
   .site-info {
     position: relative;
     width: 1226px;
@@ -128,6 +128,7 @@ export default {
     margin: 0 auto;
     padding: 30px 0;
     font-size: 12px;
+
     .info-container {
       display: flex;
     }
@@ -138,70 +139,78 @@ export default {
       height: 19px;
       background: url('https://cdn.cnbj1.fds.api.mi-img.com/staticsfile/global/slogan2020.png') no-repeat center 0;
     }
-  }
 
-  .logo-footer {
-    height: 57px;
-    img {
-      width: 57px;
+    .logo-footer {
       height: 57px;
-      margin-right: 10px;
-      border-radius: 20px;
-    }
-  }
-
-.info-footer .info-link {
-  display: flex;
-  flex-wrap: wrap; /* 允许换行 */
-  
-  .info-item {
-    height: 18px;
-    line-height: 18px;
-    display: inline-block;
-    
-    &.second-line {
-      margin-top: 10px; /* 第二行与第一行的间距 */
-    }
-    
-    a {
-      display: inline-block;
-      color: #757575;
-      &:hover {
-        color: #ff6709;
+      
+      img {
+        width: 57px;
+        height: 57px;
+        margin-right: 10px;
+        border-radius: 20px;
       }
     }
 
-    .nav-span {
-      line-height: 18px;
-      margin-left: 2px;
-      margin-right: 2px;
+    .info-footer {
+      .info-link {
+        display: flex;
+        flex-wrap: wrap; /* 允许换行 */
+        
+        .info-item {
+          height: 18px;
+          line-height: 18px;
+          display: inline-block;
+          
+          &.second-line {
+            margin-top: 10px; /* 第二行与第一行的间距 */
+          }
+          
+          a {
+            display: inline-block;
+            color: #757575;
+            
+            &:hover {
+              color: #ff6709;
+            }
+          }
+
+          .nav-span {
+            line-height: 18px;
+            margin-left: 2px;
+            margin-right: 2px;
+          }
+        }
+      }
+
+      .info-license {
+        text-align: left;
+        
+        a, span {
+          margin-right: 4px;
+          line-height: 18px;
+          color: #b0b0b0;
+        }
+
+        a:hover {
+          color: #ff6709;
+        }
+      }
+
+      .info-logo {
+        display: flex;
+        text-align: left;
+        margin-top: 4px;
+        
+        a {
+          display: block;
+          
+          img {
+            width: auto;
+            height: 28px;
+          }
+        }
+      }
     }
   }
 }
-
-  .info-footer .info-license {
-    text-align: left;
-    a, span {
-      margin-right: 4px;
-      line-height: 18px;
-      color: #b0b0b0;
-    }
-
-    a:hover {
-      color: #ff6709;
-    }
-  }
-
-  .info-footer .info-logo {
-    display: flex;
-    text-align: left;
-    margin-top: 4px;
-    a {
-      display: block;
-      img{
-        width: auto;
-        height: 28px;
-      }
-    }
-  }
 </style>

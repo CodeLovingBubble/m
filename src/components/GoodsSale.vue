@@ -21,7 +21,7 @@ export default {
   data () {
     return {
       postItem1: {src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9e9c620dbad5c650b6ff0c573df76e14.jpg?thumb=1&w=1533&h=150&f=webp&q=90', url: 'https://www.mi.com/redminote7pro/'},
-      postItem7: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/88e35cffc82cd98cd53172460067af17.jpg?w=2452&h=240', url: 'https://item.mi.com/9836.html'},
+      postItem7: {src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/88e35cffc82cd98cd53172460067af17.jpg?thumb=1&w=1533&h=150&f=webp&q=90', url: 'https://item.mi.com/9836.html'},
       goodsItem1: {
         boxTitle: '手机',
         isHot: false,
@@ -278,18 +278,18 @@ export default {
 }
 </script>
 
-<style lang="less">
-  .goods-sale {
-      position: relative;
-      width: 100%;          /* 宽度占满全屏 */
-      background: #f5f5f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
-  }
+<style scoped lang="less">
+.goods-sale {
+  position: relative;
+  width: 100%;          /* 宽度占满全屏 */
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  .goods-sale-container {
-      width: 1226px; 
-      margin: 0 auto;
+  &-container {
+    width: 1226px; 
+    margin: 0 auto;
   }
+}
 </style>
