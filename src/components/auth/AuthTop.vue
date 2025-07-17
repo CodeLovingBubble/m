@@ -22,6 +22,8 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    padding: 0 20px; /* 新增：左右内边距 */
+    box-sizing: border-box; /* 确保padding不影响总宽度 */
 }
 
 .top-box-left {
@@ -46,6 +48,7 @@
 .top-box-right {
     display: flex;
     gap: 30px;
+    padding-right: 20px; /* 新增：右侧额外内边距 */
 }
 
 .top-box-right p {
