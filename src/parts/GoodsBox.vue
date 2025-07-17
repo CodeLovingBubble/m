@@ -243,7 +243,7 @@ export default {
     .promo-content .promo-one {
       a {
         display: block;
-        height: 695px;
+        height: 654px;
 
         img {
           height: 100%;
@@ -255,7 +255,7 @@ export default {
     .promo-two {
       a {
         display: block;
-        height: 340px;
+        height: 320px;
 
         img {
           width: 234px;
@@ -277,7 +277,7 @@ export default {
       .goods-item {
         background: #fff;
         height: 300px;
-        padding: 20px 0;
+        padding: 10px 0;
         width: 234px;
         margin-left: 14px;
         margin-bottom: 14px;
@@ -294,7 +294,7 @@ export default {
         justify-content: space-between;
         height: 103px;
         background: #fff;
-        padding: 30px 20px 30px 30px;
+        padding: 25px 20px 25px 30px;
         margin-bottom: 14px;
 
         img {
