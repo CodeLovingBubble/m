@@ -37,7 +37,7 @@
           </ul>
         </transition>
         <ul class="search-list" v-show="!hotsListFlag && focusFlag">
-          <li class="list-item" v-for="(item, index) in searchHistory.concat(searchHot)" :key="index" @click="handleListItemClick(item)">
+          <li class="list-item" v-for="(item, index) in searchHistory.concat(searchHot)" :key="index" @click.stop="handleListItemClick(item)">
             {{item}}
           </li>
         </ul>
@@ -211,25 +211,28 @@ export default {
     
     // 处理下拉词条点击
     handleListItemClick(item) {
-      // 先回填搜索框
       this.searchValue = item;
+      this.addToSearchHistory(item);
       
-      // 延迟执行其他操作，确保回填先完成
-      setTimeout(() => {
-        this.addToSearchHistory(item);
+      // 使用$nextTick确保DOM更新完成后再执行后续操作
+      this.$nextTick(() => {
         this.hotsListFlag = true;
         this.focusFlag = false;
         this.handleSearch();
-      }, 100);
+      });
     },
     
     // 处理热门词条点击
     handleHotItemClick(item) {
       this.searchValue = item;
       this.addToSearchHistory(item);
-      this.hotsListFlag = true;
-      this.focusFlag = false;
-      this.handleSearch();
+      
+      // 使用$nextTick确保DOM更新完成后再执行后续操作
+      this.$nextTick(() => {
+        this.hotsListFlag = true;
+        this.focusFlag = false;
+        this.handleSearch();
+      });
     },
     
     // 添加到搜索历史
@@ -341,6 +344,30 @@ export default {
     }
   }
 }
+
+        .search-hots {
+          position: absolute;
+          display: flex;
+          top: 14px;
+          right: 55px;
+          z-index: 2;
+          .hots-item {
+            width: auto;
+            height: 18px;
+            line-height: 18px;
+            padding: 0 5px;
+            font-size: 12px;
+            background: #eee;
+            color: #757575;
+            margin-right: 5px;
+            cursor: pointer;
+            &:hover {
+              color: #fff;
+              background: #ff6300;
+            }
+          }
+        }
+
         .search-btn {
           border: 1px solid #e0e0e0;
           cursor: pointer;
@@ -366,7 +393,7 @@ export default {
           .search-input,
           .search-btn,
             #kuan input[type="submit"] {
-              border-color: #ff6700; // 统一变为橙色
+              border: 1px solid #ff6700;
             }
           }
         }
@@ -376,33 +403,12 @@ export default {
           border: 1px solid #ff6700;
         }
 
-        .search-hots {
-          position: absolute;
-          display: flex;
-          top: 14px;
-          right: 55px;
-          z-index: 2;
-          .hots-item {
-            width: auto;
-            height: 18px;
-            line-height: 18px;
-            padding: 0 5px;
-            font-size: 12px;
-            background: #eee;
-            color: #757575;
-            margin-right: 5px;
-            cursor: pointer;
-            &:hover {
-              color: #fff;
-              background: #ff6300;
-            }
-          }
-        }
+
 
         .search-list {
           position: absolute;
           width: 240px;
-          top: 50px;
+          top: 35px;
           height: auto;
           border: 1px solid #ff6700;
           border-top: 0;
@@ -517,4 +523,4 @@ export default {
   .list-trans-enter-to, .list-trans-leave {
     opacity: 1;
   }
-</style>    
+</style>
