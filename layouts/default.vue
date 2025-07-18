@@ -33,6 +33,7 @@ import TopTop from '~/src/components/TopTop.vue';
             <MoreList />
             <MoreLun />
         </template>
+
         <slot />
         <template v-if="$route.path === '/cart'">
             <TopCom />
