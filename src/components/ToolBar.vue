@@ -14,15 +14,9 @@
         </div>
       </a>
 
-      <!-- 个人中心图标 -->
-      <NuxtLink 
-        v-else-if="item.value === '个人中心'" 
-        to="/user/portal" 
-        @mouseenter="iconHover(item)" 
-        @mouseleave="iconRecovery(item)"
-        class="tool-item"
-        @click.native="handleUserCenterClick"
-      >
+      <!-- 最后一个图标（返回顶部） -->
+      <a :href="item.url" v-else-if="index === barData.length - 1" v-show="scrollTop > windowHeight"
+        @mouseenter="iconHover(item)" @mouseleave="iconRecovery(item)" class="tool-item">
         <div class="tool-icon">
           <img :src="item.src" v-show="!item.hover">
           <img :src="item.hsrc" v-show="item.hover">
@@ -31,9 +25,22 @@
         <div class="tool-popup" v-show="isSmallScreen && item.hover">
           <span>{{ item.value }}</span>
         </div>
-      </NuxtLink>
+      </a>
 
-      <!-- 其他图标 -->
+      <!-- 个人中心图标 -->
+      <a v-else-if="item.value === '个人中心'" @click.prevent="navigateToLayouts" 
+        @mouseenter="iconHover(item)" @mouseleave="iconRecovery(item)" class="tool-item">
+        <div class="tool-icon">
+          <img :src="item.src" v-show="!item.hover">
+          <img :src="item.hsrc" v-show="item.hover">
+        </div>
+        <span class="tool-text">{{ item.value }}</span>
+        <div class="tool-popup" v-show="isSmallScreen && item.hover">
+          <span>{{ item.value }}</span>
+        </div>
+      </a>
+
+      <!-- 其他中间图标 -->
       <a :href="item.url" target="_blank" v-else @mouseenter="iconHover(item)" @mouseleave="iconRecovery(item)"
         class="tool-item">
         <div class="tool-icon">
@@ -49,91 +56,91 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      toolStatus: false,
-      windowHeight: 0,
-      scrollTop: 0,
-      isSmallScreen: false,
-      barData: [
-        { value: '手机App', hover: false, url: '#', src: 'https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png', hsrc: 'https://i8.mifile.cn/b2c-mimall-media/74c4fcb4475af8308e9a670db9c01fdf.png' },
-        { value: '个人中心', hover: false, url: '/user/portal', src: 'https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png', hsrc: 'https://i8.mifile.cn/b2c-mimall-media/41f858550f42eb1770b97faf219ae215.png' },
-        { value: '售后服务', hover: false, url: 'https://service.order.mi.com/apply/front', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png', hsrc: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/95fbf0081a06eec7be4d35e277faeca0.png' },
-        { value: '人工客服', hover: false, url: 'https://support.kefu.mi.com/', src: 'https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png', hsrc: 'https://i8.mifile.cn/b2c-mimall-media/5e9f2b1b0da09ac3b3961378284ef2d4.png' },
-        { value: '购物车', hover: false, url: 'https://static.mi.com/cart/', src: 'https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png', hsrc: 'https://i8.mifile.cn/b2c-mimall-media/692a6c3b0a93a24f74a29c0f9d68ec71.png' },
-        { value: '回顶部', hover: false, url: '#', src: 'https://i1.mifile.cn/f/i/2018/home/totop.png', hsrc: 'https://i1.mifile.cn/f/i/2018/home/totop_hover.png' }
-      ]
-    }
-  },
-methods: {
-    handleUserCenterClick() {
-      if (this.$route.path.startsWith('/user')) {
-      // 如果已经在个人中心，刷新当前页
-      this.$router.go(0)
-    } else {
-      // 否则跳转到个人中心portal页
-      this.$router.push('/user/portal')
-    }
-    },
-    getScrollTop() {
-      let scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
-      if (document.body) {
-        bodyScrollTop = document.body.scrollTop;
-      }
-      if (document.documentElement) {
-        documentScrollTop = document.documentElement.scrollTop;
-      }
-      scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
-      return scrollTop;
-    },
-    getScrollHeight() {
-      let scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
-      if (document.body) {
-        bodyScrollHeight = document.body.scrollHeight;
-      }
-      if (document.documentElement) {
-        documentScrollHeight = document.documentElement.scrollHeight;
-      }
-      scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
-      return scrollHeight;
-    },
-    getWindowHeight() {
-      let windowHeight = 0;
-      if (document.compatMode === "CSS1Compat") {
-        windowHeight = document.documentElement.clientHeight;
-      } else {
-        windowHeight = document.body.clientHeight;
-      }
-      return windowHeight;
-    },
-    checkScreenSize() {
-      this.isSmallScreen = window.innerWidth < 1226;
-    },
-    iconHover(item) {
-      item.hover = true;
-    },
-    iconRecovery(item) {
-      item.hover = false;
-    }
-  },
-  mounted() {
-    this.windowHeight = this.getWindowHeight();
-    this.checkScreenSize();
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'nuxt/app'
 
-    window.onresize = () => {
-      this.windowHeight = this.getWindowHeight();
-      this.checkScreenSize();
-    };
-    window.onscroll = () => {
-      this.scrollTop = this.getScrollTop();
-    }
+const router = useRouter()
+const toolStatus = ref(false)
+const windowHeight = ref(0)
+const scrollTop = ref(0)
+const isSmallScreen = ref(false)
+const barData = ref([
+  { value: '手机App', hover: false, url: '#', src: 'https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png', hsrc: 'https://i8.mifile.cn/b2c-mimall-media/74c4fcb4475af8308e9a670db9c01fdf.png' },
+  { value: '个人中心', hover: false, url: 'https://order.mi.com/portal', src: 'https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png', hsrc: 'https://i8.mifile.cn/b2c-mimall-media/41f858550f42eb1770b97faf219ae215.png' },
+  { value: '售后服务', hover: false, url: 'https://service.order.mi.com/apply/front', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png', hsrc: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/95fbf0081a06eec7be4d35e277faeca0.png' },
+  { value: '人工客服', hover: false, url: 'https://support.kefu.mi.com/', src: 'https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png', hsrc: 'https://i8.mifile.cn/b2c-mimall-media/5e9f2b1b0da09ac3b3961378284ef2d4.png' },
+  { value: '购物车', hover: false, url: 'https://static.mi.com/cart/', src: 'https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png', hsrc: 'https://i8.mifile.cn/b2c-mimall-media/692a6c3b0a93a24f74a29c0f9d68ec71.png' },
+  { value: '回顶部', hover: false, url: '#', src: 'https://i1.mifile.cn/f/i/2018/home/totop.png', hsrc: 'https://i1.mifile.cn/f/i/2018/home/totop_hover.png' }
+])
+
+const getScrollTop = () => {
+  let scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+  if (document.body) {
+    bodyScrollTop = document.body.scrollTop;
   }
+  if (document.documentElement) {
+    documentScrollTop = document.documentElement.scrollTop;
+  }
+  scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+  return scrollTop;
 }
+
+const getScrollHeight = () => {
+  let scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+  if (document.body) {
+    bodyScrollHeight = document.body.scrollHeight;
+  }
+  if (document.documentElement) {
+    documentScrollHeight = document.documentElement.scrollHeight;
+  }
+  scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+  return scrollHeight;
+}
+
+const getWindowHeight = () => {
+  let windowHeight = 0;
+  if (document.compatMode === "CSS1Compat") {
+    windowHeight = document.documentElement.clientHeight;
+  } else {
+    windowHeight = document.body.clientHeight;
+  }
+  return windowHeight;
+}
+
+const checkScreenSize = () => {
+  isSmallScreen.value = window.innerWidth < 1226;
+}
+
+const iconHover = (item) => {
+  item.hover = true;
+}
+
+const iconRecovery = (item) => {
+  item.hover = false;
+}
+
+const navigateToLayouts = () => {
+  router.push('/user/portal')
+}
+
+onMounted(() => {
+  windowHeight.value = getWindowHeight()
+  checkScreenSize()
+
+  window.onresize = () => {
+    windowHeight.value = getWindowHeight()
+    checkScreenSize()
+  }
+
+  window.onscroll = () => {
+    scrollTop.value = getScrollTop()
+  }
+})
 </script>
 
 <style lang="less" scoped>
+// 样式部分保持不变...
 .tool-bar {
   position: fixed;
   right: 10px;

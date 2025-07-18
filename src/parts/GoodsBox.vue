@@ -103,38 +103,47 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      selectItem: '',
-      goodsData: ''
-    }
-  },
-  props: ['goodsItem'],
-  methods: {
-    selectType(item) {
-      this.selectItem = item;
-      this.goodsData = this.goodsItem.listData[item.type];
-    },
-    init() {
-      if (this.goodsItem.tabList) {
-        this.selectItem = this.goodsItem.tabList[0];
-        this.goodsData = this.goodsItem.listData.hots;
-      } else {
-        this.selectItem = '';
-        this.goodsData = '';
-      }
-    },
-    // 新增路由跳转方法
-    goToMore() {
-      navigateTo('/more')
-    }
-  },
-  mounted() {
-    this.init();
-  },
+<script setup>
+import { ref, onMounted } from 'vue'
+
+// 定义props
+const props = defineProps({
+  goodsItem: {
+    type: Object,
+    required: true
+  }
+})
+
+// 定义响应式数据
+const selectItem = ref('')
+const goodsData = ref('')
+
+// 初始化方法
+const init = () => {
+  if (props.goodsItem.tabList) {
+    selectItem.value = props.goodsItem.tabList[0]
+    goodsData.value = props.goodsItem.listData.hots
+  } else {
+    selectItem.value = ''
+    goodsData.value = ''
+  }
 }
+
+// 选择类型方法
+const selectType = (item) => {
+  selectItem.value = item
+  goodsData.value = props.goodsItem.listData[item.type]
+}
+
+// 路由跳转方法
+const goToMore = () => {
+  navigateTo('/more')
+}
+
+// 生命周期钩子
+onMounted(() => {
+  init()
+})
 </script>
 
 <style lang="less">

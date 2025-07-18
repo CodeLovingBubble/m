@@ -4,60 +4,76 @@
     <div class="banner-next" @click="next"></div>
     <transition-group tag="ul" name="banner-trans" class="banner-container">
       <li class="image-container"
-      v-for="(item, index) in banners"
-      v-show="index === imgIndex"
-      :key="index">
+          v-for="(item, index) in banners"
+          v-show="index === imgIndex"
+          :key="index">
         <a :href="item.url" target="_blank">
-          <img :src="item.src" />
+          <img :src="item.src" :alt="item.alt || '轮播图'" />
         </a>
       </li>
     </transition-group>
     <div class="banner-points">
-      <a class="banner-point" @click="jump(index)" :class="{'active': index === imgIndex}" v-for="(item, index) in banners.length" :key="index"></a>
+      <a class="banner-point" @click="jump(index)" :class="{'active': index === imgIndex}" v-for="(item, index) in banners" :key="index"></a>
     </div>
   </div>
 </template>
 
-<script>//实现轮播图
-export default {
-  data () {
-    return {
-      imgIndex: 0,
-      timer: '',
-    }
-  },
-  props: ['banners'],
-  methods: {
-    next () {
-      const lastPage = this.banners.length - 1;
-			if (this.imgIndex < lastPage) {
-				this.imgIndex += 1;
-			} else {
-				this.imgIndex = 0;
-			}
-    },
-    prev () {
-      const lastPage = this.banners.length - 1;
-			if (this.imgIndex > 0) {
-				this.imgIndex -= 1;
-			} else {
-				this.imgIndex = lastPage;
-			}
-    },
-    play () {
-			clearInterval(this.timer);
-			this.timer = setInterval(() => {
-				this.next();
-			}, 5000);
-    },
-    jump (index) {
-      this.imgIndex = index;
-    }
-  },
-  mounted () {
-    this.play();
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// 定义props
+const props = defineProps({
+  banners: {
+    type: Array,
+    required: true
+  }
+})
+
+// 状态管理
+const imgIndex = ref(0)
+let timer = null
+
+// 下一张
+const next = () => {
+  const lastPage = props.banners.length - 1
+  if (imgIndex.value < lastPage) {
+    imgIndex.value += 1
+  } else {
+    imgIndex.value = 0
   }
 }
+
+// 上一张
+const prev = () => {
+  const lastPage = props.banners.length - 1
+  if (imgIndex.value > 0) {
+    imgIndex.value -= 1
+  } else {
+    imgIndex.value = lastPage
+  }
+}
+
+// 自动播放
+const play = () => {
+  clearInterval(timer)
+  timer = setInterval(() => {
+    next()
+  }, 5000)
+}
+
+// 跳转到指定页
+const jump = (index) => {
+  imgIndex.value = index
+}
+
+// 生命周期钩子
+onMounted(() => {
+  play()
+})
+
+onUnmounted(() => {
+  clearInterval(timer)
+})
 </script>
 
 <style lang="less" scoped>
@@ -102,21 +118,18 @@ export default {
 
   &-points {
     position: absolute;
-    display: inline-block;
-    width: 400px;
     right: 30px;
     bottom: 20px;
-    text-align: right;
     z-index: 10;
+    display: flex;  // 使用flex布局替代固定宽度
+    gap: 8px;       // 设置点之间的间距
     
-    &-point {
-      display: inline-block;
+    .banner-point {
       width: 10px;
       height: 10px;
       border: 2px solid hsla(0, 0%, 100%, 0.3);
       border-radius: 50%;
       background: rgba(0, 0, 0, 0.4);
-      margin: 0 4px;
       cursor: pointer;
       transition: all 0.3s;
       
@@ -172,4 +185,4 @@ export default {
     opacity: 1;
   }
 }
-</style>
+</style>  

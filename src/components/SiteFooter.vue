@@ -2,8 +2,8 @@
   <div class="site-footer">
     <ul class="site-service">
       <li class="service-item"
-      v-for="(item, index) in serviceInfo"
-      :key="index">
+          v-for="(item, index) in serviceInfo"
+          :key="index">
         <a :href="item.url" target="_blank">
           <i :class="item.font"></i>
           <span>{{item.value}}</span>
@@ -13,13 +13,13 @@
     <div class="site-link">
       <div class="links">
         <div class="link-container"
-        v-for="(list, key) in serviceLink"
-        :key="key">
+             v-for="(list, key) in serviceLink"
+             :key="key">
           <span class="link-title">{{list.value}}</span>
           <ul class="link-list">
             <li class="link-item"
-            v-for="(item, index) in list.subLinks"
-            :key="index">
+                v-for="(item, index) in list.subLinks"
+                :key="index">
               <a :href="item.url" @click="showWindow" v-if="item.value === '官方微信'">
                 {{item.value}}
               </a>
@@ -31,95 +31,93 @@
         </div>
       </div>
       <div class="contact-column">
-    <div class="link-contact">
-      <p class="phone">950816</p>
-      <p class="desc">8:00-18:00（仅收市话费）</p>
-      <a href="https://support.kefu.mi.com/" target="_blank">
-        <i class="iconfont icon-icon-test1"></i>
-        <span>人工客服</span>
-      </a>
-    </div>
-    <div class="link-contact">
-      <p class="phone">950816</p>
-      <p class="desc">8:00-18:00（仅收市话费）</p>
-      <p class="desc1">手机适用于：Xiaomi MIX Fold系列、</p>
-      <p class="desc2">MIX Flip系列、数字12系列及以上</p>
-      <p class="desc3">电视适用于：98寸、100寸电视</p>
-      <a href="https://support.kefu.mi.com/" target="_blank">
-        <i class="iconfont icon-icon-test1"></i>
-        <span>人工客服</span>
-      </a>
-    </div>
-  </div>
+        <div class="link-contact">
+          <p class="phone">950816</p>
+          <p class="desc">8:00-18:00（仅收市话费）</p>
+          <a href="https://support.kefu.mi.com/" target="_blank">
+            <i class="iconfont icon-icon-test1"></i>
+            <span>人工客服</span>
+          </a>
+        </div>
+        <div class="link-contact">
+          <p class="phone">950816</p>
+          <p class="desc">8:00-18:00（仅收市话费）</p>
+          <p class="desc1">手机适用于：Xiaomi MIX Fold系列、</p>
+          <p class="desc2">MIX Flip系列、数字12系列及以上</p>
+          <p class="desc3">电视适用于：98寸、100寸电视</p>
+          <a href="https://support.kefu.mi.com/" target="_blank">
+            <i class="iconfont icon-icon-test1"></i>
+            <span>人工客服</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import bus from '@/src/bus.js'
 
-export default {
-  data () {
-    return {
-      serviceInfo: [
-        {value: '预约维修服务', font:'iconfont icon-buoumaotubiao46', url: 'https://www.mi.com/static/fast/'},
-        {value: '7天无理由退货', font:'iconfont icon-7tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back'},
-        {value: '15天免费换货', font:'iconfont icon-15tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back'},
-        {value: '满69元包邮', font:'iconfont icon-liwu', url: 'https://www.mi.com/service/buy/postage/'},
-        {value: '1100余家售后网点', font:'iconfont icon-icon-test', url: 'https://www.mi.com/static/maintainlocation/'}
-      ],
-      serviceLink: [
-        {value: '选购指南', subLinks: [
-          {value: '手机', url: 'https://www.mi.com/service/account/Account%20registration/'},
-          {value: '电视', url: 'https://www.mi.com/service/buy/SalesTime/'},
-          {value: '平板', url: 'https://www.mi.com/service/order/sendprogress/'},
-          {value: '穿戴', url: 'https://www.mi.com/service/order/sendprogress/'},
-          {value: '耳机', url: 'https://www.mi.com/service/order/sendprogress/'},
-          {value: '家电', url: 'https://www.mi.com/service/order/sendprogress/'},
-          {value: '路由器', url: 'https://www.mi.com/service/order/sendprogress/'},
-          {value: '音箱', url: 'https://www.mi.com/service/order/sendprogress/'},
-          {value: '配件', url: 'https://www.mi.com/service/order/sendprogress/'},
-        ]},
-        {value: '服务中心', subLinks: [
-          {value: '申请售后', url: 'https://www.mi.com/service/exchange'},
-          {value: '售后政策', url: 'https://www.mi.com/service/exchange'},
-          {value: '服务价格', url: 'https://www.mi.com/service/'},
-          {value: '订单查询', url: 'https://www.mi.com/c/service/download/'},
-          {value: '以旧换新', url: 'https://order.mi.com/service/imei'},
-          {value: '保障服务', url: 'https://order.mi.com/service/imei'},
-          {value: '防伪查询', url: 'https://order.mi.com/service/imei'},
-          {value: 'F 码通道', url: 'https://www.mi.com/order/fcode'}
-        ]},
-        {value: '线下门店', subLinks: [
-          {value: '小米之家', url: 'https://www.mi.com/c/xiaomizhijia/'},
-          {value: '服务网点', url: 'https://www.mi.com/static/maintainlocation/'},
-          {value: '授权体验店/专区', url: 'https://www.mi.com/static/familyLocation/'}
-        ]},
-        {value: '关于小米', subLinks: [
-          {value: '了解小米', url: 'https://www.mi.com/about/'},
-          {value: '加入小米', url: 'https://hr.xiaomi.com/'},
-          {value: '投资者关系', url: 'https://company.mi.com/zh-cn/ir/indexContent/index.html'},
-          {value: 'ESG与可持续发展', url: 'https://hr.xiaomi.com/'},
-          {value: '廉洁举报', url: 'https://hr.xiaomi.com/'}
-        ]},
-        {value: '关注我们', subLinks: [
-          {value: '新浪微博', url: 'https://weibo.com/xiaomishangcheng'},
-          {value: '官方微信', url: 'javascript:void(0);'},
-          {value: '联系我们', url: 'https://www.mi.com/about/contact/'},
-          {value: '公益基金会', url: 'https://www.mi.com/about/contact/'}
-        ]}
-      ]
-    }
-  },
-  methods: {
-    showWindow () {
-      bus.$emit('weChatWindowEvent', true);
-    }
-  }
+// 定义数据
+const serviceInfo = ref([
+  {value: '预约维修服务', font:'iconfont icon-buoumaotubiao46', url: 'https://www.mi.com/static/fast/'},
+  {value: '7天无理由退货', font:'iconfont icon-7tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back'},
+  {value: '15天免费换货', font:'iconfont icon-15tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back'},
+  {value: '满69元包邮', font:'iconfont icon-liwu', url: 'https://www.mi.com/service/buy/postage/'},
+  {value: '1100余家售后网点', font:'iconfont icon-icon-test', url: 'https://www.mi.com/static/maintainlocation/'}
+])
+
+const serviceLink = ref([
+  {value: '选购指南', subLinks: [
+    {value: '手机', url: 'https://www.mi.com/service/account/Account%20registration/'},
+    {value: '电视', url: 'https://www.mi.com/service/buy/SalesTime/'},
+    {value: '平板', url: 'https://www.mi.com/service/order/sendprogress/'},
+    {value: '穿戴', url: 'https://www.mi.com/service/order/sendprogress/'},
+    {value: '耳机', url: 'https://www.mi.com/service/order/sendprogress/'},
+    {value: '家电', url: 'https://www.mi.com/service/order/sendprogress/'},
+    {value: '路由器', url: 'https://www.mi.com/service/order/sendprogress/'},
+    {value: '音箱', url: 'https://www.mi.com/service/order/sendprogress/'},
+    {value: '配件', url: 'https://www.mi.com/service/order/sendprogress/'},
+  ]},
+  {value: '服务中心', subLinks: [
+    {value: '申请售后', url: 'https://www.mi.com/service/exchange'},
+    {value: '售后政策', url: 'https://www.mi.com/service/exchange'},
+    {value: '服务价格', url: 'https://www.mi.com/service/'},
+    {value: '订单查询', url: 'https://www.mi.com/c/service/download/'},
+    {value: '以旧换新', url: 'https://order.mi.com/service/imei'},
+    {value: '保障服务', url: 'https://order.mi.com/service/imei'},
+    {value: '防伪查询', url: 'https://order.mi.com/service/imei'},
+    {value: 'F 码通道', url: 'https://www.mi.com/order/fcode'}
+  ]},
+  {value: '线下门店', subLinks: [
+    {value: '小米之家', url: 'https://www.mi.com/c/xiaomizhijia/'},
+    {value: '服务网点', url: 'https://www.mi.com/static/maintainlocation/'},
+    {value: '授权体验店/专区', url: 'https://www.mi.com/static/familyLocation/'}
+  ]},
+  {value: '关于小米', subLinks: [
+    {value: '了解小米', url: 'https://www.mi.com/about/'},
+    {value: '加入小米', url: 'https://hr.xiaomi.com/'},
+    {value: '投资者关系', url: 'https://company.mi.com/zh-cn/ir/indexContent/index.html'},
+    {value: 'ESG与可持续发展', url: 'https://hr.xiaomi.com/'},
+    {value: '廉洁举报', url: 'https://hr.xiaomi.com/'}
+  ]},
+  {value: '关注我们', subLinks: [
+    {value: '新浪微博', url: 'https://weibo.com/xiaomishangcheng'},
+    {value: '官方微信', url: 'javascript:void(0);'},
+    {value: '联系我们', url: 'https://www.mi.com/about/contact/'},
+    {value: '公益基金会', url: 'https://www.mi.com/about/contact/'}
+  ]}
+])
+
+// 方法
+const showWindow = () => {
+  bus.$emit('weChatWindowEvent', true)
 }
 </script>
 
 <style scoped lang="less">
+// 保持原有样式不变
 .site-footer {
   position: relative;
   width: 1226px;
@@ -273,4 +271,4 @@ export default {
     }
   }
 }
-</style>
+</style>  

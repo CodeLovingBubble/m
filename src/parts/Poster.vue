@@ -1,21 +1,26 @@
 <template>
   <div class="sale-poster">
     <a :href="postItem.url" target="_blank">
-      <img :src="postItem.src">
+      <img :src="postItem.src" :alt="postItem.alt || '促销海报'">
     </a>
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {}
-  },
-  props: ['postItem']
-}
+<script setup>
+import { defineProps } from 'vue'
+
+// 定义props
+const props = defineProps({
+  postItem: {
+    type: Object,
+    required: true,
+    default: () => ({})
+  }
+})
 </script>
 
 <style lang="less" scoped>
+// 保持原有样式不变
 .sale-poster {
   width: 100%;
   height: 120px;
@@ -30,19 +35,19 @@ export default {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
-  &-link {
+  a {
     display: block;
     width: 100%;
     height: 100%;
     
-    &-image {
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
-    &:hover &-image {
+    &:hover img {
       transform: scale(1.02);
     }
   }
@@ -54,4 +59,4 @@ export default {
     margin: 16px 0;
   }
 }
-</style>
+</style>  

@@ -8,7 +8,7 @@
 } */
 </style>
 
-<script>
+<script setup>
 definePageMeta({
     layout: 'more'
 })

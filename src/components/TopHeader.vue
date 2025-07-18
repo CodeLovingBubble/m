@@ -307,96 +307,81 @@ export default {
         }
       }
 
-      .header-search-container {
-        height: 50px;
-        position: relative;
-        display: flex;
-        cursor: pointer;
-        .search-input {
-          cursor: pointer;
-          padding-left: 10px; 
-          width: 240px;
-          height: 100%;
-          outline: none;
-          font-size: 15px;
-          border: 1px solid #e0e0e0;
-        }
+  .header-search-container {
+    height: 50px;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    
+    .search-input {
+      cursor: pointer;
+      padding-left: 10px; 
+      width: 240px;
+      height: 100%;
+      outline: none;
+      font-size: 15px;
+      border: 1px solid #e0e0e0;
+      transition: all 0.3s ease;
+      
+      &:focus {
+        border-color: #ff6700;
+      }
+    }
 
     #kuan {
-  input[type="submit"] {
-    height: 49px;
-    width: 50px;
-    border: 1px solid #e0e0e0;
-    margin-top: 0px;
-    background-color: #fff;
-    /* 默认状态图片 */
-    background-image: url('https://i.postimg.cc/G3FQtqGh/image.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:55px;
-    color: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background-image: url('https://i.postimg.cc/Y0dLgGt8/image.png');
-      border: 1px solid #ff6700;
+      input[type="submit"] {
+        height: 50px;
+        width: 50px;
+        border: 1px solid #e0e0e0;
+        border-left: none; /* 移除左侧边框，避免与输入框重叠 */
+        background-color: #fff;
+        background-image: url('https://i.postimg.cc/G3FQtqGh/image.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 55px;
+        color: transparent;
+        cursor: pointer;
+        
+        
+        &:hover {
+          background-image: url('https://i.postimg.cc/Y0dLgGt8/image.png');
+          background-color: #ff6700;
+          border-color: #ff6700;
+        }
+      }
     }
-  }
-}
 
-        .search-hots {
-          position: absolute;
-          display: flex;
-          top: 14px;
-          right: 55px;
-          z-index: 2;
-          .hots-item {
-            width: auto;
-            height: 18px;
-            line-height: 18px;
-            padding: 0 5px;
-            font-size: 12px;
-            background: #eee;
-            color: #757575;
-            margin-right: 5px;
-            cursor: pointer;
-            &:hover {
-              color: #fff;
-              background: #ff6300;
-            }
-          }
+    /* 当输入框聚焦时，同时改变输入框和按钮的边框颜色 */
+    .search-input:focus + .search-btn,
+    .search-input:focus + .search-btn + #kuan input[type="submit"] {
+      border-color: #ff6700;
+    }
+
+    .search-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 49px;
+      border: 1px solid #e0e0e0;
+      border-left: none;
+      background: #fff;
+      transition: all 0.3s ease;
+      
+      i {
+        font-size: 19px;
+        color: #616161;
+        
+        &:hover {
+          color: #fff;
         }
-
-        .search-btn {
-          border: 1px solid #e0e0e0;
-          cursor: pointer;
-          i {
-            font-size: 19px;
-            width: 48px;
-            background: #fff;
-            color: #616161;
-            line-height: 48px;
-
-            &:hover {
-              background:#ff6700;
-              color: #fff;
-              transition: all .20s ease;
-            }
-          }
-
-          &:hover {
-            border: 1px solid #ff6700;
-            transition: all .20s ease;
-          }
-          &:focus-within {
-          .search-input,
-          .search-btn,
-            #kuan input[type="submit"] {
-              border: 1px solid #ff6700;
-            }
-          }
-        }
+      }
+      
+      &:hover {
+        background: #ff6700;
+        border-color: #ff6700;
+      }
+    }
 
         .active {
           transition: all .20s ease;

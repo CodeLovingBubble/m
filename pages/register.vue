@@ -54,83 +54,11 @@ definePageMeta({
 
 <style scoped>
 .auth-page {
-    width: 300px; /* 添加固定宽度 */
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
-    font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-}
-
-.select-box {
-    background-color: #f7f7f7;
-}
-
-.phone-input-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    align-items: flex-end;
-}
-
-.country-code-group {
-    flex: 0 0 120px;
-}
-
-.country-code-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #666;
-}
-
-.phone-number-group {
-    flex: 1;
-}
-
-.phone-number-group input,
-.verification-row input,
-.select-box {
-    width: 100%;
-    height: 42px;
-    padding: 0 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-.phone-number-group input {
-    margin-top: 0;
-    background-color: #f7f7f7;
-}
-
-.verification-row {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.verification-row input {
-    padding-right: 110px;
-    background-color: #f7f7f7;
-}
-
-.code-btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100px;
-    background: none;
-    border: none;
-    border-left: 1px solid #e0e0e0;
-    color: #ff6700;
-    cursor: pointer;
-}
-
-.auth-page {
-    max-width: 400px;
     padding: 20px;
     font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
 }
@@ -191,34 +119,76 @@ definePageMeta({
     padding: 12px 15px;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
+    background-color: #f7f7f7;
 }
 
-.input-group {
+.phone-input-row {
+    display: flex;
+    gap: 0; /* 移除间隙 */
     margin-bottom: 20px;
-    position: relative;
+    align-items: flex-end;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
+.country-code-group {
+    flex: 0 0 120px;
+}
+
+.country-code-group label {
+    display: block;
+    margin-bottom: 5px;
     font-size: 14px;
+    color: #666;
 }
 
-.input-group.with-code input {
-    padding-right: 100px;
+.country-code-group .select-box {
+    border-radius: 4px 0 0 4px; /* 左圆角 */
+    border-right: 0; /* 移除右边框 */
+}
+
+.phone-number-group {
+    flex: 1;
+}
+
+.phone-number-group input {
+    border-radius: 0 4px 4px 0; /* 右圆角 */
+}
+
+.phone-number-group input,
+.verification-row input {
+    width: 100%;
+    height: 44px;
+    padding: 0 15px;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #f7f7f7;
+}
+
+.verification-row {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.verification-row input {
+    padding-right: 110px;
 }
 
 .code-btn {
     position: absolute;
-    right: 5px;
-    top: 5px;
-    padding: 6px 10px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 32px;
+    margin: 0 5px;
+    padding: 0 10px;
     background: none;
     border: none;
+    border-left: 1px solid #e0e0e0;
     color: #ff6700;
-    cursor: button;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
 }
 
 .agreement {
@@ -267,3 +237,4 @@ definePageMeta({
     color: #ff6700;
 }
 </style>
+    

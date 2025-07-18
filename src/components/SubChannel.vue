@@ -14,7 +14,7 @@
       <ul class="promo-list">
         <li class="promo-item" v-for="(item, index) in promoList" :key="index">
           <a :href="item.url" target="_blank">
-            <img :src="item.src" alt="item.value">
+            <img :src="item.src" :alt="item.value"> <!-- 修复了alt绑定 -->
           </a>
         </li>
       </ul>
@@ -22,29 +22,28 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      channelList: [
-        {value: '小米秒杀', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48', url: 'https://www.mi.com/seckill/'},
-        {value: '企业团购', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48', url: 'https://qiye.mi.com/'},
-        {value: 'F码通道', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48', url: 'https://order.mi.com/f'},
-        {value: '米粉卡', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48', url: 'https://www.mi.com/mimobile/'},
-        {value: '以旧换新', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48', url: 'https://huanxin.mi.com/'},
-        {value: '话费充值', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48', url: 'https://recharge.10046.mi.com/'}
-      ],
-      promoList: [
-        {value: 'Redmi 7A', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e981f78d2ac17c504975a719cb8b069d.png?w=632&h=340', url: 'https://www.mi.com/redmi7a/'},
-        {value: '小米MIX3', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7404444f0c79b4bbb63e07724f502b86.png?w=632&h=340', url: 'https://www.mi.com/mix3/'},
-        {value: '小米手环4', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6b0c7fadbd84a808287af5faad6e62d7.png?w=632&h=340', url: 'https://www.mi.com/shouhuan4/'}
-      ]
-    }
-  }
-}
+<script setup>
+import { ref } from 'vue'
+
+// 定义数据
+const channelList = ref([
+  {value: '小米秒杀', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48', url: 'https://www.mi.com/seckill/'},
+  {value: '企业团购', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48', url: 'https://qiye.mi.com/'},
+  {value: 'F码通道', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48', url: 'https://order.mi.com/f'},
+  {value: '米粉卡', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48', url: 'https://www.mi.com/mimobile/'},
+  {value: '以旧换新', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48', url: 'https://huanxin.mi.com/'},
+  {value: '话费充值', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48', url: 'https://recharge.10046.mi.com/'}
+])
+
+const promoList = ref([
+  {value: 'Redmi 7A', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e981f78d2ac17c504975a719cb8b069d.png?w=632&h=340', url: 'https://www.mi.com/redmi7a/'},
+  {value: '小米MIX3', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7404444f0c79b4bbb63e07724f502b86.png?w=632&h=340', url: 'https://www.mi.com/mix3/'},
+  {value: '小米手环4', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6b0c7fadbd84a808287af5faad6e62d7.png?w=632&h=340', url: 'https://www.mi.com/shouhuan4/'}
+])
 </script>
 
 <style scoped lang="less">
+// 保持原有样式不变
 .sub-channel {
   position: relative;
   width: 1226px;
@@ -144,4 +143,4 @@ export default {
     }
   }
 }
-</style>
+</style>  
