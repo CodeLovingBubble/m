@@ -22,9 +22,9 @@ definePageMeta({
 
 /* 标题样式：字号、颜色、间距 */
 .recharge-title {
-    font-size: 20px;
+    font-size: 30px;
     /* 标题字号（比描述大） */
-    color: #999;
+    color: #757575;
     /* 浅灰色，突出层级 */
     margin: 0 0 16px 0;
     /* 与下方描述的间距 */
@@ -34,7 +34,7 @@ definePageMeta({
 
 /* 空状态描述：字号、颜色 */
 .empty-desc {
-    font-size: 14px;
+    font-size: 18px;
     /* 描述字号（比标题小） */
     color: #666;
     /* 稍深灰色，区分层级 */

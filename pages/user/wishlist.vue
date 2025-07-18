@@ -1,7 +1,7 @@
 <template>
     <div class="order-review">
-        <h2 class="review-title">订单评价</h2>
-        <p class="empty-tip">暂时没有符合条件的商品。</p>
+        <h2 class="review-title">喜欢的商品</h2>
+        <p class="empty-tip">您暂未收藏任何商品。</p>
     </div>
 </template>
 

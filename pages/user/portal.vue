@@ -65,8 +65,8 @@ const bindEmail = () => {
 
 .section-header h2 {
     margin: 0;
-    font-size: 18px;
-    color: #333;
+    font-size: 30px;
+    color: #757575;
 }
 
 .info-cards {

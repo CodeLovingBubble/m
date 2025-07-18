@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'user' // 强制使用user布局
+    layout: 'user' // 根据实际项目布局调整
 })
 import { ref, computed } from 'vue'
 
@@ -57,7 +57,7 @@ const hasOrders = computed(() => false) // 模拟空状态
 <style scoped>
 /* 全局容器 */
 .orders-page {
-    padding: 30px 20px;
+    padding: 30px 30px;
     background: #fff;
     min-height: calc(100vh - 60px);
 }
@@ -70,8 +70,8 @@ const hasOrders = computed(() => false) // 模拟空状态
 }
 
 .title {
-    font-size: 20px;
-    color: #333;
+    font-size: 30px;
+    color: #757575;
     font-weight: 600;
     margin: 0;
 }
@@ -106,10 +106,10 @@ const hasOrders = computed(() => false) // 模拟空状态
 }
 
 .tabs span {
-    font-size: 14px;
+    font-size: 16px;
     color: #999;
     cursor: pointer;
-    padding: 0 12px;
+    padding: 0 5px;
 }
 
 .tabs span.active {
@@ -149,7 +149,7 @@ const hasOrders = computed(() => false) // 模拟空状态
     border: none;
     background: #fff;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
     color: #666;
 }
 

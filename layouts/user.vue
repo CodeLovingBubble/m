@@ -75,17 +75,17 @@ const sidebarData = [
     {
         title: '售后服务',
         items: [
-            { id: 'service-record', name: '服务记录', route: '/user/service-records' },
-            { id: 'apply-service', name: '申请服务', route: '/user/apply-service' },
-            { id: 'courier-reimburse', name: '领取快递报销', route: '/user/courier-reimburse' }
+            { id: 'service-record', name: '服务记录', route: '/user/records' },
+            { id: 'apply-service', name: '申请服务', route: '/user/apply' },
+            { id: 'courier-reimburse', name: '领取快递报销', route: '/user/quick' }
         ]
     },
     {
         title: '账户管理',
         items: [
-            { id: 'personal-info', name: '个人信息', route: '/user/personal-info' },
-            { id: 'change-password', name: '修改密码', route: '/user/change-password' },
-            { id: 'cancel-service', name: '注销服务', route: '/user/cancel-service' }
+            { id: 'personal-info', name: '个人信息', route: '/user/personal' },
+            { id: 'change-password', name: '修改密码', route: '/user/change' },
+            { id: 'cancel-service', name: '注销服务', route: '/user/cancel' }
         ]
     }
 ]
