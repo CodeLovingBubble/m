@@ -31,7 +31,7 @@
           </li>
         </ul>
       </div>
-    <banner :banners="banners"></banner>
+    <banner :banners="banners"></banner> <!-- 轮播图组件 -->
   </div>
 </template>
 
@@ -41,8 +41,8 @@ import Banner from '../parts/Banner'
 export default {
   data () {
     return {
-      bannerMenuFlag: false,
-      menuTimer: '',
+      bannerMenuFlag: false,// 控制二级菜单显示/隐藏的开关（true：显示；false：隐藏）
+      menuTimer: '',// 延迟隐藏定时器（用于解决鼠标快速切换时菜单闪烁问题）
       listInfoData: [],
       menus: [
         {value: '手机', url: 'https://www.mi.com/p/1915.html', type: 'phone'},
@@ -230,7 +230,7 @@ export default {
       }, 300);
     },
     bannerMenuShow (type) {
-      if (type) {
+      if (type) {// 若传入type（从主菜单点击触发），则加载对应分类的二级菜单数据
         this.listInfoData = this[type];
       }
 
@@ -239,10 +239,10 @@ export default {
     }
   },
   computed: {
-    menuListMatch () {
+    menuListMatch () {//二维数组
       if (this.listInfoData && this.listInfoData.length) {
         const matchData = [];
-        for (let i = 0; i < this.listInfoData.length; i += 6) {
+        for (let i = 0; i < this.listInfoData.length; i += 6) {// 遍历数据，每6项切分一次
           matchData.push(this.listInfoData.slice(i, i + 6));
         }
         return matchData;

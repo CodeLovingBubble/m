@@ -5,11 +5,13 @@
                 <h2 class="title">为您推荐</h2>
             </div>
             <div class="product-container">
+                <!-- 遍历商品数据，生成每个商品项 -->
                 <div v-for="(product, index) in products" :key="index" class="product-item">
                     <div class="product-card">
                         <img :src="product.image" alt="商品图片" class="product-image">
                         <h3 class="product-name">{{ product.name }}</h3>
                         <p class="product-price">{{ product.price }}</p>
+                        <!-- 描述与加入购物车按钮容器（悬停交互核心区域） -->
                         <div class="desc-container">
                             <p class="product-desc">{{ product.desc }}</p>
                             <button class="add-to-cart">加入购物车</button>
@@ -159,17 +161,17 @@
     font-size: 12px;
     cursor: pointer;
     transition: all 0.3s;
-    opacity: 0;
+    opacity: 0;/* 完全透明 */
     margin-top: 0px;
 }
 
 .desc-container:hover .product-desc {
-    transform: translateY(-100%);
+    transform: translateY(-100%);/* 向上移动，移出容器（隐藏） */
 }
 
 .desc-container:hover .add-to-cart {
     top: 0;
-    opacity: 1;
+    opacity: 1;/* 完全显示 */
 }
 </style>
 

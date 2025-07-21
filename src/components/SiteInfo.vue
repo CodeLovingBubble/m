@@ -113,7 +113,6 @@ const showLocationWindow = () => {
 </script>
 
 <style scoped lang="less">
-// 保持原有样式不变
 .footer-wrapper {
   background: #f5f5f5;
   /* 让内部内容居中显示 */

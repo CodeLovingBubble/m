@@ -113,11 +113,11 @@ const checkScreenSize = () => {
 }
 
 const iconHover = (item) => {
-  item.hover = true;
+  item.hover = true;// 进入时激活悬停状态
 }
 
 const iconRecovery = (item) => {
-  item.hover = false;
+  item.hover = false;// 离开时恢复默认状态
 }
 
 const navigateToLayouts = () => {
@@ -132,7 +132,7 @@ onMounted(() => {
     windowHeight.value = getWindowHeight()
     checkScreenSize()
   }
-
+// 监听滚动事件，更新滚动距离
   window.onscroll = () => {
     scrollTop.value = getScrollTop()
   }
@@ -140,7 +140,6 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
-// 样式部分保持不变...
 .tool-bar {
   position: fixed;
   right: 10px;

@@ -24,9 +24,9 @@ export default {
       postItem1: {src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/9e9c620dbad5c650b6ff0c573df76e14.jpg?thumb=1&w=1533&h=150&f=webp&q=90', url: 'https://www.mi.com/redminote7pro/'},
       postItem7: {src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/88e35cffc82cd98cd53172460067af17.jpg?thumb=1&w=1533&h=150&f=webp&q=90', url: 'https://item.mi.com/9836.html'},
       goodsItem1: {
-        boxTitle: '手机',
-        isHot: false,
-        vertical: true,
+        boxTitle: '手机',// 分类标题
+        isHot: false,// 非热门分类（头部显示"查看更多"）
+        vertical: true,//是否显示浏览更多卡片
         url: 'https://www.mi.com/a/h/9891.html',
         listData: {
           promo: [{src: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/55d2e50dd3783b52244ea3938e9dfca7.png?thumb=1&w=293&h=768&f=webp&q=90', url: 'https://www.mi.com/shop/buy?product_id=10050081'}],

@@ -31,11 +31,13 @@
             <input type="submit" value="" @click="handleSearch">
           </div>
         </label>
+        <!-- 热门搜索列表（失焦时显示） -->
         <transition name="list-trans">
           <ul class="search-hots" v-show="hotsListFlag && !focusFlag">
             <li class="hots-item" v-for="(item, index) in hots" :key="index" @click="handleHotItemClick(item)">{{item}}</li>
           </ul>
         </transition>
+        <!-- 搜索历史列表（聚焦时显示） -->
         <ul class="search-list" v-show="!hotsListFlag && focusFlag">
           <li class="list-item" v-for="(item, index) in searchHistory.concat(searchHot)" :key="index" @click.stop="handleListItemClick(item)">
             {{item}}
@@ -43,6 +45,7 @@
         </ul>
       </div>
     </div>
+    <!-- 下拉菜单区域（导航项鼠标悬停时显示） -->
     <transition name="menu-trans">
       <div class="menus-list"
       @mouseenter="menusListShow()"
@@ -68,11 +71,11 @@
 export default {
   data () {
     return {
-      menusListFlag: false,
-      timer: '',
-      menusItemData: this.xiaomi,
-      hotsListFlag: true,
-      focusFlag: false,
+      menusListFlag: false,// 控制下拉菜单显示/隐藏
+      timer: '',// 延迟隐藏下拉菜单的定时器
+      menusItemData: this.xiaomi,// 当前下拉菜单显示的数据
+      hotsListFlag: true,// 控制热门搜索显示/隐藏
+      focusFlag: false,// 控制搜索框聚焦状态
       navs: [
         {value: 'Xiaomi手机', type: 'xiaomi'},
         {value: 'REDMI手机', type: 'redmi'},
@@ -153,10 +156,10 @@ export default {
         '空气净化器',
         '小米手环9pro'
       ],
-      currentWordIndex: 0,
-      rotateInterval: null,
-      searchValue: '',
-      searchHistory: []
+      currentWordIndex: 0,// 当前占位符索引
+      rotateInterval: null,// 占位符轮换定时器
+      searchValue: '',// 搜索框当前值
+      searchHistory: []// 搜索历史记录
     }
   },
   mounted() {
@@ -171,15 +174,15 @@ export default {
     // 菜单显示区域
     menusListShow (type) {
       if (type) {
-        this.menusItemData = this[type];
+        this.menusItemData = this[type];// 根据类型切换下拉菜单数据
       }
 
-      this.menusListFlag = true;
+      this.menusListFlag = true;// 显示下拉菜单
       clearTimeout(this.timer);
     },
     menusListHide () {
       this.timer = setTimeout(() => {
-        this.menusListFlag = false;
+        this.menusListFlag = false;// 隐藏下拉菜单
       }, 300);
     },
     // 启动轮换
@@ -197,28 +200,28 @@ export default {
     
     // 搜索框获取焦点
     searchListShow() {
-      this.hotsListFlag = false;
-      this.focusFlag = true;
+      this.hotsListFlag = false;// 隐藏热门搜索
+      this.focusFlag = true;// 标记为聚焦状态
       this.stopRotation(); // 停止轮换
     },
     
     // 搜索框失去焦点
     searchListHide() {
-      this.hotsListFlag = true;
-      this.focusFlag = false;
+      this.hotsListFlag = true;// 显示热门搜索
+      this.focusFlag = false;// 标记为失焦状态
       this.startRotation(); // 重新开始轮换
     },
     
     // 处理下拉词条点击
     handleListItemClick(item) {
-      this.searchValue = item;
-      this.addToSearchHistory(item);
+      this.searchValue = item;// 设置搜索框值
+      this.addToSearchHistory(item);// 添加到搜索历史
       
       // 使用$nextTick确保DOM更新完成后再执行后续操作
       this.$nextTick(() => {
         this.hotsListFlag = true;
         this.focusFlag = false;
-        this.handleSearch();
+        this.handleSearch();// 触发搜索
       });
     },
     

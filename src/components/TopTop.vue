@@ -84,13 +84,13 @@
 </template>
 
 <script setup>
-const showAppCode = ref(false);
-const showCart = ref(false);
-const showProtocol = ref(false);
-const protocolType = ref('');
-const handleAgree = async () => {
+const showAppCode = ref(false);// 控制"下载app"悬浮二维码的显示状态（默认隐藏）
+const showCart = ref(false);// 控制购物车下拉框的显示状态（默认隐藏）
+const showProtocol = ref(false);// 控制协议声明弹窗的显示状态（默认隐藏）
+const protocolType = ref('');// 记录当前是登录还是注册操作（用于后续跳转对应页面）
+const handleAgree = async () => {// 处理用户同意协议后的逻辑
     showProtocol.value = false;
-    await nextTick(); // 确保弹窗完全关闭
+    await nextTick(); // 等待DOM更新完成（确保弹窗完全关闭后再执行跳转）
 
     if (protocolType.value === 'login') {
         return navigateTo('/login'); // 使用 Nuxt 的 navigateTo
@@ -244,7 +244,7 @@ const handleAgree = async () => {
 
 /* 协议弹窗样式 */
 .protocol-modal {
-    position: fixed;
+    position: fixed;    /* 全屏固定定位，改变全屏背景颜色 */
     top: 0;
     left: 0;
     width: 100%;

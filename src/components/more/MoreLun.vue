@@ -43,8 +43,9 @@ const paginatedProducts = ref([])
 
 // 分页处理
 const paginateProducts = () => {
-    const pageSize = 5
-    paginatedProducts.value = []
+    const pageSize = 5// 每页显示5个商品
+    paginatedProducts.value = []// 清空分页结果数组
+    // 遍历商品数组，按每页5个进行分组
     for (let i = 0; i < products.value.length; i += pageSize) {
         paginatedProducts.value.push(products.value.slice(i, i + pageSize))
     }

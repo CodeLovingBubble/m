@@ -183,16 +183,16 @@ const tags = [
     { name: '红米手机', value: 'redmi' },
     { name: '小米手机', value: 'xiaomi' }
 ]
-const activeTag = ref('all')
+const activeTag = ref('all')// 当前选中的筛选标签，默认显示全部
 
 // 筛选面板控制
-const showFilters = ref(false)
+const showFilters = ref(false)// 是否显示筛选面板
 const toggleFilter = (tagValue) => {
-    activeTag.value = tagValue
+    activeTag.value = tagValue// 切换筛选标签时更新当前标签值，并显示筛选面板
     showFilters.value = true
 }
 const toggleAllFilters = () => {
-    activeTag.value = 'all'
+    activeTag.value = 'all'// 切换"全部"标签状态，同时控制筛选面板显示/隐藏
     showFilters.value = !showFilters.value
 }
 
@@ -219,7 +219,7 @@ const filterGroups = ref([
             '6.73英寸', '6.74英寸', '6.79英寸',
             '6.83英寸', '6.88英寸', '7.92英寸'
         ],
-        isExpanded: false
+        isExpanded: false// 控制更多选项是否展开
     },
     {
         name: '运行内存',
@@ -340,8 +340,8 @@ const filterGroups = ref([
             },
         ],
         isExpanded: false,
-        showSubPanel: false,
-        activeOptionIndex: null
+        showSubPanel: false,// 是否显示二级选项面板
+        activeOptionIndex: null// 当前激活的选项索引，用于显示对应子选项
     }
 ])
 
@@ -810,7 +810,7 @@ const goods = ref([
     }
 ])
 // 分页相关变量
-const currentPage = ref(1)
+const currentPage = ref(1)// 当前页码
 const pageSize = ref(20) // 每页20条
 
 // 计算总页数
@@ -828,7 +828,7 @@ const paginatedGoods = computed(() => {
 // 修改原来的filteredGoods计算属性
 const filteredGoods = computed(() => {
     let result = [...goods.value]
-
+// 应用标签筛选
     if (activeTag.value !== 'all') {
         result = result.filter(item => item.category === activeTag.value)
     }
@@ -869,12 +869,12 @@ const handleOptionHover = (group, groupIndex, event) => {
     
     // 过滤掉"更多"按钮元素
     const validOptions = optionElements.filter(el => !el.classList.contains('more'))
-    
+    // 判断鼠标当前悬停在哪个选项上
     validOptions.forEach((el, i) => {
         const rect = el.getBoundingClientRect()
         if (event.clientX >= rect.left && event.clientX <= rect.right &&
             event.clientY >= rect.top && event.clientY <= rect.bottom) {
-            if (options[i]?.subOptions) {
+            if (options[i]?.subOptions) {// 如果当前选项有子选项，则激活它
                 filterGroups.value[groupIndex].activeOptionIndex = i
             } else {
                 filterGroups.value[groupIndex].activeOptionIndex = null
@@ -886,7 +886,7 @@ const handleOptionHover = (group, groupIndex, event) => {
 // 获取当前激活的子选项
 const getActiveSubOptions = (group) => {
     if (group.activeOptionIndex === null) return []
-
+// 从选项列表中获取当前激活选项的子选项
     const options = [...group.options, ...(group.isExpanded ? group.moreOptions : [])]
     return options[group.activeOptionIndex]?.subOptions || []
 }
@@ -895,7 +895,7 @@ const getActiveSubOptions = (group) => {
 const selectSubOption = (group, groupIndex, subOpt) => {
     console.log('选择了:', subOpt)
     // 这里可以添加实际的选择逻辑
-    filterGroups.value[groupIndex].showSubPanel = false
+    filterGroups.value[groupIndex].showSubPanel = false// 选择后隐藏二级面板
 }
 
 </script>

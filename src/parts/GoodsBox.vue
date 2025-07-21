@@ -115,24 +115,24 @@ const props = defineProps({
 })
 
 // 定义响应式数据
-const selectItem = ref('')
-const goodsData = ref('')
+const selectItem = ref('')// 当前选中的标签
+const goodsData = ref('')// 当前展示的商品列表
 
 // 初始化方法
 const init = () => {
   if (props.goodsItem.tabList) {
-    selectItem.value = props.goodsItem.tabList[0]
-    goodsData.value = props.goodsItem.listData.hots
+    selectItem.value = props.goodsItem.tabList[0]// 默认选中第一个标签
+    goodsData.value = props.goodsItem.listData.hots// 加载初始商品数据
   } else {
     selectItem.value = ''
     goodsData.value = ''
   }
 }
 
-// 选择类型方法
+// 切换标签：更新选中标签和商品数据
 const selectType = (item) => {
-  selectItem.value = item
-  goodsData.value = props.goodsItem.listData[item.type]
+  selectItem.value = item// 更新选中状态
+  goodsData.value = props.goodsItem.listData[item.type]// 加载对应类型的商品
 }
 
 // 路由跳转方法
