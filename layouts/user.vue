@@ -5,10 +5,6 @@
         <!-- 用户信息栏 -->
         <div class="user-top-bar">
             <div class="container">
-                <div class="user-greeting">
-                    <span class="user-id">{{ userId }}</span>
-                    <span class="greeting-text">早上好~</span>
-                </div>
             </div>
         </div>
 
@@ -35,11 +31,13 @@
     </div>
     <SiteFooter />
     <SiteInfo />
+    <ToolBar />
 </template>
 
 <script setup>
 import SiteFooter from '~/src/components/SiteFooter.vue'
 import SiteInfo from '~/src/components/SiteInfo.vue'
+import ToolBar from '~/src/components/ToolBar.vue'
 import TopHeader from '~/src/components/TopHeader.vue'
 import TopTop from '~/src/components/TopTop.vue'
 
@@ -83,9 +81,9 @@ const sidebarData = [
     {
         title: '账户管理',
         items: [
-            { id: 'personal-info', name: '个人信息', route: '/user/personal' },
-            { id: 'change-password', name: '修改密码', route: '/user/change' },
-            { id: 'cancel-service', name: '注销服务', route: '/user/cancel' }
+            { id: 'personal-info', name: '个人信息', route: '/user/LoginAndSecurity' },
+            { id: 'change-password', name: '修改密码', route: '/user/LoginAndSecurity' },
+            { id: 'cancel-service', name: '注销服务', route: '/user/LoginAndSecurity' }
         ]
     }
 ]

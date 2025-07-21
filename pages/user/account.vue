@@ -56,7 +56,6 @@ definePageMeta({
 .notice-bar {
     background-color: #dff0d8;
     padding: 12px 20px;
-    /* 关键：保持正常文档流，实现挤压效果 */
 }
 
 .notice-text {
@@ -83,7 +82,6 @@ definePageMeta({
 .content {
     background-color: #fff;
     padding: 30px 20px;
-    /* 与通知栏自然衔接，无需额外margin（通知栏已占文档流空间） */
 }
 
 .section-title {

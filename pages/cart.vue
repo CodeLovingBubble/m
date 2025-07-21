@@ -15,6 +15,4 @@ import CartGoods from '~/src/components/CartGoods.vue';
 </template>
 
 <style scoped>
-/* 保留您原有的样式（如果有） */
-/* 由于布局样式已经移到cart.vue布局文件中，这里可以放页面特有的样式 */
 </style>
