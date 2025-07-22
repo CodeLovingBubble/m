@@ -84,25 +84,22 @@ const isFormValid = computed(() => {
 
 // 发送验证码
 const sendCode = () => {
-    if (!phone.value.trim()) {
+    if (!phone.value.trim()) {//检查手机号是否为空
         isPhoneValid.value = false;
         return;
     }
     
-    isPhoneValid.value = true;
-    isSendingCode.value = true;
+    isPhoneValid.value = true;// 标记手机号有效
+    isSendingCode.value = true;// 标记"正在发送"状态
     countdown.value = 60;
     
     const timer = setInterval(() => {
         countdown.value--;
         if (countdown.value <= 0) {
             clearInterval(timer);
-            isSendingCode.value = false;
+            isSendingCode.value = false;// 重置发送状态
         }
     }, 1000);
-    
-    // 模拟发送验证码的API调用
-    console.log('发送验证码到:', phone.value);
 };
 
 // 处理注册
@@ -111,9 +108,6 @@ const handleSubmit = () => {
         showAgreementModal.value = true;
         return;
     }
-    
-    console.log('注册信息提交:', { phone: phone.value, code: code.value });
-    
     // 注册成功后跳转到首页
     router.push('/');
 };
@@ -136,7 +130,6 @@ const cancelAgreement = () => {
     width: 350px;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     padding: 50px;
     font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
@@ -196,8 +189,7 @@ const cancelAgreement = () => {
 
 .select-box {
     flex: 1;
-    padding: 12px 15px;
-    border: 1px solid #e0e0e0;
+    padding: 20px 15px;
     border-radius: 4px;
     background-color: #f7f7f7;
 }
@@ -237,11 +229,12 @@ const cancelAgreement = () => {
 .verification-row input {
     width: 100%;
     height: 44px;
-    padding: 0 15px;
-    border: 1px solid #e0e0e0;
+    padding: 30px 15px;
+    border: none;
     box-sizing: border-box;
     font-size: 14px;
     background-color: #f7f7f7;
+    outline: none;
 }
 
 .verification-row {
@@ -404,5 +397,6 @@ const cancelAgreement = () => {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
+
 </style>
     

@@ -29,7 +29,6 @@
         <div class="auth-footer">
             <div class="links">
                 <a href="#">忘记密码？</a>
-                <span>|</span>
                 <a href="#">手机号登录</a>
             </div>
 
@@ -136,7 +135,6 @@ const performLogin = () => {
     width: 350px;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     padding: 50px;
     font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
@@ -188,8 +186,8 @@ const performLogin = () => {
 
 .input-group input {
     width: 90%;
-    padding: 12px 15px;
-    border: 1px solid #e0e0e0;
+    padding: 20px 15px;
+    border: none;
     border-radius: 4px;
     font-size: 14px;
     background-color: #f7f7f7;
@@ -202,7 +200,7 @@ const performLogin = () => {
 }
 
 .agreement {
-    margin: 15px 0 25px;
+    margin: 15px 0 20px;
     font-size: 14px;
     color: #666;
 }
@@ -219,7 +217,7 @@ const performLogin = () => {
 
 .submit-btn {
     width: 100%;
-    padding: 12px;
+    padding: 16px;
     background: #ff6900;
     color: white;
     border: none;
@@ -238,26 +236,25 @@ const performLogin = () => {
 }
 
 .auth-footer {
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
 }
 
 .links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
-    margin-bottom: 30px;
-    font-size: 14px;
-    color: #999;
+    margin-bottom: 20px;
+    font-size: 17px;
 }
 
 .links a {
-    color: #999;
+    color: #ff6700;
     text-decoration: none;
 }
 
 .links a:hover {
-    color: #ff6700;
+    color: #f68743;
 }
 
 .divider {

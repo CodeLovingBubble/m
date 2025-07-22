@@ -15,7 +15,7 @@
                 <div class="sidebar-section" v-for="section in sidebarData" :key="section.title">
                     <h3 class="section-title">{{ section.title }}</h3>
                     <ul class="section-list">
-                        <li v-for="item in section.items" :key="item.id" :class="{ active: isActive(item.route) }">
+                        <li v-for="item in section.items" :key="item.id" :class="{ active: isActive(item.route) }"><!-- 动态绑定active类实现高亮 -->
                             <NuxtLink :to="item.route">{{ item.name }}</NuxtLink>
                         </li>
                     </ul>
@@ -42,7 +42,6 @@ import TopHeader from '~/src/components/TopHeader.vue'
 import TopTop from '~/src/components/TopTop.vue'
 
 const route = useRoute()
-const userId = ref('3100475286')
 
 // 侧边栏数据
 const sidebarData = [
@@ -188,7 +187,7 @@ const isActive = (path) => {
 }
 
 /* 响应式设计 */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .user-main-container {
         flex-direction: column;
     }
