@@ -109,8 +109,8 @@ import { ref, onMounted } from 'vue'
 // 定义props
 const props = defineProps({
   goodsItem: {
-    type: Object,
-    required: true
+    type: Object,// 指定 prop 的类型为 Object
+    required: true//表示父组件必须传递这个 prop
   }
 })
 
@@ -130,7 +130,7 @@ const init = () => {
 }
 
 // 切换标签：更新选中标签和商品数据
-const selectType = (item) => {
+const selectType = (item) => {//根据当前悬停的标签对象
   selectItem.value = item// 更新选中状态
   goodsData.value = props.goodsItem.listData[item.type]// 加载对应类型的商品
 }

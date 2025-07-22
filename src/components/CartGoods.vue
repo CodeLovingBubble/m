@@ -24,7 +24,6 @@
 </template>
 
 <style scoped>
-/* 样式部分保持不变 */
 .full{
     background-color: #f5f5f5;
     padding: 20px 0;

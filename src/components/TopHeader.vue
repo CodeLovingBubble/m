@@ -256,7 +256,7 @@ export default {
     // 处理搜索提交
     handleSearch() {
       if (this.searchValue.trim()) {
-        this.addToSearchHistory(this.searchValue);
+        this.addToSearchHistory(this.searchValue);//将搜索词加入历史记录
         // 这里可以添加实际的搜索逻辑
         console.log('搜索:', this.searchValue);
       }

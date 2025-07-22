@@ -5,7 +5,7 @@
             <button class="active">注册</button>
         </div>
 
-        <form class="auth-form">
+        <form class="auth-form" @submit.prevent="handleSubmit">
             <div class="input-row">
                 <label>国家/地区</label>
                 <div class="select-box">
@@ -21,46 +21,126 @@
                     </div>
                 </div>
                 <div class="phone-number-group">
-                    <input type="tel" placeholder="手机号">
+                    <input type="tel" v-model="phone" placeholder="手机号">
                 </div>
             </div>
 
             <div class="verification-row">
-                <input type="text" placeholder="请输入验证码">
-                <button class="code-btn">获取验证码</button>
+                <input type="text" v-model="code" placeholder="请输入验证码">
+                <button class="code-btn" @click="sendCode" :disabled="!isPhoneValid || isSendingCode">
+                    {{ isSendingCode ? `${countdown}s后重试` : '获取验证码' }}
+                </button>
             </div>
 
             <div class="agreement">
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" v-model="agreed">
                     <span>已阅读并同意小米账号使用协议和隐私政策</span>
                 </label>
             </div>
 
-            <button type="submit" class="submit-btn">注册</button>
+            <button type="submit" class="submit-btn" :disabled="!isFormValid">注册</button>
         </form>
 
         <div class="auth-footer">
             <a href="#" class="code-help">收不到验证码？</a>
         </div>
+
+        <!-- 协议确认弹窗 - 统一风格 -->
+        <div v-if="showAgreementModal" class="modal-overlay">
+            <div class="modal-content">
+                <h3>隐私政策确认</h3>
+                <p>请阅读并同意我们的隐私政策和使用条款以继续注册。</p>
+                <div class="modal-actions">
+                    <button @click="cancelAgreement">取消</button>
+                    <button @click="confirmAgreement" class="confirm-btn">同意并继续</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
 definePageMeta({
     layout: "auth"
 });
+
+const router = useRouter();
+const phone = ref('');
+const code = ref('');
+const agreed = ref(false);
+const showAgreementModal = ref(false);
+const isSendingCode = ref(false);
+const countdown = ref(0);
+
+// 表单验证计算属性
+const isPhoneValid = ref(true);
+const isFormValid = computed(() => {
+    return phone.value.trim().length > 0 && code.value.trim().length > 0;
+});
+
+// 发送验证码
+const sendCode = () => {
+    if (!phone.value.trim()) {
+        isPhoneValid.value = false;
+        return;
+    }
+    
+    isPhoneValid.value = true;
+    isSendingCode.value = true;
+    countdown.value = 60;
+    
+    const timer = setInterval(() => {
+        countdown.value--;
+        if (countdown.value <= 0) {
+            clearInterval(timer);
+            isSendingCode.value = false;
+        }
+    }, 1000);
+    
+    // 模拟发送验证码的API调用
+    console.log('发送验证码到:', phone.value);
+};
+
+// 处理注册
+const handleSubmit = () => {
+    if (!agreed.value) {
+        showAgreementModal.value = true;
+        return;
+    }
+    
+    console.log('注册信息提交:', { phone: phone.value, code: code.value });
+    
+    // 注册成功后跳转到首页
+    router.push('/');
+};
+
+// 确认同意协议
+const confirmAgreement = () => {
+    agreed.value = true;
+    showAgreementModal.value = false;
+    handleSubmit();
+};
+
+// 取消同意协议
+const cancelAgreement = () => {
+    showAgreementModal.value = false;
+};
 </script>
 
 <style scoped>
 .auth-page {
-    width: 300px;
+    width: 350px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
+    padding: 50px;
     font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .auth-tabs {
@@ -124,7 +204,7 @@ definePageMeta({
 
 .phone-input-row {
     display: flex;
-    gap: 0; /* 移除间隙 */
+    gap: 0;
     margin-bottom: 20px;
     align-items: flex-end;
 }
@@ -141,8 +221,8 @@ definePageMeta({
 }
 
 .country-code-group .select-box {
-    border-radius: 4px 0 0 4px; /* 左圆角 */
-    border-right: 0; /* 移除右边框 */
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
 }
 
 .phone-number-group {
@@ -150,7 +230,7 @@ definePageMeta({
 }
 
 .phone-number-group input {
-    border-radius: 0 4px 4px 0; /* 右圆角 */
+    border-radius: 0 4px 4px 0;
 }
 
 .phone-number-group input,
@@ -191,6 +271,11 @@ definePageMeta({
     font-size: 14px;
 }
 
+.code-btn:disabled {
+    color: #999;
+    cursor: not-allowed;
+}
+
 .agreement {
     margin: 15px 0 25px;
     font-size: 14px;
@@ -218,7 +303,12 @@ definePageMeta({
     cursor: pointer;
 }
 
-.submit-btn:hover {
+.submit-btn:disabled {
+    background: #ffb88c;
+    cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
     background: #f56600;
 }
 
@@ -235,6 +325,84 @@ definePageMeta({
 
 .code-help:hover {
     color: #ff6700;
+}
+
+/* 统一弹窗样式 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-actions button.confirm-btn {
+    background-color: #ff6700;
+    color: white;
+}
+
+.agreement input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.agreement input[type="checkbox"]:checked {
+    border-color: #ff6700;
+    background-color: #ff6700;
+}
+
+.agreement input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 </style>
     

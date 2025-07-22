@@ -61,7 +61,6 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'nuxt/app'
 
 const router = useRouter()
-const toolStatus = ref(false)
 const windowHeight = ref(0)
 const scrollTop = ref(0)
 const isSmallScreen = ref(false)
@@ -86,17 +85,6 @@ const getScrollTop = () => {
   return scrollTop;
 }
 
-const getScrollHeight = () => {
-  let scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
-  if (document.body) {
-    bodyScrollHeight = document.body.scrollHeight;
-  }
-  if (document.documentElement) {
-    documentScrollHeight = document.documentElement.scrollHeight;
-  }
-  scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
-  return scrollHeight;
-}
 
 const getWindowHeight = () => {
   let windowHeight = 0;

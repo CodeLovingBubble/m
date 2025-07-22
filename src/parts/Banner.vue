@@ -57,7 +57,7 @@ const prev = () => {
 const play = () => {
   clearInterval(timer)
   timer = setInterval(() => {
-    next()
+    next()//每隔五秒调用
   }, 5000)
 }
 

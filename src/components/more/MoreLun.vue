@@ -1,6 +1,7 @@
 <template>
     <div class="full">
         <div class="product-carousel">
+            <!-- 使用transform实现水平滑动 -->
                 <div class="carousel-wrapper"
                     :style="{ transform: `translateX(-${currentPage * 100}%)`, transition: 'transform 0.5s ease-in-out' }">
                     <div class="carousel-page" v-for="(page, pageIndex) in paginatedProducts" :key="pageIndex">
@@ -24,7 +25,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// 模拟商品数据，可根据实际接口替换
 const products = ref([
     { image: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202412271148_a4cb76ca76ad26ac81da44ad1a69ebd1.png?thumb=1&w=225&h=225&f=webp&q=90', title: 'Redmi 14C', price: 469, rating: 18.1 },
     { image: '//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202309281055_6ca7721ad4d7b055f9250f08d97fa0ea.png?thumb=1&w=225&h=225&f=webp&q=90', title: '米家体脂秤 S400', price: 99, rating: 75.7 },
@@ -55,7 +55,7 @@ const paginateProducts = () => {
 let interval = null
 const startAutoPlay = () => {
     interval = setInterval(() => {
-        currentPage.value = (currentPage.value + 1) % paginatedProducts.value.length
+        currentPage.value = (currentPage.value + 1) % paginatedProducts.value.length    //控制当前显示哪一页
     }, 5000)
 }
 

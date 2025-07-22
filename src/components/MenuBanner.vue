@@ -43,7 +43,7 @@ export default {
     return {
       bannerMenuFlag: false,// 控制二级菜单显示/隐藏的开关（true：显示；false：隐藏）
       menuTimer: '',// 延迟隐藏定时器（用于解决鼠标快速切换时菜单闪烁问题）
-      listInfoData: [],
+      listInfoData: [],// 当前显示的二级菜单数据
       menus: [
         {value: '手机', url: 'https://www.mi.com/p/1915.html', type: 'phone'},
         {value: '电视', url: 'https://www.mi.com/a/h/9819.html', type: 'tv'},

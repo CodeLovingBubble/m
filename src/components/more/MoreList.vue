@@ -189,7 +189,7 @@ const activeTag = ref('all')// 当前选中的筛选标签，默认显示全部
 const showFilters = ref(false)// 是否显示筛选面板
 const toggleFilter = (tagValue) => {
     activeTag.value = tagValue// 切换筛选标签时更新当前标签值，并显示筛选面板
-    showFilters.value = true
+    showFilters.value = true// 显示筛选面板
 }
 const toggleAllFilters = () => {
     activeTag.value = 'all'// 切换"全部"标签状态，同时控制筛选面板显示/隐藏
@@ -815,13 +815,13 @@ const pageSize = ref(20) // 每页20条
 
 // 计算总页数
 const totalPages = computed(() => {
-    return Math.ceil(filteredGoods.value.length / pageSize.value)
+    return Math.ceil(filteredGoods.value.length / pageSize.value)//总页数 = 商品总数 / 每页条数
 })
 
 // 分页后的商品数据
 const paginatedGoods = computed(() => {
-    const start = (currentPage.value - 1) * pageSize.value
-    const end = start + pageSize.value
+    const start = (currentPage.value - 1) * pageSize.value//start = (当前页-1) * 每页条数
+    const end = start + pageSize.value//end = start + 每页条数
     return filteredGoods.value.slice(start, end)
 })
 
@@ -845,6 +845,9 @@ const filteredGoods = computed(() => {
     return result
 })
 
+//鼠标移入选项->高级选项->计算悬停位置->是否有子选项->显示二级面板
+           //->无操作                         \\->保持面板隐藏
+
 // 显示二级面板（仅高级选项）
 const showSubPanel = (groupIndex) => {
     if (filterGroups.value[groupIndex].name === '高级选项') {
@@ -863,8 +866,9 @@ const hideSubPanel = (groupIndex) => {
 // 处理鼠标悬停选项（仅高级选项）
 const handleOptionHover = (group, groupIndex, event) => {
     if (group.name !== '高级选项' || !group.showSubPanel) return
-
+    // 获取所有选项数据
     const options = [...group.options, ...(group.isExpanded ? group.moreOptions : [])]
+    // 获取DOM元素并过滤无效项
     const optionElements = Array.from(event.currentTarget.querySelectorAll('.filter-option'))
     
     // 过滤掉"更多"按钮元素
@@ -892,9 +896,7 @@ const getActiveSubOptions = (group) => {
 }
 
 // 选择子选项
-const selectSubOption = (group, groupIndex, subOpt) => {
-    console.log('选择了:', subOpt)
-    // 这里可以添加实际的选择逻辑
+const selectSubOption = (groupIndex) => {
     filterGroups.value[groupIndex].showSubPanel = false// 选择后隐藏二级面板
 }
 

@@ -1,30 +1,24 @@
 <template>
   <div class="site-footer">
     <ul class="site-service">
-      <li class="service-item"
-          v-for="(item, index) in serviceInfo"
-          :key="index">
+      <li class="service-item" v-for="(item, index) in serviceInfo" :key="index">
         <a :href="item.url" target="_blank">
           <i :class="item.font"></i>
-          <span>{{item.value}}</span>
+          <span>{{ item.value }}</span>
         </a>
       </li>
     </ul>
     <div class="site-link">
       <div class="links">
-        <div class="link-container"
-             v-for="(list, key) in serviceLink"
-             :key="key">
-          <span class="link-title">{{list.value}}</span>
+        <div class="link-container" v-for="(list, key) in serviceLink" :key="key">
+          <span class="link-title">{{ list.value }}</span>
           <ul class="link-list">
-            <li class="link-item"
-                v-for="(item, index) in list.subLinks"
-                :key="index">
+            <li class="link-item" v-for="(item, index) in list.subLinks" :key="index">
               <a :href="item.url" @click="showWindow" v-if="item.value === '官方微信'">
-                {{item.value}}
+                {{ item.value }}
               </a>
               <a :href="item.url" target="_blank" v-else>
-                {{item.value}}
+                {{ item.value }}
               </a>
             </li>
           </ul>
@@ -57,73 +51,77 @@
 
 <script setup>
 import { ref } from 'vue'
-import bus from '@/src/bus.js'
 
 // 定义数据
 const serviceInfo = ref([
-  {value: '预约维修服务', font:'iconfont icon-buoumaotubiao46', url: 'https://www.mi.com/static/fast/'},
-  {value: '7天无理由退货', font:'iconfont icon-7tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back'},
-  {value: '15天免费换货', font:'iconfont icon-15tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back'},
-  {value: '满69元包邮', font:'iconfont icon-liwu', url: 'https://www.mi.com/service/buy/postage/'},
-  {value: '1100余家售后网点', font:'iconfont icon-icon-test', url: 'https://www.mi.com/static/maintainlocation/'}
+  { value: '预约维修服务', font: 'iconfont icon-buoumaotubiao46', url: 'https://www.mi.com/static/fast/' },
+  { value: '7天无理由退货', font: 'iconfont icon-7tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back' },
+  { value: '15天免费换货', font: 'iconfont icon-15tianwuliyoutuihuo', url: 'https://www.mi.com/service/exchange#back' },
+  { value: '满69元包邮', font: 'iconfont icon-liwu', url: 'https://www.mi.com/service/buy/postage/' },
+  { value: '1100余家售后网点', font: 'iconfont icon-icon-test', url: 'https://www.mi.com/static/maintainlocation/' }
 ])
 
 const serviceLink = ref([
-  {value: '选购指南', subLinks: [
-    {value: '手机', url: 'https://www.mi.com/service/account/Account%20registration/'},
-    {value: '电视', url: 'https://www.mi.com/service/buy/SalesTime/'},
-    {value: '平板', url: 'https://www.mi.com/service/order/sendprogress/'},
-    {value: '穿戴', url: 'https://www.mi.com/service/order/sendprogress/'},
-    {value: '耳机', url: 'https://www.mi.com/service/order/sendprogress/'},
-    {value: '家电', url: 'https://www.mi.com/service/order/sendprogress/'},
-    {value: '路由器', url: 'https://www.mi.com/service/order/sendprogress/'},
-    {value: '音箱', url: 'https://www.mi.com/service/order/sendprogress/'},
-    {value: '配件', url: 'https://www.mi.com/service/order/sendprogress/'},
-  ]},
-  {value: '服务中心', subLinks: [
-    {value: '申请售后', url: 'https://www.mi.com/service/exchange'},
-    {value: '售后政策', url: 'https://www.mi.com/service/exchange'},
-    {value: '服务价格', url: 'https://www.mi.com/service/'},
-    {value: '订单查询', url: 'https://www.mi.com/c/service/download/'},
-    {value: '以旧换新', url: 'https://order.mi.com/service/imei'},
-    {value: '保障服务', url: 'https://order.mi.com/service/imei'},
-    {value: '防伪查询', url: 'https://order.mi.com/service/imei'},
-    {value: 'F 码通道', url: 'https://www.mi.com/order/fcode'}
-  ]},
-  {value: '线下门店', subLinks: [
-    {value: '小米之家', url: 'https://www.mi.com/c/xiaomizhijia/'},
-    {value: '服务网点', url: 'https://www.mi.com/static/maintainlocation/'},
-    {value: '授权体验店/专区', url: 'https://www.mi.com/static/familyLocation/'}
-  ]},
-  {value: '关于小米', subLinks: [
-    {value: '了解小米', url: 'https://www.mi.com/about/'},
-    {value: '加入小米', url: 'https://hr.xiaomi.com/'},
-    {value: '投资者关系', url: 'https://company.mi.com/zh-cn/ir/indexContent/index.html'},
-    {value: 'ESG与可持续发展', url: 'https://hr.xiaomi.com/'},
-    {value: '廉洁举报', url: 'https://hr.xiaomi.com/'}
-  ]},
-  {value: '关注我们', subLinks: [
-    {value: '新浪微博', url: 'https://weibo.com/xiaomishangcheng'},
-    {value: '官方微信', url: 'javascript:void(0);'},
-    {value: '联系我们', url: 'https://www.mi.com/about/contact/'},
-    {value: '公益基金会', url: 'https://www.mi.com/about/contact/'}
-  ]}
+  {
+    value: '选购指南', subLinks: [
+      { value: '手机', url: 'https://www.mi.com/service/account/Account%20registration/' },
+      { value: '电视', url: 'https://www.mi.com/service/buy/SalesTime/' },
+      { value: '平板', url: 'https://www.mi.com/service/order/sendprogress/' },
+      { value: '穿戴', url: 'https://www.mi.com/service/order/sendprogress/' },
+      { value: '耳机', url: 'https://www.mi.com/service/order/sendprogress/' },
+      { value: '家电', url: 'https://www.mi.com/service/order/sendprogress/' },
+      { value: '路由器', url: 'https://www.mi.com/service/order/sendprogress/' },
+      { value: '音箱', url: 'https://www.mi.com/service/order/sendprogress/' },
+      { value: '配件', url: 'https://www.mi.com/service/order/sendprogress/' },
+    ]
+  },
+  {
+    value: '服务中心', subLinks: [
+      { value: '申请售后', url: 'https://www.mi.com/service/exchange' },
+      { value: '售后政策', url: 'https://www.mi.com/service/exchange' },
+      { value: '服务价格', url: 'https://www.mi.com/service/' },
+      { value: '订单查询', url: 'https://www.mi.com/c/service/download/' },
+      { value: '以旧换新', url: 'https://order.mi.com/service/imei' },
+      { value: '保障服务', url: 'https://order.mi.com/service/imei' },
+      { value: '防伪查询', url: 'https://order.mi.com/service/imei' },
+      { value: 'F 码通道', url: 'https://www.mi.com/order/fcode' }
+    ]
+  },
+  {
+    value: '线下门店', subLinks: [
+      { value: '小米之家', url: 'https://www.mi.com/c/xiaomizhijia/' },
+      { value: '服务网点', url: 'https://www.mi.com/static/maintainlocation/' },
+      { value: '授权体验店/专区', url: 'https://www.mi.com/static/familyLocation/' }
+    ]
+  },
+  {
+    value: '关于小米', subLinks: [
+      { value: '了解小米', url: 'https://www.mi.com/about/' },
+      { value: '加入小米', url: 'https://hr.xiaomi.com/' },
+      { value: '投资者关系', url: 'https://company.mi.com/zh-cn/ir/indexContent/index.html' },
+      { value: 'ESG与可持续发展', url: 'https://hr.xiaomi.com/' },
+      { value: '廉洁举报', url: 'https://hr.xiaomi.com/' }
+    ]
+  },
+  {
+    value: '关注我们', subLinks: [
+      { value: '新浪微博', url: 'https://weibo.com/xiaomishangcheng' },
+      { value: '官方微信', url: 'javascript:void(0);' },
+      { value: '联系我们', url: 'https://www.mi.com/about/contact/' },
+      { value: '公益基金会', url: 'https://www.mi.com/about/contact/' }
+    ]
+  }
 ])
 
-// 方法
-const showWindow = () => {
-  bus.$emit('weChatWindowEvent', true)
-}
 </script>
 
 <style scoped lang="less">
-// 保持原有样式不变
 .site-footer {
   position: relative;
   width: 1226px;
   height: 450px;
   margin: 0 auto;
-  
+
   .site-service {
     display: flex;
     padding: 27px 0;
@@ -136,7 +134,7 @@ const showWindow = () => {
       font-size: 16px;
       line-height: 25px;
       text-align: center;
-      
+
       &:first-child {
         border-left: none;
       }
@@ -144,11 +142,11 @@ const showWindow = () => {
       a {
         color: #616161;
         transition: color .2s;
-        
+
         &:hover {
           color: #ff6709;
         }
-        
+
         i {
           margin-right: 6px;
           font-size: 24px;
@@ -167,7 +165,7 @@ const showWindow = () => {
   .site-link {
     display: flex;
     padding: 40px 0;
-    
+
     .links {
       display: flex;
       margin-left: 140px;
@@ -178,7 +176,7 @@ const showWindow = () => {
         height: 112px;
         margin: 0;
         text-align: left;
-        
+
         .link-title {
           display: block;
           margin: -1px 0 26px;
@@ -187,14 +185,15 @@ const showWindow = () => {
           color: #424242;
         }
 
-        .link-list, .link-item {
+        .link-list,
+        .link-item {
           margin: 10px 0 0;
           font-size: 12px;
-          
+
           a {
             color: #757575;
             transition: color .2s;
-            
+
             &:hover {
               color: #ff6709;
             }
@@ -202,28 +201,28 @@ const showWindow = () => {
         }
       }
     }
-    
+
     .contact-column {
       display: flex;
-      flex-direction: column;
+      flex-direction: column;/* 改为竖直方向 */
       width: 256px;
       margin-left: 20px;
-      
+
       .link-contact {
         width: 100%;
         height: auto;
         text-align: center;
         color: #616161;
         padding: 10px 0;
-        
+
         &:first-child {
           border-left: 1px solid #e0e0e0;
         }
-        
+
         &:last-child {
           border-left: none;
         }
-        
+
         .phone {
           margin: 0 0 5px;
           margin-bottom: 10px;
@@ -233,6 +232,7 @@ const showWindow = () => {
         }
 
         .desc {
+
           &,
           &1,
           &2,
@@ -242,10 +242,18 @@ const showWindow = () => {
             white-space: nowrap;
             line-height: 5px;
           }
-          
-          &1 { margin-left: 50px; }
-          &2 { margin-left: 35px; }
-          &3 { margin-left: 25px; }
+
+          &1 {
+            margin-left: 50px;
+          }
+
+          &2 {
+            margin-left: 35px;
+          }
+
+          &3 {
+            margin-left: 25px;
+          }
         }
 
         a {
@@ -260,7 +268,7 @@ const showWindow = () => {
           background: #fff;
           color: #ff6700;
           transition: all .4s;
-          
+
           &:hover {
             color: #fff;
             background-color: #f25807;
@@ -271,4 +279,4 @@ const showWindow = () => {
     }
   }
 }
-</style>  
+</style>
