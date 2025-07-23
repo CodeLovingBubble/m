@@ -21,14 +21,17 @@
                     </div>
                 </div>
                 <div class="phone-number-group">
-                    <input type="tel" v-model="phone" :placeholder="localeStore.t('phoneNumber')">
+                    <input type="tel" v-model="phone" :placeholder="localeStore.t('phoneNumber')"
+                        :class="{ 'error-input': showPhoneError }" @input="validatePhone">
+                    <span class="error-message" v-if="showPhoneError">{{ phoneError }}</span>
                 </div>
             </div>
 
             <div class="verification-row">
                 <input type="text" v-model="code" :placeholder="localeStore.t('enterVerificationCode')">
-                <button class="code-btn" @click="sendCode" :disabled="!isPhoneValid || isSendingCode">
-                    {{ isSendingCode ? `${countdown}s${localeStore.t('retryAfter')}` : localeStore.t('getVerificationCode') }}
+                <button type="button" class="code-btn" @click="sendCode" :disabled="!canSendCode">
+                    {{ isSendingCode ? `${countdown}s${localeStore.t('retryAfter')}` :
+                        localeStore.t('getVerificationCode') }}
                 </button>
             </div>
 
@@ -39,7 +42,7 @@
                 </label>
             </div>
 
-            <button type="submit" class="submit-btn" :disabled="!isFormValid">
+            <button type="submit" class="submit-btn" :disabled="!canSubmit">
                 {{ localeStore.t('register') }}
             </button>
         </form>
@@ -55,7 +58,8 @@
                 <p>{{ localeStore.t('privacyPolicyText') }}</p>
                 <div class="modal-actions">
                     <button @click="cancelAgreement">{{ localeStore.t('cancel') }}</button>
-                    <button @click="confirmAgreement" class="confirm-btn">{{ localeStore.t('agreeAndContinue') }}</button>
+                    <button @click="confirmAgreement" class="confirm-btn">{{ localeStore.t('agreeAndContinue')
+                        }}</button>
                 </div>
             </div>
         </div>
@@ -63,7 +67,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useLocaleStore } from '~/stores/locale';
 
@@ -80,39 +84,74 @@ const agreed = ref(false);
 const showAgreementModal = ref(false);
 const isSendingCode = ref(false);
 const countdown = ref(0);
+const phoneError = ref('');
+const showPhoneError = ref(false);
+let timer = null; // 使用局部变量存储定时器
 
 // 表单验证计算属性
-const isPhoneValid = ref(true);
-const isFormValid = computed(() => {
-    return phone.value.trim().length > 0 && code.value.trim().length > 0;
+const isPhoneValid = computed(() => {
+    return /^1[3-9]\d{9}$/.test(phone.value);
 });
+
+// 发送验证码按钮始终可点击（只要不在倒计时中）
+const canSendCode = computed(() => {
+    return !isSendingCode.value;
+});
+
+// 注册按钮
+const canSubmit = computed(() => {
+    return isPhoneValid.value && code.value.trim().length > 0;
+});
+
+// 验证手机号
+const validatePhone = () => {
+    if (!phone.value) {
+        phoneError.value = localeStore.t('phoneRequired');
+        showPhoneError.value = true;
+        return false;
+    }
+
+    if (!/^1[3-9]\d{9}$/.test(phone.value)) {
+        phoneError.value = localeStore.t('invalidPhone');
+        showPhoneError.value = true;
+        return false;
+    }
+
+    showPhoneError.value = false;
+    return true;
+};
 
 // 发送验证码
 const sendCode = () => {
-    if (!phone.value.trim()) {//检查手机号是否为空
-        isPhoneValid.value = false;
-        return;
-    }
+    // 只验证手机号，不检查协议
+    if (!validatePhone()) return;
     
-    isPhoneValid.value = true;// 标记手机号有效
-    isSendingCode.value = true;// 标记"正在发送"状态
+    // 开始发送验证码流程
+    isSendingCode.value = true;
     countdown.value = 60;
     
-    const timer = setInterval(() => {
+    timer = setInterval(() => {
         countdown.value--;
         if (countdown.value <= 0) {
             clearInterval(timer);
-            isSendingCode.value = false;// 重置发送状态
+            isSendingCode.value = false;
         }
     }, 1000);
 };
 
+// 清理定时器
+onUnmounted(() => {
+    if (timer) clearInterval(timer);
+});
+
 // 处理注册
 const handleSubmit = () => {
+    // 只有这里检查协议状态
     if (!agreed.value) {
         showAgreementModal.value = true;
         return;
     }
+    
     // 注册成功后跳转到首页
     router.push('/');
 };
@@ -403,5 +442,21 @@ const cancelAgreement = () => {
     transform: rotate(45deg);
 }
 
+.error-input {
+    background-color: #fff0f0 !important;
+    border: 1px solid #ff4d4f !important;
+}
+
+.error-message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    color: #ff4d4f;
+    font-size: 12px;
+}
+
+.phone-number-group {
+    position: relative;
+    flex: 1;
+}
 </style>
-    

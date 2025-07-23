@@ -42,6 +42,7 @@ export const useLocaleStore = defineStore("locale", {
         getVerificationCode: '获取验证码',
         retryAfter: '后重试',
         noVerificationCode: '收不到验证码？',
+        phoneRequired: '请输入手机号',
         copyright: '小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号',
       },
       "zh-TW": {
@@ -69,6 +70,7 @@ export const useLocaleStore = defineStore("locale", {
         getVerificationCode: '獲取驗證碼',
         retryAfter: '後重試',
         noVerificationCode: '收不到驗證碼？',
+        phoneRequired: '請輸入手機號',
         copyright: '小米公司版權所有-京ICP備10046444-京公網安備11010802020134號-京ICP證110507號',
       },
       en: {
@@ -97,6 +99,7 @@ export const useLocaleStore = defineStore("locale", {
         getVerificationCode: 'Get verification code',
         retryAfter: 'retry after',
         noVerificationCode: "Didn't receive code?",
+        phoneRequired: 'Please enter your mobile phone number',
         copyright: '© Xiaomi Inc. All Rights Reserved - ICP No.10046444 - Beijing Public Security No.11010802020134 - Beijing ICP Certificate No.110507',
       },
     } as Record<Locale, Messages>,
