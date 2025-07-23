@@ -8,78 +8,43 @@
 
 ### 配置有SEO优化
 
-# Nuxt Minimal Starter
+### 请使用pnpm启动
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+下面是一些页面展示
 
-## Setup
+首页：
 
-Make sure to install dependencies:
+![](https://i.postimg.cc/B6fzcgZx/image.png)
 
-```bash
-# npm
-npm install
+首页2：
 
-# pnpm
-pnpm install
+![](https://i.postimg.cc/KYfTJcxJ/2.png)
 
-# yarn
-yarn install
+登录页面：
 
-# bun
-bun install
-```
+![](https://i.postimg.cc/L51nKmFd/image.png)
 
-## Development Server
+注册页面（语言切换了）
 
-Start the development server on `http://localhost:3000`:
+![](https://i.postimg.cc/05TfBCL3/image.png)
 
-```bash
-# npm
-npm run dev
+购物车页面：
 
-# pnpm
-pnpm dev
+![](https://i.postimg.cc/wxLJ7YGf/image.png)
 
-# yarn
-yarn dev
+全部商品页面：
 
-# bun
-bun run dev
-```
+![](https://i.postimg.cc/3xcWttq0/image.png)
 
-## Production
+个人中心页面：
 
-Build the application for production:
+![](https://i.postimg.cc/t4Z94pr7/image.png)
 
-```bash
-# npm
-npm run build
+礼品卡页面（其他省略）
 
-# pnpm
-pnpm build
+![](https://i.postimg.cc/sxXtH4q1/image.png)
 
-# yarn
-yarn build
+个人信息页面：
 
-# bun
-bun run build
-```
+![](https://i.postimg.cc/HxPSnDvs/image.png)
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
