@@ -24,7 +24,7 @@
 
 ![](https://i.postimg.cc/L51nKmFd/image.png)
 
-注册页面（语言切换了）
+登录页面2（语言切换了）
 
 ![](https://i.postimg.cc/05TfBCL3/image.png)
 
