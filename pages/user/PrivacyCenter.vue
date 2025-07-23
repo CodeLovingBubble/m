@@ -1,25 +1,25 @@
 <template>
     <div class="security-verification">
-        <h2 class="title">小米账号安全验证</h2>
+        <h2 class="title">{{ localeStore.t('xiaomiAccountSecurityVerification') }}</h2>
         <div class="content-box">
-            <p class="desc">为确认身份，我们仍需验证您的安全手机</p>
+            <p class="desc">{{ localeStore.t('securityVerificationDesc') }}</p>
             <p class="sub-desc">
-                点击发送验证码按钮，将会发送一条带有验证码的信息至手机
+                {{ localeStore.t('verificationCodeInstructions') }}
                 <span class="phone-number">+86 158****8025</span>
             </p>
-            <button class="send-btn">发送验证码</button>
+            <button class="send-btn">{{ localeStore.t('sendVerificationCode') }}</button>
             <p class="extra">
-                手机号或邮箱已停用？
-                <a href="#" class="reset-link">去申请重置</a>
+                {{ localeStore.t('phoneOrEmailDisabled') }}
+                <a href="#" class="reset-link">{{ localeStore.t('applyForReset') }}</a>
             </p>
         </div>
     </div>
 </template>
 
 <script setup>
-definePageMeta({
-    layout: 'blank' // 若需要空白布局可配置，根据实际项目调整，也可去掉
-})
+import { useLocaleStore } from '~/stores/locale'
+
+const localeStore = useLocaleStore()
 </script>
 
 <style scoped>

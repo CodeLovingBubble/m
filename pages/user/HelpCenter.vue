@@ -1,64 +1,70 @@
 <template>
     <div class="mi-help-center">
         <!-- 标题 -->
-        <h1 class="page-title">小米账号帮助中心</h1>
+        <h1 class="page-title">{{ localeStore.t('miAccountHelpCenter') }}</h1>
         <!-- 搜索框 -->
         <div class="search-bar">
-            <input type="text" placeholder="请输入问题关键词" class="search-input" />
+            <input type="text" :placeholder="localeStore.t('searchPlaceholder')" class="search-input" />
         </div>
         <!-- 自助服务区域 -->
         <div class="section">
-            <h2 class="section-title">自助服务</h2>
+            <h2 class="section-title">{{ localeStore.t('selfService') }}</h2>
             <div class="service-grid">
                 <div class="service-item">
                     <i class="el-icon-refresh-right"></i>
-                    <p class="service-text">重置密码</p>
+                    <p class="service-text">{{ localeStore.t('resetPassword') }}</p>
                 </div>
                 <div class="service-item">
                     <i class="el-icon-s-claim"></i>
-                    <p class="service-text">账号申诉</p>
+                    <p class="service-text">{{ localeStore.t('accountAppeal') }}</p>
                 </div>
                 <div class="service-item">
                     <i class="el-icon-lock"></i>
-                    <p class="service-text">冻结账号</p>
+                    <p class="service-text">{{ localeStore.t('freezeAccount') }}</p>
                 </div>
                 <div class="service-item">
                     <i class="el-icon-unlock"></i>
-                    <p class="service-text">解冻账号</p>
+                    <p class="service-text">{{ localeStore.t('unfreezeAccount') }}</p>
                 </div>
                 <div class="service-item">
                     <i class="el-icon-circle-check"></i>
-                    <p class="service-text">解封账号</p>
+                    <p class="service-text">{{ localeStore.t('unblockAccount') }}</p>
                 </div>
                 <div class="service-item">
                     <i class="el-icon-close"></i>
-                    <p class="service-text">注销账号</p>
+                    <p class="service-text">{{ localeStore.t('deleteAccount') }}</p>
                 </div>
             </div>
         </div>
         <!-- 帮助中心区域 -->
         <div class="section">
             <div class="help-header">
-                <h2 class="section-title">帮助中心</h2>
-                <a href="#" class="more-link">更多</a>
+                <h2 class="section-title">{{ localeStore.t('helpCenter') }}</h2>
+                <a href="#" class="more-link">{{ localeStore.t('more') }}</a>
             </div>
             <div class="tab-nav">
-                <span class="tab-item active">常见问题</span>
-                <span class="tab-item">登录</span>
-                <span class="tab-item">修改信息</span>
-                <span class="tab-item">账号安全</span>
+                <span class="tab-item active">{{ localeStore.t('faq') }}</span>
+                <span class="tab-item">{{ localeStore.t('login') }}</span>
+                <span class="tab-item">{{ localeStore.t('modifyInfo') }}</span>
+                <span class="tab-item">{{ localeStore.t('accountSecurity') }}</span>
             </div>
             <ul class="question-list">
-                <li class="question-item">忘记账号了，该如何找回？</li>
-                <li class="question-item">忘记密码了，如何重置密码？</li>
-                <li class="question-item">手机号停用了，如何登录或换绑手机号？</li>
-                <li class="question-item">申诉不通过怎么办？</li>
-                <li class="question-item">账号被盗了，怎么办？</li>
-                <li class="question-item">如何退出小米账号？</li>
+                <li class="question-item">{{ localeStore.t('forgotAccountQuestion') }}</li>
+                <li class="question-item">{{ localeStore.t('forgotPasswordQuestion') }}</li>
+                <li class="question-item">{{ localeStore.t('phoneDisabledQuestion') }}</li>
+                <li class="question-item">{{ localeStore.t('appealRejectedQuestion') }}</li>
+                <li class="question-item">{{ localeStore.t('accountHackedQuestion') }}</li>
+                <li class="question-item">{{ localeStore.t('logoutQuestion') }}</li>
             </ul>
         </div>
     </div>
 </template>
+
+<script setup>
+import { useLocaleStore } from '~/stores/locale'
+
+const localeStore = useLocaleStore()
+</script>
 
 <style scoped>
 /* 全局容器 */

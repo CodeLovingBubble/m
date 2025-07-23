@@ -2,27 +2,27 @@
     <div class="login-and-security">
         <!-- 登录方式模块 -->
         <section class="module">
-            <h3 class="module-title">登录方式</h3>
+            <h3 class="module-title">{{ localeStore.t('loginMethods') }}</h3>
             <div class="item">
                 <span class="icon phone-icon"></span>
-                <span class="label">安全手机</span>
+                <span class="label">{{ localeStore.t('securityPhone') }}</span>
                 <span class="value">+86 158****8025</span>
                 <span class="arrow">></span>
             </div>
             <div class="item">
                 <span class="icon email-icon"></span>
-                <span class="label">安全邮箱</span>
-                <span class="value not-set">未设置</span>
+                <span class="label">{{ localeStore.t('securityEmail') }}</span>
+                <span class="value not-set">{{ localeStore.t('notSet') }}</span>
                 <span class="arrow">></span>
             </div>
             <div class="item">
                 <span class="icon pwd-icon"></span>
-                <span class="label">修改密码</span>
+                <span class="label">{{ localeStore.t('changePassword') }}</span>
                 <span class="arrow">></span>
             </div>
             <div class="item">
                 <span class="icon third-icon"></span>
-                <span class="label">第三方账号</span>
+                <span class="label">{{ localeStore.t('thirdPartyAccounts') }}</span>
                 <!-- 新增微信图标 -->
                 <span class="wechat-icon"></span>
                 <span class="arrow">></span>
@@ -31,16 +31,16 @@
 
         <!-- 账号安全模块 -->
         <section class="module">
-            <h3 class="module-title">账号安全</h3>
+            <h3 class="module-title">{{ localeStore.t('accountSecurity') }}</h3>
             <div class="item">
                 <span class="icon question-icon"></span>
-                <span class="label">密保问题</span>
-                <span class="value not-set">未设置</span>
+                <span class="label">{{ localeStore.t('securityQuestions') }}</span>
+                <span class="value not-set">{{ localeStore.t('notSet') }}</span>
                 <span class="arrow">></span>
             </div>
             <div class="item">
                 <span class="icon device-icon"></span>
-                <span class="label">登录设备管理</span>
+                <span class="label">{{ localeStore.t('loginDeviceManagement') }}</span>
                 <span class="arrow">></span>
             </div>
         </section>
@@ -48,6 +48,10 @@
 </template>
 
 <script setup>
+import { useLocaleStore } from '~/stores/locale'
+
+const localeStore = useLocaleStore()
+
 definePageMeta({
     layout: 'account'
 })

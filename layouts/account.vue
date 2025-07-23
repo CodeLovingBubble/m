@@ -5,9 +5,9 @@
         <aside class="account-aside">
             <div class="profile" style="background-image: url(&quot;https://cdn.web-global.fds.api.mi-img.com/mcfe--mi-account/static/static/media/background.fdf39507..png&quot;);">
                 <div class="avatar">
-                    <img src="https://cdn.web-global.fds.api.mi-img.com/mcfe--mi-account/static/static/media/avatar.d443cc57.svg" alt="">
+                    <img src="https://cdn.web-global.fds.api.mi-img.com/mcfe--mi-account/static/static/media/avatar.d443cc57.svg" :alt="localeStore.t('userAvatar')">
                 </div>
-                <p class="nickname">请设置昵称</p>
+                <p class="nickname">{{ localeStore.t('setNickname') }}</p>
                 <p class="phone">+86 158****8025</p>
             </div>
             <nav class="account-nav">
@@ -33,6 +33,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useLocaleStore } from '~/stores/locale'
 import LoginAndSecurity from '@/pages/user/LoginAndSecurity.vue'
 import PersonalInfo from '@/pages/user/PersonalInfo.vue'
 import PrivacyCenter from '@/pages/user/PrivacyCenter.vue'
@@ -41,34 +42,37 @@ import HelpCenter from '@/pages/user/HelpCenter.vue'
 import AuthBottom from '~/src/components/auth/AuthBottom.vue'
 import AuthTop from '~/src/components/auth/AuthTop.vue'
 
+const localeStore = useLocaleStore()
+
 // 左侧导航数据
-const navList = ref([
+const navList = computed(() => [
     { 
-        label: '账号与安全', 
+        label: localeStore.t('accountAndSecurity'), 
         key: 'loginAndSecurity',
         icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path></svg>'
     },
     { 
-        label: '个人信息', 
+        label: localeStore.t('personalInfo'), 
         key: 'personalInfo',
         icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>'
     },
     { 
-        label: '隐私中心', 
+        label: localeStore.t('privacyCenter'), 
         key: 'privacyCenter',
         icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"></path></svg>'
     },
     { 
-        label: '绑定授权', 
+        label: localeStore.t('bindingAuthorization'), 
         key: 'bindingAuthorization',
         icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17 7h-4v2h4c1.65 0 3 1.35 3 3s-1.35 3-3 3h-4v2h4c2.76 0 5-2.24 5-5s-2.24-5-5-5zm-6 8H7c-1.65 0-3-1.35-3-3s1.35-3 3-3h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-2zm-3-4h8v2H8z"></path></svg>'
     },
     { 
-        label: '帮助中心', 
+        label: localeStore.t('helpCenter'), 
         key: 'helpCenter',
         icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"></path></svg>'
     }
 ])
+
 // 当前激活的标签
 const currentTab = ref('loginAndSecurity')
 

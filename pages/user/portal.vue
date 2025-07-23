@@ -9,7 +9,7 @@
             <div class="user-info">
                 <h2 class="user-id">3100475286</h2>
                 <p class="greeting">早上好~</p>
-                <a href="#" class="edit-link">修改个人信息 ></a>
+                <router-link to="/user/LoginAndSecurity" class="edit-link">修改个人信息 ></router-link>
             </div>
             <div class="security-panel">
                 <p>账户安全：<span class="security-level">普通</span></p>
@@ -76,6 +76,10 @@
 </template>
 
 <script setup>
+import { useLocaleStore } from '~/stores/locale';
+
+const localeStore = useLocaleStore();
+
 definePageMeta({
     layout: 'user' // 保持页面布局一致性
 })
@@ -218,7 +222,6 @@ definePageMeta({
 .count {
     font-size: 16px;
     color: #ff6700;
-    /* 数字橙色 */
 }
 
 .link {

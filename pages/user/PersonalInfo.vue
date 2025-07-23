@@ -1,61 +1,63 @@
 <template>
     <div class="personal-info">
         <h3 class="section-title">
-            <span class="vertical-line"></span>个人信息
+            <span class="vertical-line"></span>{{ localeStore.t('personalInformation') }}
         </h3>
 
         <div class="info-item">
-            <label class="item-label">头像</label>
+            <label class="item-label">{{ localeStore.t('avatar') }}</label>
             <div class="avatar-container">
                 <img class="avatar-img"
                     src="https://cdn.web-global.fds.api.mi-img.com/mcfe--mi-account/static/static/media/avatar.d443cc57.svg"
-                    alt="用户头像">
+                    :alt="localeStore.t('userAvatar')">
             </div>
         </div>
 
         <div class="info-item">
-            <label class="item-label">昵称</label>
+            <label class="item-label">{{ localeStore.t('nickname') }}</label>
             <div class="item-content">
-                <span class="item-value orange">请设置昵称</span>
+                <span class="item-value orange">{{ localeStore.t('setNickname') }}</span>
                 <button class="edit-icon"></button>
             </div>
         </div>
 
         <div class="info-item">
-            <label class="item-label">性别</label>
+            <label class="item-label">{{ localeStore.t('gender') }}</label>
             <div class="item-content">
-                <span class="item-value">未设置</span>
+                <span class="item-value">{{ localeStore.t('notSet') }}</span>
                 <button class="edit-icon"></button>
             </div>
         </div>
 
         <div class="info-item">
-            <label class="item-label">小米ID</label>
+            <label class="item-label">{{ localeStore.t('xiaomiID') }}</label>
             <span class="item-value">3100475286</span>
         </div>
 
         <div class="info-item">
-            <label class="item-label">国家/地区</label>
-            <span class="item-value">中国</span>
+            <label class="item-label">{{ localeStore.t('countryRegion') }}</label>
+            <span class="item-value">{{ localeStore.t('china') }}</span>
         </div>
 
         <div class="info-item">
-            <label class="item-label">出生日期</label>
+            <label class="item-label">{{ localeStore.t('birthDate') }}</label>
             <div class="item-content">
-                <span class="item-value">未设置</span>
+                <span class="item-value">{{ localeStore.t('notSet') }}</span>
                 <button class="edit-icon"></button>
             </div>
         </div>
 
         <!-- 添加的编辑按钮 -->
         <div class="edit-button-container">
-            <button class="edit-button">编辑</button>
+            <button class="edit-button">{{ localeStore.t('edit') }}</button>
         </div>
     </div>
 </template>
 
 <script setup>
+import { useLocaleStore } from '~/stores/locale'
 
+const localeStore = useLocaleStore()
 </script>
 
 <style scoped>
