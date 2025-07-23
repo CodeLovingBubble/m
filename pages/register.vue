@@ -1,59 +1,61 @@
 <template>
     <div class="auth-page">
         <div class="auth-tabs">
-            <NuxtLink to="/login" class="tab-link">登录</NuxtLink>
-            <button class="active">注册</button>
+            <NuxtLink to="/login" class="tab-link">{{ localeStore.t('login') }}</NuxtLink>
+            <button class="active">{{ localeStore.t('register') }}</button>
         </div>
 
         <form class="auth-form" @submit.prevent="handleSubmit">
             <div class="input-row">
-                <label>国家/地区</label>
+                <label>{{ localeStore.t('countryRegion') }}</label>
                 <div class="select-box">
-                    <span>中国</span>
+                    <span>{{ localeStore.t('china') }}</span>
                 </div>
             </div>
 
             <div class="phone-input-row">
                 <div class="country-code-group">
-                    <label>国家码</label>
+                    <label>{{ localeStore.t('countryCode') }}</label>
                     <div class="select-box">
                         <span>+86</span>
                     </div>
                 </div>
                 <div class="phone-number-group">
-                    <input type="tel" v-model="phone" placeholder="手机号">
+                    <input type="tel" v-model="phone" :placeholder="localeStore.t('phoneNumber')">
                 </div>
             </div>
 
             <div class="verification-row">
-                <input type="text" v-model="code" placeholder="请输入验证码">
+                <input type="text" v-model="code" :placeholder="localeStore.t('enterVerificationCode')">
                 <button class="code-btn" @click="sendCode" :disabled="!isPhoneValid || isSendingCode">
-                    {{ isSendingCode ? `${countdown}s后重试` : '获取验证码' }}
+                    {{ isSendingCode ? `${countdown}s${localeStore.t('retryAfter')}` : localeStore.t('getVerificationCode') }}
                 </button>
             </div>
 
             <div class="agreement">
                 <label>
                     <input type="checkbox" v-model="agreed">
-                    <span>已阅读并同意小米账号使用协议和隐私政策</span>
+                    <span>{{ localeStore.t('agreementText') }}</span>
                 </label>
             </div>
 
-            <button type="submit" class="submit-btn" :disabled="!isFormValid">注册</button>
+            <button type="submit" class="submit-btn" :disabled="!isFormValid">
+                {{ localeStore.t('register') }}
+            </button>
         </form>
 
         <div class="auth-footer">
-            <a href="#" class="code-help">收不到验证码？</a>
+            <a href="#" class="code-help">{{ localeStore.t('noVerificationCode') }}</a>
         </div>
 
-        <!-- 协议确认弹窗 - 统一风格 -->
+        <!-- 协议确认弹窗 -->
         <div v-if="showAgreementModal" class="modal-overlay">
             <div class="modal-content">
-                <h3>隐私政策确认</h3>
-                <p>请阅读并同意我们的隐私政策和使用条款以继续注册。</p>
+                <h3>{{ localeStore.t('privacyPolicyConfirmation') }}</h3>
+                <p>{{ localeStore.t('privacyPolicyText') }}</p>
                 <div class="modal-actions">
-                    <button @click="cancelAgreement">取消</button>
-                    <button @click="confirmAgreement" class="confirm-btn">同意并继续</button>
+                    <button @click="cancelAgreement">{{ localeStore.t('cancel') }}</button>
+                    <button @click="confirmAgreement" class="confirm-btn">{{ localeStore.t('agreeAndContinue') }}</button>
                 </div>
             </div>
         </div>
@@ -63,12 +65,15 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useLocaleStore } from '~/stores/locale';
 
 definePageMeta({
     layout: "auth"
 });
 
 const router = useRouter();
+const localeStore = useLocaleStore();
+
 const phone = ref('');
 const code = ref('');
 const agreed = ref(false);

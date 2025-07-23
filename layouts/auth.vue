@@ -2,6 +2,14 @@
 import AuthBottom from '~/src/components/auth/AuthBottom.vue';
 import AuthTop from '~/src/components/auth/AuthTop.vue';
 import LeftPoster from '~/src/components/auth/LeftPoster.vue';
+import { useLocaleStore } from '~/stores/locale'; // 明确导入
+
+const localeStore = useLocaleStore()
+
+// 初始化语言设置
+onMounted(() => {
+    localeStore.initLocale()
+})
 </script>
 
 <template>
@@ -21,7 +29,6 @@ import LeftPoster from '~/src/components/auth/LeftPoster.vue';
 </template>
 
 <style scoped>
-/* 整体布局 - 关键修改 */
 .auth-layout {
     display: flex;
     min-height: 100vh;
@@ -43,7 +50,7 @@ import LeftPoster from '~/src/components/auth/LeftPoster.vue';
     border-bottom-left-radius: 5px;
 }
 
-/* 右侧内容区 - 关键修改 */
+/* 右侧内容区 */
 .right-content {
     flex: 1;
     min-width: 0;

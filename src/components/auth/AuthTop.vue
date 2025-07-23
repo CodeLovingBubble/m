@@ -2,15 +2,22 @@
     <div class="top-box">
         <div class="top-box-left">
             <img src="/_nuxt/src/assets/image/logo-footer.png" alt="小米Logo">
-            <p>小米账号</p>
+            <p>{{ localeStore.t('account') }}</p>
         </div>
         <div class="top-box-right">
-            <p>用户协议</p>
-            <p>隐私政策</p>
-            <p>帮助中心</p>
+            <p>{{ localeStore.t('agreement') }}</p>
+            <p>{{ localeStore.t('privacy') }}</p>
+            <p>{{ localeStore.t('help') }}</p>
+            <p>|</p>
+            <LanguageSwitcher />
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import LanguageSwitcher from '~/src/components/LanguageSwitcher.vue'
+const localeStore = useLocaleStore()
+</script>
 
 <style scoped>
 .top-box {
@@ -22,8 +29,8 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 0 20px; /* 新增：左右内边距 */
-    box-sizing: border-box; /* 确保padding不影响总宽度 */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .top-box-left {
@@ -40,7 +47,7 @@
 }
 
 .top-box-left p {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #333;
 }
@@ -48,7 +55,7 @@
 .top-box-right {
     display: flex;
     gap: 30px;
-    padding-right: 20px; /* 新增：右侧额外内边距 */
+    padding-right: 20px;
 }
 
 .top-box-right p {
@@ -60,5 +67,44 @@
 
 .top-box-right p:hover {
     color: #ff6709;
+}
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1001;
+    min-width: 120px;
+}
+
+.dropdown-menu p {
+    padding: 8px 12px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.dropdown-menu p:hover {
+    background-color: #f5f5f5;
+    color: #ff6709;
+}
+
+.dropdown-menu p.active {
+    color: #ff6709;
+    font-weight: bold;
 }
 </style>
