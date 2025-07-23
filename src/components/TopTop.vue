@@ -3,7 +3,7 @@
         <div class="left">
             <a href="//www.mi.com/">小米官网</a>
             <span class="sep">|</span>
-            <a href="//www.mi.com/shop">小米商城</a>
+            <a href="javascript:;" @click="navigateToHome">小米商城</a>
             <span class="sep">|</span>
             <a href="//hyperos.mi.com/" target="_blank">小米澎湃OS</a>
             <span class="sep">|</span>
@@ -38,7 +38,7 @@
                 <span class="sep">|</span>
                 <a href="javascript:void(0)" @click="showProtocol = true; protocolType = 'register'">注册</a>
                 <span class="sep">|</span>
-                <a href="">消息通知</a>
+                <a href="javascript:;" @click="navigateToNotification">消息通知</a>
             </div>
             <div class="cart" @mouseenter="showCart = true" @mouseleave="showCart = false">
                 <div class="cart-container" @click.stop="goToCart">
@@ -93,15 +93,21 @@ const handleAgree = async () => {// 处理用户同意协议后的逻辑
     await nextTick(); // 等待DOM更新完成（确保弹窗完全关闭后再执行跳转）
 
     if (protocolType.value === 'login') {
-        return navigateTo('/login'); // 使用 Nuxt 的 navigateTo
+        return navigateTo('/login'); 
     } else {
         return navigateTo('/register');
     }
 };
+const navigateToHome = () => {
+    return navigateTo('/');
+};
+const navigateToNotification = () => {
+    return navigateTo('/user/notifications');
+};
+
 </script>
 
 <style>
-/* 原有样式保持不变 */
 .back {
     z-index: 30;
     height: 40px;
@@ -195,14 +201,15 @@ const handleAgree = async () => {// 处理用户同意协议后的逻辑
 .cart-container img {
     width: 100%;
     height: 40px;
-    background-image: url("https://i.postimg.cc/kGbZk9zN/image.png");
+    background-image: url("https://i.postimg.cc/d3wrB7TH/image.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .cart-container img:hover {
-    content: url("https://i.postimg.cc/fWt63jy3/image.png");
+    content: url("https://i.postimg.cc/7ZdzRt2T/image.png");
+    border: none;
 }
 
 .cart-list {
@@ -213,6 +220,7 @@ const handleAgree = async () => {// 处理用户同意协议后的逻辑
     padding: 15px;
     background: #fff;
     border: 1px solid #e0e0e0;
+    border-top: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
     text-align: center;
@@ -244,7 +252,8 @@ const handleAgree = async () => {// 处理用户同意协议后的逻辑
 
 /* 协议弹窗样式 */
 .protocol-modal {
-    position: fixed;    /* 全屏固定定位，改变全屏背景颜色 */
+    position: fixed;
+    /* 全屏固定定位，改变全屏背景颜色 */
     top: 0;
     left: 0;
     width: 100%;

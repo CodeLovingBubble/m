@@ -40,6 +40,32 @@
         </div>
       </a>
 
+      <!-- 售后服务图标 -->
+      <a v-else-if="item.value === '售后服务'" @click.prevent="navigateToService" 
+        @mouseenter="iconHover(item)" @mouseleave="iconRecovery(item)" class="tool-item">
+        <div class="tool-icon">
+          <img :src="item.src" v-show="!item.hover">
+          <img :src="item.hsrc" v-show="item.hover">
+        </div>
+        <span class="tool-text">{{ item.value }}</span>
+        <div class="tool-popup" v-show="isSmallScreen && item.hover">
+          <span>{{ item.value }}</span>
+        </div>
+      </a>
+
+      <!-- 购物车图标 -->
+      <a v-else-if="item.value === '购物车'" @click.prevent="navigateToCart" 
+        @mouseenter="iconHover(item)" @mouseleave="iconRecovery(item)" class="tool-item">
+        <div class="tool-icon">
+          <img :src="item.src" v-show="!item.hover">
+          <img :src="item.hsrc" v-show="item.hover">
+        </div>
+        <span class="tool-text">{{ item.value }}</span>
+        <div class="tool-popup" v-show="isSmallScreen && item.hover">
+          <span>{{ item.value }}</span>
+        </div>
+      </a>
+
       <!-- 其他中间图标 -->
       <a :href="item.url" target="_blank" v-else @mouseenter="iconHover(item)" @mouseleave="iconRecovery(item)"
         class="tool-item">
@@ -85,7 +111,6 @@ const getScrollTop = () => {
   return scrollTop;
 }
 
-
 const getWindowHeight = () => {
   let windowHeight = 0;
   if (document.compatMode === "CSS1Compat") {
@@ -101,15 +126,23 @@ const checkScreenSize = () => {
 }
 
 const iconHover = (item) => {
-  item.hover = true;// 进入时激活悬停状态
+  item.hover = true;
 }
 
 const iconRecovery = (item) => {
-  item.hover = false;// 离开时恢复默认状态
+  item.hover = false;
 }
 
 const navigateToLayouts = () => {
   router.push('/user/portal')
+}
+
+const navigateToService = () => {
+  router.push('/user/apply')
+}
+
+const navigateToCart = () => {
+  router.push('/cart')
 }
 
 onMounted(() => {
@@ -120,7 +153,7 @@ onMounted(() => {
     windowHeight.value = getWindowHeight()
     checkScreenSize()
   }
-// 监听滚动事件，更新滚动距离
+  
   window.onscroll = () => {
     scrollTop.value = getScrollTop()
   }
