@@ -18,6 +18,15 @@
                         </div>
                     </div>
                 </div>
+                <!-- 添加轮播图指示器 -->
+                <div class="carousel-indicators">
+                    <span 
+                        v-for="(page, index) in paginatedProducts" 
+                        :key="index"
+                        :class="['indicator', { active: currentPage === index }]"
+                        @click="currentPage = index"
+                    ></span><!-- 当前轮播图页等于指示点索引，激活active -->
+                </div>
             </div>
     </div>
 </template>
@@ -189,5 +198,25 @@ onUnmounted(() => {
 .add-to-cart:hover {
     background-color: #ff6700;
     color: #fff;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: #ff6700;
 }
 </style>

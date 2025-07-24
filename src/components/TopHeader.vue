@@ -207,34 +207,38 @@ export default {
     
     // 搜索框失去焦点
     searchListHide() {
-      this.hotsListFlag = true;// 显示热门搜索
-      this.focusFlag = false;// 标记为失焦状态
-      this.startRotation(); // 重新开始轮换
+      // 延迟隐藏以允许点击列表项
+      setTimeout(() => {
+        if (!this.keepFocus) {
+          this.hotsListFlag = true;
+          this.focusFlag = false;
+          this.startRotation();
+        }
+      }, 100);
     },
     
     // 处理下拉词条点击
     handleListItemClick(item) {
-      this.searchValue = item;// 设置搜索框值
-      this.addToSearchHistory(item);// 添加到搜索历史
-      
-      // 使用$nextTick确保DOM更新完成后再执行后续操作
-      this.$nextTick(() => {
-        this.hotsListFlag = true;
-        this.focusFlag = false;
-        this.handleSearch();// 触发搜索
-      });
+      this.searchValue = item;// 回填到搜索框
+      // 只有当搜索框内容与点击的词条不同时才添加到历史记录
+      if (this.searchValue !== item) {
+        this.addToSearchHistory(item);// 避免重复添加
+      }
+      this.focusFlag = true;
+      this.hotsListFlag = false;
     },
     
     // 处理热门词条点击
     handleHotItemClick(item) {
       this.searchValue = item;
-      this.addToSearchHistory(item);
-      
-      // 使用$nextTick确保DOM更新完成后再执行后续操作
+      // 只有当搜索框内容与点击的词条不同时才添加到历史记录
+      if (this.searchValue !== item) {
+        this.addToSearchHistory(item);
+      }
       this.$nextTick(() => {
-        this.hotsListFlag = true;
-        this.focusFlag = false;
-        this.handleSearch();
+        document.querySelector('.search-input').focus();// 重新聚焦输入框
+        this.focusFlag = true;
+        this.hotsListFlag = false;
       });
     },
     
@@ -327,8 +331,11 @@ export default {
       transition: all 0.3s ease;
       
       &:focus {
-        border-color: #ff6700;
-      }
+    ~ .search-btn,
+    ~ #kuan input[type="submit"] {
+      border-color: #ff6700;
+    }
+  }
     }
 
     #kuan {
@@ -511,4 +518,25 @@ export default {
   .list-trans-enter-to, .list-trans-leave {
     opacity: 1;
   }
+  .search-list, .search-hots {
+  .list-item, .hots-item {
+    cursor: pointer;
+    transition: all 0.2s;
+    
+    &:hover {
+      background: #f5f5f5;
+      color: #ff6700;
+    }
+    
+    &:active {
+      background: #eee;
+    }
+  }
+}
+.header-search-container {
+  z-index: 20;
+}
+.list-trans-enter-active, .list-trans-leave-active {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
 </style>
