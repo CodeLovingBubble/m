@@ -115,7 +115,7 @@ const changeCaptcha = () => {
 /* 容器基础样式 */
 .gift-card-container {
     background-color: #fff;
-    padding: 30px;
+    padding: 40px;
 }
 
 /* 页面标题 */

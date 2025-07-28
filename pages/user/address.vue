@@ -20,7 +20,7 @@ definePageMeta({
 /* 容器样式 */
 .address-container {
     background-color: #fff;
-    padding: 30px 20px;
+    padding: 40px;
 }
 
 /* 标题样式 */

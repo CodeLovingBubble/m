@@ -31,7 +31,7 @@ const activeTabIndex = ref(0) // 当前激活的标签索引
 /* 容器基础样式 */
 .message-notice {
     background-color: #fff;
-    padding: 30px 20px;
+    padding: 40px;
 }
 
 /* 标题样式 */

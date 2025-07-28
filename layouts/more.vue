@@ -1,8 +1,6 @@
-<script setup lang="ts">
+<script setup>
 import TopTop from '~/src/components/TopTop.vue';
 import TopHeader from '~/src/components/TopHeader.vue';
-import MoreList from '~/src/components/more/MoreList.vue';
-import MoreLun from '~/src/components/more/MoreLun.vue';
 import SiteFooter from '~/src/components/SiteFooter.vue';
 import SiteInfo from '~/src/components/SiteInfo.vue';
 import ToolBar from '~/src/components/ToolBar.vue';
@@ -15,8 +13,7 @@ import ToolBar from '~/src/components/ToolBar.vue';
             <TopHeader />
 
             <main class="more-content">
-                <MoreList />
-                <MoreLun />
+                <slot />
             </main>
 
             <SiteFooter />
@@ -29,21 +26,5 @@ import ToolBar from '~/src/components/ToolBar.vue';
 </template>
 
 <style scoped>
-.more-layout {
-    display: flex;
-    min-height: 100vh;
-}
-
-
-
-.right-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.gray-page {
-    background-color: #f5f5f5;
-    padding: 20px 0;
-}
+/*  */
 </style>

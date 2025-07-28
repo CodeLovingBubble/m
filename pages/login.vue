@@ -132,6 +132,7 @@ const performLogin = () => {
 
 <style scoped>
 .auth-page {
+    left: 60%;
     width: 350px;
     position: absolute;
     top: 50%;
@@ -405,5 +406,11 @@ const performLogin = () => {
     border: solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
+}
+
+@media (max-width: 1226px){
+    .auth-page{
+        left: 50%;
+    }
 }
 </style>

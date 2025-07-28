@@ -14,7 +14,7 @@ definePageMeta({
 <style scoped>
 .qr-section {
     background-color: #fff;
-    padding: 30px 20px;
+    padding: 40px;
     text-align: left;
     /* 严格左对齐 */
 }

@@ -265,7 +265,7 @@ export default {
   .menu-container {
     position: absolute;
     left: 0;
-    top: 16px;
+    top: 0;
     width: 235px;
     height: auto;
     background: rgb(172, 170, 170);

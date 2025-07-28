@@ -33,7 +33,7 @@ const activeTab = ref(0)
 /* 容器样式 */
 .cash-coupon-container {
     background-color: #fff;
-    padding: 30px 20px;
+    padding: 40px;
 }
 
 /* 标题样式 */

@@ -73,5 +73,7 @@ definePageMeta({
     width: 100%;
     height: auto;
     display: block;
+    max-width: none;
+    padding: 0;
 }
 </style>

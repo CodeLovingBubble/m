@@ -31,18 +31,5 @@ import SubChannel from '~/src/components/SubChannel.vue';
 </template>
 
 <style scoped>
-.default-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.main-content {
-    flex: 1; /* 让主要内容区域占据剩余空间 */
-}
-
-.gray-page {
-    background-color: #f5f5f5;
-    padding: 20px 0;
-}
+/*  */
 </style>

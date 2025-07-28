@@ -57,9 +57,8 @@ const hasOrders = computed(() => false) // 模拟空状态
 <style scoped>
 /* 全局容器 */
 .orders-page {
-    padding: 30px 30px;
+    padding: 40px;
     background: #fff;
-    min-height: calc(100vh - 60px);
 }
 
 /* 标题区 */

@@ -26,7 +26,7 @@ const localeStore = useLocaleStore()
     align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 375px;
     right: 0;
     z-index: 1000;
     padding: 0 20px;
@@ -106,5 +106,11 @@ const localeStore = useLocaleStore()
 .dropdown-menu p.active {
     color: #ff6709;
     font-weight: bold;
+}
+
+@media (max-width: 1226px){
+    .top-box {
+        left: 0;
+    }
 }
 </style>

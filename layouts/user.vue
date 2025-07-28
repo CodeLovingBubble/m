@@ -6,7 +6,7 @@
             <div class="shou">
                 <p @click="$router.push('/')">首页</p>
                 <p>/</p>
-                <p @click="$router.go(0)" style="cursor:pointer">个人中心</p>
+                <p @click="$router.go(0)">个人中心</p>
             </div>
         </div>
 
@@ -36,46 +36,29 @@ import UserSidebar from '~/src/components/user/UserSidebar.vue';
 </script>
 
 <style scoped>
-.user-layout {
+.user-layout,
+.user-top-bar{
     background-color: #f5f5f5;
-    min-height: 100vh;
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
+    max-width: 1246px;
     margin: 0 auto;
-    padding: 0 15px;
-}
-
-.user-top-bar {
-    background-color: #fff;
 }
 
 .user-main-container {
     display: flex;
-    margin-top: 20px;
     gap: 20px;
     padding-bottom: 40px;
 }
 
 .user-content-area {
     flex: 1;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.user-top-bar{
-    background-color: #f5f5f5;
-    height: 20px;
 }
 
 .shou {
     display: flex;
-    align-items: center;
-    width: 1200px;
+    width: 1246px;
     margin: 0 auto;
     padding: 10px;
 }

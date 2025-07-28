@@ -40,7 +40,7 @@ const activeTab = ref('unused') // 默认显示"未使用"
 
 <style scoped>
 .purchase-qualification {
-    padding: 24px;
+    padding: 40px;
     background-color: #fff;
 }
 

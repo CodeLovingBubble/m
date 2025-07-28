@@ -14,7 +14,7 @@ const localeStore = useLocaleStore();
 .footer {
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 375px;
     right: 0;
     text-align: center;
     padding: 10px 0;
@@ -31,5 +31,11 @@ const localeStore = useLocaleStore();
     margin: 0 auto;
     max-width: 90%;
     font-size: 12px;
+}
+
+@media (max-width: 1226px){
+    .auth-bottom {
+        left: 0;
+    }
 }
 </style>

@@ -88,7 +88,7 @@ definePageMeta({
 <style scoped>
 /* 全局容器样式 */
 .user-portal {
-    padding: 20px;
+    padding: 40px;
     background-color: #fff;
 }
 

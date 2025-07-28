@@ -171,6 +171,7 @@ const cancelAgreement = () => {
 
 <style scoped>
 .auth-page {
+    left: 60%;
     width: 350px;
     position: absolute;
     top: 50%;
@@ -458,5 +459,11 @@ const cancelAgreement = () => {
 .phone-number-group {
     position: relative;
     flex: 1;
+}
+
+@media (max-width: 1226px){
+    .auth-page{
+        left: 50%;
+    }
 }
 </style>

@@ -81,7 +81,7 @@ definePageMeta({
 /* 主内容区 */
 .content {
     background-color: #fff;
-    padding: 30px 20px;
+    padding: 40px;
 }
 
 .section-title {

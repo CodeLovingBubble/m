@@ -49,7 +49,7 @@ const activeTab = ref(0)
 /* 容器基础样式 */
 .coupon-container {
     background-color: #fff;
-    padding: 30px 20px;
+    padding: 40px;
 }
 
 /* 标题样式（还原设计：30px 浅灰色） */

@@ -16,7 +16,7 @@ definePageMeta({
 .phone-recharge-order {
     background-color: #fff;
     /* 白色容器，与截图一致 */
-    padding: 40px 20px;
+    padding: 40px;
     /* 上下大间距，左右适中 */
 }
 

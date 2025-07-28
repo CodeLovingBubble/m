@@ -15,7 +15,7 @@ definePageMeta({
 /* 外层容器：白色背景 + 内边距 */
 .order-review {
     background-color: #fff;
-    padding: 40px 20px;
+    padding: 40px;
     /* 上下大间距，左右适中 */
 }
 
