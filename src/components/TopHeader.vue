@@ -303,10 +303,16 @@ export default {
 
         .navs {
           display: flex;
-          line-height: 100px;
-          .navs-item > a {
+          align-items: center;
+          .navs-item{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin: 10px;
+          } 
+          > a {
+            height: 100%;
             cursor: pointer;
-            padding: 26px 10px 38px;
             &:hover {
               color: #ff6700;
             }
@@ -342,7 +348,7 @@ export default {
       input[type="submit"] {
         height: 50px;
         width: 50px;
-        border: 1px solid #e0e0e0;
+        border: none;
         border-left: none; /* 移除左侧边框，避免与输入框重叠 */
         background-color: #fff;
         background-image: url('https://i.postimg.cc/G3FQtqGh/image.png');

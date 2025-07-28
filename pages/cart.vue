@@ -13,6 +13,3 @@ import CartGoods from '~/src/components/CartGoods.vue';
         <CartGoods />
     </div>
 </template>
-
-<style scoped>
-</style>

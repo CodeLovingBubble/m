@@ -1,9 +1,11 @@
 <template>
     <div class="phone-list-container">
-        <div class="shou">
-            <p @click="$router.push('/')">首页</p>
-            <p>></p>
-            <p @click="$router.go(0)" style="cursor:pointer">全部结果</p>
+        <div class="header">
+            <div class="shou">
+                <p @click="$router.push('/')">首页</p>
+                <p>></p>
+                <p @click="$router.go(0)" style="cursor:pointer">全部结果</p>
+            </div>
         </div>
 
         <!-- 筛选标签栏 -->
@@ -918,8 +920,8 @@ const selectSubOption = (groupIndex) => {
 .shou {
     display: flex;
     align-items: center;
-    padding: 15px 0;
-    margin-left: 20%;
+    width: 1246px;
+    margin: 0 auto;
 }
 
 .shou p {

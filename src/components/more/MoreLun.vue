@@ -27,7 +27,7 @@
                         @click="currentPage = index"
                     ></span><!-- 当前轮播图页等于指示点索引，激活active -->
                 </div>
-            </div>
+        </div>
     </div>
 </template>
 

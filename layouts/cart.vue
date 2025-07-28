@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TopCom from '~/src/components/TopCom.vue';
-import CartGoods from '~/src/components/CartGoods.vue';
 import SiteFooter from '~/src/components/SiteFooter.vue';
 import SiteInfo from '~/src/components/SiteInfo.vue';
 import ToolBar from '~/src/components/ToolBar.vue';
@@ -8,24 +7,24 @@ import ToolBar from '~/src/components/ToolBar.vue';
 
 <template>
     <div class="ff"></div>
-            <div class="top-box">
-                <div class="top-container">
-                    <div class="top-box-left">
-                        <img src="/_nuxt/src/assets/image/logo-footer.png" alt="小米Logo">
-                        <p>我的购物车</p>
-                    </div>
-                    <div class="top-box-right">
-                        <NuxtLink to="/login" class="tab-link">登录</NuxtLink>
-                        <span class="sep">|</span>
-                        <NuxtLink to="/register" class="tab-link">注册</NuxtLink>
-                    </div>
-                </div>
+    <div class="top-box">
+        <div class="top-container">
+            <div class="top-box-left">
+                <img src="/_nuxt/src/assets/image/logo-footer.png" alt="小米Logo">
+                <p>我的购物车</p>
             </div>
+            <div class="top-box-right">
+                <NuxtLink to="/login" class="tab-link">登录</NuxtLink>
+                <span class="sep">|</span>
+                <NuxtLink to="/register" class="tab-link">注册</NuxtLink>
+            </div>
+        </div>
+    </div>
     <TopCom />
     <div class="cart-layout">
         <div class="right-content">
-            <!-- 购物车内容 -->
-            <CartGoods />
+            <!-- 这里插入页面内容 -->
+            <slot />
             <ToolBar />
         </div>
     </div>
